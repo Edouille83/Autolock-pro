@@ -2838,11 +2838,19 @@ function showResult(v, year){
   // Mid grid
   document.getElementById('info-grid-mid').innerHTML = `
     <div class="ig-block">
-      <div class="ig-label"><span class="dot" style="background:var(--blue)"></span>LAME À TAILLER</div>
+      <div class="ig-label"><span class="dot" style="background:var(--blue)"></span>LAME À TAILLER
+        ${v.bladeVerified
+          ? `<span style="background:var(--green-d);border:1px solid rgba(16,185,129,.3);color:var(--green);border-radius:4px;font-size:8px;padding:1px 6px;margin-left:4px;letter-spacing:1px">✓ VÉRIFIÉ</span>`
+          : `<span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);border-radius:4px;font-size:8px;padding:1px 6px;margin-left:4px;letter-spacing:1px">⚠ À VÉRIFIER</span>`}
+      </div>
       <div class="ig-val" style="color:#60a5fa;font-size:26px;font-weight:900">${v.blade}</div>
     </div>
     <div class="ig-block">
-      <div class="ig-label"><span class="dot" style="background:var(--green)"></span>LITCHI CROCHETAGE</div>
+      <div class="ig-label"><span class="dot" style="background:var(--green)"></span>LITCHI CROCHETAGE
+        ${v.bladeVerified
+          ? `<span style="background:var(--green-d);border:1px solid rgba(16,185,129,.3);color:var(--green);border-radius:4px;font-size:8px;padding:1px 6px;margin-left:4px;letter-spacing:1px">✓ VÉRIFIÉ</span>`
+          : `<span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);border-radius:4px;font-size:8px;padding:1px 6px;margin-left:4px;letter-spacing:1px">⚠ À VÉRIFIER</span>`}
+      </div>
       <div class="ig-val" style="color:#34d399;font-size:26px;font-weight:900">${v.pick}</div>
     </div>
     <div class="ig-block" style="border-right:none">
