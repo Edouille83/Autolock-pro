@@ -561,7 +561,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
           <button class="btn-action primary" onclick="addToHistory()" aria-label="Enregistrer cette intervention dans l'historique">✅ Marquer intervention</button>
           <button class="btn-action" onclick="openEdit()" style="border-color:rgba(245,158,11,.3);color:var(--amber)" aria-label="Modifier la fiche véhicule">✏️ Modifier</button>
           <button class="btn-action blue" onclick="copyInfos()" aria-label="Copier les informations pour SMS">📋 Copier infos</button>
-          <button class="btn-action" onclick="openMK3()" style="border-color:rgba(168,85,247,.4);color:#c084fc" aria-label="Rechercher les pièces sur MK3">🔍 MK3</button>
+          <button class="btn-action" onclick="openXhorse()" style="border-color:rgba(168,85,247,.4);color:#c084fc" aria-label="Rechercher les télécommandes sur Xhorse">🔍 Xhorse</button>
           <button class="btn-action" onclick="printFiche()" aria-label="Imprimer la fiche véhicule">🖨️ Imprimer</button>
           <button class="btn-action" onclick="resetAll()" style="margin-left:auto" aria-label="Nouvelle recherche">← Nouveau</button>
         </div>
@@ -2848,12 +2848,12 @@ function showResult(v, year){
     <div class="ig-block" style="border-right:none">
       <div class="ig-label"><span class="dot" style="background:var(--purple)"></span>TÉLÉCOMMANDE</div>
       <div style="margin-top:6px">
-        <a href="${mk3SearchUrl(v)}" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:var(--purple-d);border:1px solid rgba(168,85,247,.35);border-radius:8px;padding:9px 14px;transition:all .2s;color:#c084fc;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1px">
-          🔍 CHERCHER SUR MK3
-          <span style="font-size:9px;opacity:.7">${v.brand} ${v.model} ${document.getElementById('sel-year').value}</span>
+        <a href="${xhorseSearchUrl(v)}" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:var(--purple-d);border:1px solid rgba(168,85,247,.35);border-radius:8px;padding:9px 14px;transition:all .2s;color:#c084fc;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1px">
+          🔍 CHERCHER SUR XHORSE
+          <span style="font-size:9px;opacity:.7">${(v.remotes&&v.remotes[0])||v.transponder}</span>
         </a>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:6px;letter-spacing:1px">
-          → Ouvre mk3.com avec les bons mots-clés
+          → Ouvre xhorse.com avec la référence télécommande
         </div>
       </div>
     </div>
@@ -3143,8 +3143,8 @@ function printFiche(){
         <div style="font-size:22px;font-weight:900;color:#065f46">${v.pick}</div>
       </div>
       <div style="grid-column:1/-1;background:#f5f5f5;border-radius:6px;padding:9px 11px">
-        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:5px">Télécommande — Recherche MK3</div>
-        <div style="font-size:12px;color:#6d28d9;word-break:break-all">${mk3SearchUrl(v)}</div>
+        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:5px">Télécommande — Recherche Xhorse</div>
+        <div style="font-size:12px;color:#6d28d9;word-break:break-all">${xhorseSearchUrl(v)}</div>
       </div>
       ${v.obdPos?`<div style="grid-column:1/-1;background:#f0f9ff;border-radius:6px;padding:9px 11px"><div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px">Position prise OBD</div><div style="font-size:13px;font-weight:600">📍 ${v.obdPos}</div></div>`:''}
     </div>
@@ -3233,44 +3233,33 @@ function quickSelect(brand,model,year){
 }
 
 // ════════════════════════════════════════════════════
-//  MK3 SEARCH
+//  XHORSE SEARCH
 // ════════════════════════════════════════════════════
 
-const MK3_SLUGS = {
-  "Renault":"renault","Peugeot":"peugeot","Citroën":"citroen",
-  "Volkswagen":"volkswagen","Audi":"audi","Seat":"seat","Skoda":"skoda",
-  "BMW":"bmw","MINI":"mini","Mercedes":"mercedes-benz",
-  "Opel":"opel","Ford":"ford","Fiat":"fiat","Alfa Romeo":"alfa-romeo",
-  "Lancia":"lancia","Nissan":"nissan","Toyota":"toyota","Honda":"honda",
-  "Hyundai":"hyundai","Kia":"kia","Dacia":"dacia","Suzuki":"suzuki",
-  "Mazda":"mazda","Volvo":"volvo","Land Rover":"land-rover",
-  "Mitsubishi":"mitsubishi","Subaru":"subaru",
-};
+// Construit l'URL Xhorse la plus précise possible :
+// Utilise la référence télécommande Xhorse (ex: XKRN00EN) en priorité,
+// sinon marque + modèle + transpondeur
+function xhorseSearchUrl(v){
+  // Extraire la référence Xhorse propre (ex: XKRN00EN, XN004, XE-Wireless...)
+  const firstRemote = (v.remotes && v.remotes[0]) || '';
+  const refMatch = firstRemote.match(/X[KN]\w+|XE-\w+|XN-\w+/i);
+  const ref = refMatch ? refMatch[0] : '';
 
-// Construit l'URL MK3 la plus précise possible :
-// marque + modèle + année + transpondeur chip → recherche directe produit
-function mk3SearchUrl(v){
-  const year  = document.getElementById('sel-year')?.value || '';
-  const slug  = MK3_SLUGS[v.brand];
-
-  // Extraire juste le chip du transpondeur (ex: "PCF7936" ou "PCF7947" ou "ID46")
-  const chipMatch = v.transponder.match(/PCF\d+|4D\d+|ID\d+|Hitag\s*\w+|Megamos\s*\d+|Temic\s*\d+/i);
+  const chipMatch = v.transponder.match(/PCF\d+|4D\d+|ID\d+|Hitag\s*\w+|Megamos\s*\d+/i);
   const chip = chipMatch ? chipMatch[0].replace(/\s+/g,'') : '';
 
-  // Query : "Peugeot 307 2006 PCF7936 433MHz"
-  const q = [v.brand, v.model, year, chip, '433MHz'].filter(Boolean).join(' ');
+  const q = ref
+    ? ref
+    : [v.brand, v.model, chip].filter(Boolean).join(' ');
 
-  if(slug){
-    return `https://www.mk3.com/fr/${slug}?q=${encodeURIComponent(q)}`;
-  }
-  return `https://www.mk3.com/fr/search?q=${encodeURIComponent(q)}`;
+  return `https://www.xhorse.com/en/search/?keywords=${encodeURIComponent(q)}`;
 }
 
-function openMK3(){
+function openXhorse(){
   if(!currentResult) return;
-  const url = mk3SearchUrl(currentResult);
+  const url = xhorseSearchUrl(currentResult);
   window.open(url, '_blank');
-  showToast('🔍 Recherche MK3 — ' + currentResult.brand + ' ' + currentResult.model);
+  showToast('🔍 Recherche Xhorse — ' + (currentResult.remotes&&currentResult.remotes[0] ? currentResult.remotes[0] : currentResult.brand + ' ' + currentResult.model));
 }
 
 // ════════════════════════════════════════════════════
