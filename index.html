@@ -3240,8 +3240,10 @@ function quickSelect(brand,model,year){
 // Lien vers la page catégorie xhorsetool.com selon le type de télécommande
 function xhorseSearchUrl(v){
   const first = (v.remotes && v.remotes[0]) || '';
-  if(/^XK/i.test(first)) return 'https://www.xhorsetool.com/wholesale/xk-series-wire-remote/';
-  if(/^XN|^XS/i.test(first)) return 'https://www.xhorsetool.com/wholesale/xn-series-wireless-remote/';
+  if(/^XK/i.test(first)) return 'https://www.xhorsetool.com/wholesale/vvdi-remote/xk-wire-remote/';
+  if(/^XN/i.test(first)) return 'https://www.xhorsetool.com/wholesale/vvdi-remote/xn-wireless-remote/';
+  if(/^XS/i.test(first)) return 'https://www.xhorsetool.com/wholesale/vvdi-remote/xs-smart-remote/';
+  if(/^XE/i.test(first)) return 'https://www.xhorsetool.com/wholesale/vvdi-remote/xe-super-remote/';
   return 'https://www.xhorsetool.com/wholesale/vvdi-remote/';
 }
 
