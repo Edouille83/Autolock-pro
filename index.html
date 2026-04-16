@@ -3184,21 +3184,22 @@ function resetCalc(){
 function copyDevis(){
   const type  = document.getElementById('c-type').selectedOptions[0].text;
   const total = document.getElementById('c-total').textContent;
-  const detail= document.getElementById('c-detail').innerText;
   const notes = document.getElementById('c-notes').value;
+  const tva   = document.getElementById('c-tva').value;
+  const date  = new Date().toLocaleDateString('fr-FR');
   const txt = [
-    `💰 DEVIS REPARETONPHONE83`,
-    `Toulon (83) — Serrurier Auto Mobile`,
+    `🔑 REPARETONPHONE83`,
+    `Serrurier Automobile · Toulon (83)`,
     ``,
-    notes ? `Intervention : ${notes}` : `Intervention : ${type}`,
+    `Prestation : ${notes || type}`,
     ``,
-    detail,
+    tva==='0'
+      ? `Montant : ${total}`
+      : `Montant TTC : ${total}${tva!=='0'?` (TVA ${tva}% incluse)`:''}`,
     ``,
-    `TOTAL : ${total}`,
-    ``,
-    `Devis établi le ${new Date().toLocaleDateString('fr-FR')}`,
-    `Contact : Reparetonphone83`,
-  ].join('\n');
+    `Devis valable 30 jours — établi le ${date}`,
+    `📞 Reparetonphone83`,
+  ].filter(Boolean).join('\n');
 
   navigator.clipboard.writeText(txt)
     .then(()=>showToast('✅ Devis copié — prêt à envoyer'))
