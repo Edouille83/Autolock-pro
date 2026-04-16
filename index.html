@@ -449,12 +449,67 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   height:16px;
 }
 .pin-error.show{opacity:1;}
+
+/* ── Clients tab ── */
+.client-form{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:16px;margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.client-form input,.client-form textarea{background:var(--s2);border:1px solid var(--b1);color:var(--txt);border-radius:7px;padding:9px 12px;font-family:'Rajdhani',sans-serif;font-size:14px;width:100%;box-sizing:border-box;}
+.client-form textarea{grid-column:1/-1;resize:vertical;height:60px;}
+.client-form .full{grid-column:1/-1;}
+.client-card{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px;margin-bottom:10px;cursor:pointer;transition:border-color .2s;}
+.client-card:hover{border-color:var(--b2);}
+.client-card-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;}
+.client-card-meta{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;}
+.client-veh{background:var(--s2);border-radius:6px;padding:4px 10px;font-size:11px;margin-top:8px;display:inline-block;}
+
+/* ── Checklist ── */
+.checklist-wrap{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px;margin-top:14px;}
+.checklist-title{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:10px;}
+.cl-item{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--b1);cursor:pointer;user-select:none;}
+.cl-item:last-child{border-bottom:none;}
+.cl-item input[type=checkbox]{width:17px;height:17px;accent-color:var(--green);cursor:pointer;flex-shrink:0;}
+.cl-item label{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:color .2s;}
+.cl-item.done label{text-decoration:line-through;color:var(--muted);}
+.cl-progress{height:4px;background:var(--b1);border-radius:2px;margin-top:10px;}
+.cl-progress-bar{height:100%;background:var(--green);border-radius:2px;transition:width .3s;}
+
+/* ── Fournisseurs ── */
+.fournisseur-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px;}
+.fournisseur-card{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px;}
+.fournisseur-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:6px;}
+.fournisseur-link{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--blue);text-decoration:none;margin-top:4px;}
+.fournisseur-link:hover{text-decoration:underline;}
+
+/* ── Stock alerts ── */
+.stock-alert{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-radius:8px;padding:10px 14px;margin-bottom:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);}
+.stock-ok{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:8px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--green);}
+
+/* ── Torch overlay ── */
+#torch-overlay{display:none;position:fixed;inset:0;background:#fff;z-index:10000;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:16px;}
+#torch-overlay.on{display:flex;}
+#torch-overlay span{font-size:64px;}
+#torch-overlay p{font-family:'JetBrains Mono',monospace;font-size:12px;color:#999;letter-spacing:2px;}
+
+/* ── Header action buttons ── */
+.hdr-tool-btn{background:transparent;border:1px solid var(--b1);color:var(--txt2);border-radius:7px;padding:6px 10px;font-size:16px;cursor:pointer;transition:all .2s;}
+.hdr-tool-btn:hover{border-color:var(--b2);color:var(--txt);}
+.hdr-tool-btn.active{background:var(--amber-d);border-color:rgba(245,158,11,.4);color:var(--amber);}
+
+@media(max-width:640px){
+  .client-form{grid-template-columns:1fr;}
+  .fournisseur-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
 
 <!-- OFFLINE INDICATOR -->
 <div class="offline-bar" id="offline-bar" role="status" aria-live="assertive">📵 Hors-ligne — Données locales disponibles</div>
+
+<!-- TORCH OVERLAY -->
+<div id="torch-overlay" onclick="toggleTorch()" role="button" aria-label="Éteindre la lampe de poche">
+  <span>🔦</span>
+  <p>APPUYER POUR ÉTEINDRE</p>
+</div>
 
 <!-- PIN LOCK SCREEN -->
 <div id="pin-lock">
@@ -498,6 +553,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <div class="hs"><div class="hs-v" id="s-hist">0</div><div class="hs-l">Interventions</div></div>
       </div>
       <button class="hist-btn" onclick="showTab('tab-history')" aria-label="Ouvrir l'historique des interventions">📅 Historique</button>
+      <button class="hdr-tool-btn" id="wake-btn" onclick="toggleWakeLock()" title="Verrouillage écran actif pendant intervention" aria-label="Verrouiller l'écran allumé">🔒</button>
+      <button class="hdr-tool-btn" onclick="toggleTorch()" title="Lampe de poche — écran blanc plein" aria-label="Activer la lampe de poche">🔦</button>
       <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Mode jour/nuit" aria-label="Basculer mode jour/nuit">🌙</button>
     </div>
   </div>
@@ -519,6 +576,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
     <button class="tab-nav-btn" id="btn-tab-calc" onclick="showTab('tab-calc')" aria-label="Calculateur de prix intervention">💰 Calculateur</button>
     <button class="tab-nav-btn" id="btn-tab-history" onclick="showTab('tab-history')" aria-label="Voir l'historique des interventions">📅 Historique</button>
     <button class="tab-nav-btn" id="btn-tab-stats" onclick="showTab('tab-stats')" aria-label="Voir les statistiques">📊 Stats</button>
+    <button class="tab-nav-btn" id="btn-tab-clients" onclick="showTab('tab-clients')" aria-label="Carnet clients">👥 Clients</button>
   </div>
 
   <!-- ═══ ONGLET RECHERCHE ═══ -->
@@ -557,12 +615,14 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <div class="hero-head" id="hero-head"></div>
         <div class="info-grid" id="info-grid-top" style="grid-template-columns:1fr"></div>
         <div class="info-grid" id="info-grid-mid" style="grid-template-columns:1fr 1fr 1fr"></div>
+        <div id="checklist-wrap"></div>
         <div class="action-bar">
-          <button class="btn-action primary" onclick="addToHistory()" aria-label="Enregistrer cette intervention dans l'historique">✅ Marquer intervention</button>
+          <button class="btn-action primary" onclick="addToHistory()" aria-label="Enregistrer cette intervention dans l'historique">✅ Marquer</button>
           <button class="btn-action" onclick="openEdit()" style="border-color:rgba(245,158,11,.3);color:var(--amber)" aria-label="Modifier la fiche véhicule">✏️ Modifier</button>
-          <button class="btn-action blue" onclick="copyInfos()" aria-label="Copier les informations pour SMS">📋 Copier infos</button>
+          <button class="btn-action blue" onclick="copyInfos()" aria-label="Copier les informations pour SMS">📋 Copier</button>
+          <button class="btn-action" onclick="shareWhatsApp()" style="border-color:rgba(37,211,102,.4);color:#25d366" aria-label="Partager sur WhatsApp">📲 WhatsApp</button>
           <button class="btn-action" onclick="openXhorse()" style="border-color:rgba(168,85,247,.4);color:#c084fc" aria-label="Rechercher les télécommandes sur Xhorse">🔍 Xhorse</button>
-          <button class="btn-action" onclick="printFiche()" aria-label="Imprimer la fiche véhicule">🖨️ Imprimer</button>
+          <button class="btn-action" onclick="printFiche()" aria-label="Imprimer / PDF la fiche véhicule">🖨️ PDF</button>
           <button class="btn-action" onclick="resetAll()" style="margin-left:auto" aria-label="Nouvelle recherche">← Nouveau</button>
         </div>
       </div>
@@ -645,6 +705,42 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <button class="btn-cancel" onclick="resetCalc()">🗑 Reset</button>
       </div>
     </div>
+
+    <!-- FOURNISSEURS -->
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:24px;margin-bottom:4px;">📦 Contacts fournisseurs</div>
+    <div class="fournisseur-grid">
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#f59e0b">XHORSE</div>
+        <div style="font-size:12px;color:var(--txt2)">Télécommandes VVDI · SuperChips</div>
+        <a class="fournisseur-link" href="https://www.xhorsetool.com" target="_blank">xhorsetool.com</a>
+        <a class="fournisseur-link" href="mailto:support@xhorsetool.com">support@xhorsetool.com</a>
+      </div>
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#60a5fa">SILCA</div>
+        <div style="font-size:12px;color:var(--txt2)">Lames · Clés vierges · Références VA2, HU66…</div>
+        <a class="fournisseur-link" href="https://www.silca.biz" target="_blank">silca.biz</a>
+      </div>
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#34d399">JMA</div>
+        <div style="font-size:12px;color:var(--txt2)">Lames · Transpondeurs · Équivalences Silca</div>
+        <a class="fournisseur-link" href="https://www.jma.es" target="_blank">jma.es</a>
+      </div>
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#c084fc">KEYLINE</div>
+        <div style="font-size:12px;color:var(--txt2)">Duplicateurs · Machines à tailler</div>
+        <a class="fournisseur-link" href="https://www.keyline.it" target="_blank">keyline.it</a>
+      </div>
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#f87171">LISHI / UHS</div>
+        <div style="font-size:12px;color:var(--txt2)">Outils de crochetage Lishi 2-en-1</div>
+        <a class="fournisseur-link" href="https://www.uhs-hardware.com" target="_blank">uhs-hardware.com</a>
+      </div>
+      <div class="fournisseur-card">
+        <div class="fournisseur-name" style="color:#fb923c">DIGICODE83</div>
+        <div style="font-size:12px;color:var(--txt2)">Grossiste local Var · Toulon</div>
+        <div style="font-size:12px;color:var(--txt2);margin-top:4px">📞 À compléter</div>
+      </div>
+    </div>
   </div>
 
   <!-- ═══ ONGLET HISTORIQUE ═══ -->
@@ -658,6 +754,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <button class="btn-cancel" onclick="clearHistory()" style="font-size:11px;padding:6px 12px;" aria-label="Effacer tout l'historique">🗑 Effacer tout</button>
       </div>
     </div>
+    <div id="stock-alerts"></div>
     <div class="hist-list" id="hist-list" role="list" aria-label="Liste des interventions">
       <div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>
     </div>
@@ -666,6 +763,38 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   <!-- ═══ ONGLET STATS ═══ -->
   <div class="tab-content" id="tab-stats" role="region" aria-label="Statistiques des interventions">
     <div id="stats-content"></div>
+  </div>
+
+  <!-- ═══ ONGLET CLIENTS ═══ -->
+  <div class="tab-content" id="tab-clients" role="region" aria-label="Carnet clients">
+    <div class="client-form" id="client-form">
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:5px">Nom / Prénom</label>
+        <input type="text" id="cl-name" placeholder="Jean Dupont">
+      </div>
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:5px">Téléphone</label>
+        <input type="tel" id="cl-phone" placeholder="06 12 34 56 78">
+      </div>
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:5px">Véhicule</label>
+        <input type="text" id="cl-vehicle" placeholder="Peugeot 307 CC 2006">
+      </div>
+      <div>
+        <label style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:5px">VIN (optionnel)</label>
+        <input type="text" id="cl-vin" placeholder="VF3XXXXXXXXXXXXXXX">
+      </div>
+      <div class="full">
+        <label style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:5px">Notes</label>
+        <textarea id="cl-notes" placeholder="Clé perdue, AKL Hitag2, facturé 380€..."></textarea>
+      </div>
+      <div class="full" style="display:flex;gap:8px">
+        <button class="btn-save" style="flex:1" onclick="addClient()">➕ Ajouter client</button>
+        <button class="btn-cancel" onclick="clearClientForm()">✕ Annuler</button>
+      </div>
+    </div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:10px;text-transform:uppercase"><span id="cl-count">0</span> clients enregistrés</div>
+    <div id="clients-list"></div>
   </div>
 
 </main>
@@ -2624,8 +2753,9 @@ function showTab(id){
   document.querySelectorAll('.tab-nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.getElementById('btn-'+id).classList.add('active');
-  if(id==='tab-history') renderHistory();
+  if(id==='tab-history'){ renderHistory(); renderStockAlerts(); }
   if(id==='tab-stats') renderStats();
+  if(id==='tab-clients') renderClients();
 }
 
 // ════════════════════════════════════════════════════
@@ -2760,6 +2890,8 @@ function resetAll(){
 //  SHOW RESULT
 // ════════════════════════════════════════════════════
 function showResult(v, year){
+  window._curV = v;
+  window._curY = year;
   const bc = BRAND_CLR[v.brand]||'#888';
   const ov = getOverride(v);
 
@@ -2897,6 +3029,7 @@ function showResult(v, year){
 
   document.getElementById('result-panel').style.display='block';
   document.getElementById('result-panel').scrollIntoView({behavior:'smooth',block:'start'});
+  renderChecklist(v);
 }
 
 // ════════════════════════════════════════════════════
@@ -3421,6 +3554,219 @@ function renderStats(){
   window.addEventListener('offline',()=>{ bar.classList.add('show'); showToast('📵 Connexion perdue — mode hors-ligne'); });
   window.addEventListener('online',()=>{ bar.classList.remove('show'); showToast('✅ Connexion rétablie !'); });
 })();
+
+// ════════════════════════════════════════════════════
+//  WHATSAPP SHARING
+// ════════════════════════════════════════════════════
+function shareWhatsApp(){
+  if(!window._curV){ showToast('⚠️ Aucun véhicule sélectionné'); return; }
+  const v=window._curV, y=window._curY||'';
+  const ov=getOverride(v);
+  const blade=(ov&&ov.blade)||v.blade;
+  const transponder=(ov&&ov.transponder)||v.transponder;
+  const method=(v.method||[]).join(' / ');
+  const cs=cloneStatus(transponder);
+  const lines=[
+    `🔑 *AutoLock Pro — Fiche Intervention*`,
+    `📅 ${new Date().toLocaleDateString('fr-FR')}`,``,
+    `🚗 *${v.brand} ${v.model}* (${y})`,
+    `   Version : ${v.version}`,``,
+    `🔐 Transpondeur : ${transponder}`,
+    cs ? `   ↳ ${cs.label}` : '',
+    `🗡️ Lame : ${blade}`,
+    `🔧 Méthode : ${method}`,
+    v.timeMin ? `⏱️ Durée estimée : ~${v.timeMin} min` : '',
+    ``,`_Généré avec AutoLock Pro — Reparetonphone83 Toulon 83_`
+  ].filter(Boolean).join('\n');
+  window.open(`https://wa.me/?text=${encodeURIComponent(lines)}`,'_blank');
+}
+
+// ════════════════════════════════════════════════════
+//  LAMPE DE POCHE
+// ════════════════════════════════════════════════════
+function toggleTorch(){
+  const el=document.getElementById('torch-overlay');
+  el.classList.toggle('on');
+  if(el.classList.contains('on')) showToast('🔦 Lampe de poche — appuyer pour éteindre');
+}
+
+// ════════════════════════════════════════════════════
+//  VERROUILLAGE ÉCRAN (Wake Lock API)
+// ════════════════════════════════════════════════════
+let _wakeLock=null;
+async function toggleWakeLock(){
+  const btn=document.getElementById('wake-btn');
+  if(_wakeLock){
+    await _wakeLock.release();
+    _wakeLock=null;
+    btn.classList.remove('active');
+    btn.title='Activer verrouillage écran';
+    showToast('🔓 Verrouillage écran désactivé');
+  } else {
+    try {
+      _wakeLock=await navigator.wakeLock.request('screen');
+      btn.classList.add('active');
+      btn.title='Verrouillage actif — clic pour désactiver';
+      showToast('🔒 Écran verrouillé allumé');
+      _wakeLock.addEventListener('release',()=>{ _wakeLock=null; btn.classList.remove('active'); });
+    } catch(e){
+      showToast('⚠️ Wake Lock non supporté sur cet appareil');
+    }
+  }
+}
+
+// ════════════════════════════════════════════════════
+//  CHECKLIST D'INTERVENTION
+// ════════════════════════════════════════════════════
+function renderChecklist(v){
+  const wrap=document.getElementById('checklist-wrap');
+  if(!wrap||!v) return;
+  const methods=v.method||[];
+  const steps=[];
+
+  // Étapes communes
+  steps.push('Confirmer marque / modèle / année avec client');
+  steps.push('Vérifier présence de toutes les anciennes clés');
+
+  // Étapes par méthode
+  if(methods.includes('OBD')){
+    steps.push('Connecter interface OBD (VVDI / DiagBox)');
+    steps.push('Lire le PIN via OBD');
+  }
+  if(methods.includes('CALC')){
+    steps.push('Relever N° de série / VIN pour calcul PIN');
+    steps.push('Calculer le code avec VVDI Key Tool');
+  }
+  if(methods.includes('EEPROM')){
+    steps.push('Localiser et déposer le BSI / BCM');
+    steps.push('Dessouder la puce EEPROM');
+    steps.push('Lire EEPROM sur EZP2019+ ou programmateur');
+    steps.push('Extraire et décoder le PIN');
+    steps.push('Ressouder et reposer le module');
+  }
+  if(methods.includes('BENCH')){
+    steps.push('Déposer le calculateur / ECU / CAS');
+    steps.push('Câbler sur banc (alimentation + données)');
+    steps.push('Lire / écrire avec outil dédié');
+    steps.push('Reposer le calculateur');
+  }
+
+  // Étapes finales communes
+  steps.push(`Tailler la lame ${v.blade||''} avec Lishi ${v.pick||''}`);
+  steps.push('Programmer le transpondeur / clé complète');
+  steps.push('Test démarrage moteur');
+  steps.push('Test verrouillage / télécommande');
+  steps.push('Encaisser et faire signer le bon');
+
+  const id='cl_'+Date.now();
+  wrap.innerHTML=`
+    <div class="checklist-wrap">
+      <div class="checklist-title">✅ Checklist intervention — ${(methods).join(' + ')}</div>
+      ${steps.map((s,i)=>`
+        <div class="cl-item" id="${id}_${i}" onclick="toggleCLItem('${id}',${i},${steps.length})">
+          <input type="checkbox" id="chk_${id}_${i}" onclick="event.stopPropagation();toggleCLItem('${id}',${i},${steps.length})">
+          <label for="chk_${id}_${i}">${s}</label>
+        </div>`).join('')}
+      <div class="cl-progress"><div class="cl-progress-bar" id="${id}_prog" style="width:0%"></div></div>
+    </div>`;
+}
+
+function toggleCLItem(id,i,total){
+  const row=document.getElementById(`${id}_${i}`);
+  const chk=document.getElementById(`chk_${id}_${i}`);
+  chk.checked=!chk.checked;
+  row.classList.toggle('done',chk.checked);
+  const done=document.querySelectorAll(`[id^="${id}_"][id$="_"]`).length; // fallback
+  const allChk=document.querySelectorAll(`[id^="chk_${id}_"]`);
+  const doneCount=[...allChk].filter(c=>c.checked).length;
+  const prog=document.getElementById(`${id}_prog`);
+  if(prog) prog.style.width=Math.round(doneCount/total*100)+'%';
+}
+
+// ════════════════════════════════════════════════════
+//  ALERTES STOCK
+// ════════════════════════════════════════════════════
+function renderStockAlerts(){
+  const el=document.getElementById('stock-alerts');
+  if(!el) return;
+  const hist=getHistory();
+  if(hist.length<5){ el.innerHTML=''; return; }
+  const bladeCount={}, transCount={};
+  hist.forEach(h=>{
+    if(h.blade) bladeCount[h.blade]=(bladeCount[h.blade]||0)+1;
+    if(h.transponder) transCount[h.transponder]=(transCount[h.transponder]||0)+1;
+  });
+  const topBlade=Object.entries(bladeCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  const topTrans=Object.entries(transCount).sort((a,b)=>b[1]-a[1]).slice(0,2);
+  el.innerHTML=`
+    <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:8px">📦 Alertes stock (basé sur ton historique)</div>
+    ${topBlade.map(([b,n])=>`<div class="${n>=5?'stock-alert':'stock-ok'}">🗡️ Lame <strong>${b}</strong> — utilisée <strong>${n}x</strong>${n>=5?' — ⚠️ Vérifier le stock !':' — Stock OK'}</div>`).join('')}
+    ${topTrans.map(([t,n])=>`<div class="${n>=5?'stock-alert':'stock-ok'}" style="margin-top:5px">🔐 <strong>${t.split('(')[0].trim()}</strong> — utilisé <strong>${n}x</strong>${n>=5?' — ⚠️ Réapprovisionner !':' — OK'}</div>`).join('')}
+    <div style="height:14px"></div>`;
+}
+
+// ════════════════════════════════════════════════════
+//  CARNET CLIENTS
+// ════════════════════════════════════════════════════
+function getClients(){ try{ return JSON.parse(localStorage.getItem('alp4_clients')||'[]'); }catch(e){ return []; } }
+function saveClients(c){ localStorage.setItem('alp4_clients',JSON.stringify(c)); }
+
+function addClient(){
+  const name=document.getElementById('cl-name').value.trim();
+  const phone=document.getElementById('cl-phone').value.trim();
+  const vehicle=document.getElementById('cl-vehicle').value.trim();
+  const vin=document.getElementById('cl-vin').value.trim();
+  const notes=document.getElementById('cl-notes').value.trim();
+  if(!name){ showToast('⚠️ Nom requis'); return; }
+  const clients=getClients();
+  clients.unshift({ id:Date.now(), name, phone, vehicle, vin, notes, date:new Date().toLocaleDateString('fr-FR') });
+  saveClients(clients);
+  clearClientForm();
+  renderClients();
+  showToast('✅ Client ajouté');
+}
+
+function clearClientForm(){
+  ['cl-name','cl-phone','cl-vehicle','cl-vin','cl-notes'].forEach(id=>{ document.getElementById(id).value=''; });
+}
+
+function deleteClient(id){
+  if(!confirm('Supprimer ce client ?')) return;
+  saveClients(getClients().filter(c=>c.id!==id));
+  renderClients();
+  showToast('🗑 Client supprimé');
+}
+
+function callClient(phone){
+  if(phone) window.open('tel:'+phone.replace(/\s/g,''));
+}
+
+function renderClients(){
+  const clients=getClients();
+  const el=document.getElementById('clients-list');
+  const cnt=document.getElementById('cl-count');
+  if(cnt) cnt.textContent=clients.length;
+  if(!el) return;
+  if(!clients.length){
+    el.innerHTML='<div class="hist-empty">Aucun client enregistré.</div>'; return;
+  }
+  el.innerHTML=clients.map(c=>`
+    <div class="client-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="client-card-name">${c.name}</div>
+          <div class="client-card-meta">${c.date}${c.vehicle?` · ${c.vehicle}`:''}</div>
+          ${c.vin?`<div class="client-card-meta">VIN : ${c.vin}</div>`:''}
+          ${c.notes?`<div style="font-size:12px;color:var(--txt2);margin-top:6px;font-style:italic">${c.notes}</div>`:''}
+        </div>
+        <div style="display:flex;gap:6px;flex-shrink:0;margin-left:10px">
+          ${c.phone?`<button class="btn-cancel" style="padding:5px 10px;font-size:12px" onclick="callClient('${c.phone}')">📞</button>`:''}
+          ${c.phone?`<button class="btn-cancel" style="padding:5px 10px;font-size:12px;border-color:rgba(37,211,102,.4);color:#25d366" onclick="window.open('https://wa.me/${c.phone.replace(/[\s\-\+]/g,'')}','_blank')">📲</button>`:''}
+          <button class="btn-cancel" style="padding:5px 10px;font-size:12px;border-color:rgba(239,68,68,.3);color:var(--red)" onclick="deleteClient(${c.id})">🗑</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
 
 // ════
 document.getElementById('c-mo').addEventListener('input',()=>{ document.getElementById('c-mo').dataset.touched='1'; calcPrice(); });
