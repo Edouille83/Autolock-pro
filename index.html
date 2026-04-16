@@ -332,6 +332,36 @@ main{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:20px 16p
 }
 .toast.show{transform:translateX(-50%) translateY(0);}
 
+/* Offline indicator */
+.offline-bar{
+  display:none;position:fixed;top:0;left:0;right:0;z-index:9998;
+  background:var(--red);color:#fff;
+  font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;
+  text-align:center;padding:8px 16px;letter-spacing:1px;
+  box-shadow:0 2px 8px rgba(239,68,68,.4);
+}
+.offline-bar.show{display:block;}
+
+/* Advanced browse filters */
+.browse-filters{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;align-items:center;}
+.filt-btn{
+  background:transparent;border:1px solid var(--b1);border-radius:6px;
+  color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:9px;
+  letter-spacing:1px;padding:4px 9px;cursor:pointer;transition:all .2s;
+}
+.filt-btn:hover{border-color:var(--b2);color:var(--txt);}
+.filt-btn.active{background:var(--amber-d);border-color:rgba(245,158,11,.5);color:var(--amber);}
+.filt-sep{width:1px;background:var(--b2);align-self:stretch;margin:0 2px;}
+
+/* Stats tab */
+.stat-card{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:16px;}
+.stat-big{font-family:'Bebas Neue',sans-serif;font-size:40px;line-height:1;}
+.stat-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.stat-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.stat-bar-track{flex:1;background:var(--b1);border-radius:3px;height:6px;overflow:hidden;}
+.stat-bar-fill{height:100%;border-radius:3px;transition:width .5s ease;}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+
 /* Print overlay */
 #print-overlay{display:none;position:fixed;inset:0;z-index:999;background:#fff;overflow-y:auto;padding:20px;}
 
@@ -423,6 +453,9 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 </head>
 <body>
 
+<!-- OFFLINE INDICATOR -->
+<div class="offline-bar" id="offline-bar" role="status" aria-live="assertive">📵 Hors-ligne — Données locales disponibles</div>
+
 <!-- PIN LOCK SCREEN -->
 <div id="pin-lock">
   <div class="pin-logo">🔑</div>
@@ -464,8 +497,8 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <div class="hs"><div class="hs-v" id="s-total">0</div><div class="hs-l">Véhicules</div></div>
         <div class="hs"><div class="hs-v" id="s-hist">0</div><div class="hs-l">Interventions</div></div>
       </div>
-      <button class="hist-btn" onclick="showTab('tab-history')">📅 Historique</button>
-      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Mode jour/nuit">🌙</button>
+      <button class="hist-btn" onclick="showTab('tab-history')" aria-label="Ouvrir l'historique des interventions">📅 Historique</button>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Mode jour/nuit" aria-label="Basculer mode jour/nuit">🌙</button>
     </div>
   </div>
 </header>
@@ -481,10 +514,11 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 
   <!-- ONGLETS -->
   <div class="tab-nav">
-    <button class="tab-nav-btn active" id="btn-tab-search" onclick="showTab('tab-search')">🔍 Recherche</button>
-    <button class="tab-nav-btn" id="btn-tab-browse" onclick="showTab('tab-browse')">📋 Catalogue</button>
-    <button class="tab-nav-btn" id="btn-tab-calc" onclick="showTab('tab-calc')">💰 Calculateur</button>
-    <button class="tab-nav-btn" id="btn-tab-history" onclick="showTab('tab-history')">📅 Historique</button>
+    <button class="tab-nav-btn active" id="btn-tab-search" onclick="showTab('tab-search')" aria-label="Recherche par marque/modèle/année">🔍 Recherche</button>
+    <button class="tab-nav-btn" id="btn-tab-browse" onclick="showTab('tab-browse')" aria-label="Parcourir le catalogue complet">📋 Catalogue</button>
+    <button class="tab-nav-btn" id="btn-tab-calc" onclick="showTab('tab-calc')" aria-label="Calculateur de prix intervention">💰 Calculateur</button>
+    <button class="tab-nav-btn" id="btn-tab-history" onclick="showTab('tab-history')" aria-label="Voir l'historique des interventions">📅 Historique</button>
+    <button class="tab-nav-btn" id="btn-tab-stats" onclick="showTab('tab-stats')" aria-label="Voir les statistiques">📊 Stats</button>
   </div>
 
   <!-- ═══ ONGLET RECHERCHE ═══ -->
@@ -524,12 +558,12 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <div class="info-grid" id="info-grid-top" style="grid-template-columns:1fr"></div>
         <div class="info-grid" id="info-grid-mid" style="grid-template-columns:1fr 1fr 1fr"></div>
         <div class="action-bar">
-          <button class="btn-action primary" onclick="addToHistory()">✅ Marquer intervention</button>
-          <button class="btn-action" onclick="openEdit()" style="border-color:rgba(245,158,11,.3);color:var(--amber)">✏️ Modifier</button>
-          <button class="btn-action blue" onclick="copyInfos()">📋 Copier infos</button>
-          <button class="btn-action" onclick="openMK3()" style="border-color:rgba(168,85,247,.4);color:#c084fc">🔍 MK3</button>
-          <button class="btn-action" onclick="printFiche()">🖨️ Imprimer</button>
-          <button class="btn-action" onclick="resetAll()" style="margin-left:auto">← Nouveau</button>
+          <button class="btn-action primary" onclick="addToHistory()" aria-label="Enregistrer cette intervention dans l'historique">✅ Marquer intervention</button>
+          <button class="btn-action" onclick="openEdit()" style="border-color:rgba(245,158,11,.3);color:var(--amber)" aria-label="Modifier la fiche véhicule">✏️ Modifier</button>
+          <button class="btn-action blue" onclick="copyInfos()" aria-label="Copier les informations pour SMS">📋 Copier infos</button>
+          <button class="btn-action" onclick="openMK3()" style="border-color:rgba(168,85,247,.4);color:#c084fc" aria-label="Rechercher les pièces sur MK3">🔍 MK3</button>
+          <button class="btn-action" onclick="printFiche()" aria-label="Imprimer la fiche véhicule">🖨️ Imprimer</button>
+          <button class="btn-action" onclick="resetAll()" style="margin-left:auto" aria-label="Nouvelle recherche">← Nouveau</button>
         </div>
       </div>
     </div>
@@ -540,8 +574,21 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   <div class="tab-content" id="tab-browse">
     <div class="brand-tabs" id="brand-tabs"></div>
     <div class="browse-search">
-      <input type="text" id="browse-search" placeholder="Recherche : modèle, ID46, HU66, transpondeur, lame..." oninput="browseFilter()">
-      <button class="btn-sm" onclick="browseReset()">✕</button>
+      <input type="text" id="browse-search" placeholder="Recherche : modèle, ID46, HU66, transpondeur, lame..." oninput="debouncedBrowseFilter()" aria-label="Rechercher dans le catalogue">
+      <button class="btn-sm" onclick="browseReset()" aria-label="Effacer la recherche">✕</button>
+    </div>
+    <div class="browse-filters" id="browse-filters" role="group" aria-label="Filtres avancés">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px">FILTRER :</span>
+      <button class="filt-btn" data-filter="diff:easy" onclick="toggleFilter(this)" aria-pressed="false">🟢 Facile</button>
+      <button class="filt-btn" data-filter="diff:medium" onclick="toggleFilter(this)" aria-pressed="false">🟡 Moyen</button>
+      <button class="filt-btn" data-filter="diff:hard" onclick="toggleFilter(this)" aria-pressed="false">🔴 Expert</button>
+      <div class="filt-sep" aria-hidden="true"></div>
+      <button class="filt-btn" data-filter="method:OBD" onclick="toggleFilter(this)" aria-pressed="false">OBD</button>
+      <button class="filt-btn" data-filter="method:CALC" onclick="toggleFilter(this)" aria-pressed="false">CALC</button>
+      <button class="filt-btn" data-filter="method:EEPROM" onclick="toggleFilter(this)" aria-pressed="false">EEPROM</button>
+      <button class="filt-btn" data-filter="method:BENCH" onclick="toggleFilter(this)" aria-pressed="false">BENCH</button>
+      <button class="filt-btn" data-filter="method:IR" onclick="toggleFilter(this)" aria-pressed="false">IR</button>
+      <button class="filt-btn" id="filt-clear" onclick="clearFilters()" style="display:none;border-color:rgba(239,68,68,.5);color:var(--red)" aria-label="Effacer tous les filtres">✕ Effacer filtres</button>
     </div>
     <div id="browse-results-count" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:10px;"></div>
     <div class="cards-grid" id="browse-grid"></div>
@@ -604,11 +651,21 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   <div class="tab-content" id="tab-history">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
       <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2)"><span id="hist-count">0</span> interventions enregistrées</div>
-      <button class="btn-cancel" onclick="clearHistory()" style="font-size:11px;padding:6px 12px;">🗑 Effacer tout</button>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button class="btn-cancel" onclick="exportData()" style="font-size:11px;padding:6px 12px;" aria-label="Exporter les données en JSON">⬇️ Exporter</button>
+        <button class="btn-cancel" onclick="document.getElementById('import-file').click()" style="font-size:11px;padding:6px 12px;" aria-label="Importer une sauvegarde JSON">⬆️ Importer</button>
+        <input type="file" id="import-file" accept=".json" style="display:none" onchange="importData(this)" aria-label="Fichier de sauvegarde">
+        <button class="btn-cancel" onclick="clearHistory()" style="font-size:11px;padding:6px 12px;" aria-label="Effacer tout l'historique">🗑 Effacer tout</button>
+      </div>
     </div>
-    <div class="hist-list" id="hist-list">
+    <div class="hist-list" id="hist-list" role="list" aria-label="Liste des interventions">
       <div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>
     </div>
+  </div>
+
+  <!-- ═══ ONGLET STATS ═══ -->
+  <div class="tab-content" id="tab-stats" role="region" aria-label="Statistiques des interventions">
+    <div id="stats-content"></div>
   </div>
 
 </main>
@@ -670,7 +727,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 </div>
 
 <!-- TOAST -->
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
 <script>
@@ -2542,6 +2599,7 @@ const MO_PRESETS = {double:60,akl:120,plip:45,eeprom:90,custom:0};
 let currentResult = null;
 let browseTab = "ALL";
 let currentTheme = localStorage.getItem('alp_theme') || 'dark';
+let activeFilters = new Set();
 
 // ════════════════════════════════════════════════════
 //  THEME
@@ -2565,6 +2623,8 @@ function showTab(id){
   document.querySelectorAll('.tab-nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.getElementById('btn-'+id).classList.add('active');
+  if(id==='tab-history') renderHistory();
+  if(id==='tab-stats') renderStats();
 }
 
 // ════════════════════════════════════════════════════
@@ -2861,10 +2921,16 @@ function addToHistory(){
   const v = currentResult;
   const year = document.getElementById('sel-year').value;
   const hist = getHistory();
+  const today = new Date().toLocaleDateString('fr-FR');
+  const isDuplicate = hist.some(h=>h.brand===v.brand&&h.model===v.model&&String(h.year)===String(year)&&h.date===today);
+  if(isDuplicate){
+    showToast('⚠️ Déjà enregistré aujourd\'hui pour ce véhicule');
+    return;
+  }
   hist.unshift({
     brand:v.brand, model:v.model, version:v.version,
     year, blade:v.blade, transponder:v.transponder,
-    diff:v.diff, date:new Date().toLocaleDateString('fr-FR'),
+    diff:v.diff, date:today,
     time:new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})
   });
   // Garder max 30
@@ -3115,10 +3181,15 @@ function browseFilter(){
   const search=document.getElementById('browse-search').value.toLowerCase().trim();
   let data=browseTab==='ALL'?DB:DB.filter(v=>v.brand===browseTab);
   if(search) data=data.filter(v=>[v.brand,v.model,v.version,v.transponder,v.blade,v.pick,v.protocol,...(v.remotes||[])].join(' ').toLowerCase().includes(search));
+  activeFilters.forEach(filter=>{
+    const [type,val]=filter.split(':');
+    if(type==='diff') data=data.filter(v=>v.diff===val);
+    if(type==='method') data=data.filter(v=>v.method&&v.method.includes(val));
+  });
   document.getElementById('browse-results-count').textContent=`${data.length} résultat(s)`;
   renderBrowse(data);
 }
-function browseReset(){ document.getElementById('browse-search').value=''; browseFilter(); }
+function browseReset(){ document.getElementById('browse-search').value=''; clearFilters(); }
 
 function renderBrowse(data){
   const grid=document.getElementById('browse-grid');
@@ -3201,6 +3272,149 @@ function openMK3(){
   window.open(url, '_blank');
   showToast('🔍 Recherche MK3 — ' + currentResult.brand + ' ' + currentResult.model);
 }
+
+// ════════════════════════════════════════════════════
+//  DEBOUNCE
+// ════════════════════════════════════════════════════
+function debounce(fn, delay){
+  let t; return function(...args){ clearTimeout(t); t=setTimeout(()=>fn(...args), delay); };
+}
+const debouncedBrowseFilter = debounce(browseFilter, 250);
+
+// ════════════════════════════════════════════════════
+//  FILTRES AVANCÉS CATALOGUE
+// ════════════════════════════════════════════════════
+function toggleFilter(btn){
+  const filter = btn.dataset.filter;
+  if(activeFilters.has(filter)){
+    activeFilters.delete(filter);
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed','false');
+  }else{
+    activeFilters.add(filter);
+    btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');
+  }
+  document.getElementById('filt-clear').style.display = activeFilters.size ? 'inline-block' : 'none';
+  browseFilter();
+}
+
+function clearFilters(){
+  activeFilters.clear();
+  document.querySelectorAll('.filt-btn').forEach(b=>{ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  document.getElementById('filt-clear').style.display = 'none';
+  browseFilter();
+}
+
+// ════════════════════════════════════════════════════
+//  EXPORT / IMPORT JSON
+// ════════════════════════════════════════════════════
+function exportData(){
+  const data = {};
+  for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    if(key&&key.startsWith('alp4_')) data[key]=localStorage.getItem(key);
+  }
+  if(!Object.keys(data).length){ showToast('⚠️ Aucune donnée à exporter'); return; }
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`autolock-pro-backup-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  showToast('⬇️ Sauvegarde exportée !');
+}
+
+function importData(input){
+  const file=input.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const data=JSON.parse(e.target.result);
+      let count=0;
+      Object.entries(data).forEach(([key,val])=>{
+        if(key.startsWith('alp4_')){ localStorage.setItem(key,val); count++; }
+      });
+      renderHistory();
+      showLastUsed();
+      showToast(`⬆️ ${count} données importées !`);
+    }catch{ showToast('❌ Fichier invalide'); }
+    input.value='';
+  };
+  reader.readAsText(file);
+}
+
+// ════════════════════════════════════════════════════
+//  STATISTIQUES
+// ════════════════════════════════════════════════════
+function renderStats(){
+  const hist=getHistory();
+  const el=document.getElementById('stats-content');
+  if(!hist.length){
+    el.innerHTML='<div class="hist-empty">Aucune donnée.<br>Enregistre des interventions pour voir les statistiques.</div>';
+    return;
+  }
+
+  const brandCount={};
+  hist.forEach(h=>{ brandCount[h.brand]=(brandCount[h.brand]||0)+1; });
+  const topBrands=Object.entries(brandCount).sort((a,b)=>b[1]-a[1]).slice(0,6);
+
+  const vehicleCount={};
+  hist.forEach(h=>{ const k=`${h.brand} ${h.model}`; vehicleCount[k]=(vehicleCount[k]||0)+1; });
+  const topVehicles=Object.entries(vehicleCount).sort((a,b)=>b[1]-a[1]).slice(0,5);
+
+  const times=hist.map(h=>{ const d=DB.find(v=>v.brand===h.brand&&v.model===h.model); return d?.timeMin||0; }).filter(Boolean);
+  const avgTime=times.length ? Math.round(times.reduce((a,b)=>a+b,0)/times.length) : 0;
+
+  const diffCount={easy:0,medium:0,hard:0};
+  hist.forEach(h=>{ if(h.diff&&diffCount[h.diff]!==undefined) diffCount[h.diff]++; });
+
+  el.innerHTML=`
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="section-lbl">📊 Vue d'ensemble</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:center;margin-bottom:14px">
+        <div><div class="stat-big" style="color:var(--amber)">${hist.length}</div><div class="stat-lbl">Interventions</div></div>
+        <div><div class="stat-big" style="color:var(--cyan)">${avgTime||'—'}</div><div class="stat-lbl">Min moy.</div></div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+        <span class="diff-badge d-easy">${diffCount.easy} facile</span>
+        <span class="diff-badge d-medium">${diffCount.medium} moyen</span>
+        <span class="diff-badge d-hard">${diffCount.hard} expert</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="section-lbl">🏆 Top Marques</div>
+      ${topBrands.map(([brand,count])=>{
+        const bc=BRAND_CLR[brand]||'#888';
+        const pct=Math.round(count/hist.length*100);
+        return `<div class="stat-bar-row">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:11px;padding:2px 7px;border-radius:4px;background:${bc}22;color:${bc};border:1px solid ${bc}44;min-width:80px;text-align:center;flex-shrink:0">${brand}</span>
+          <div class="stat-bar-track"><div class="stat-bar-fill" style="width:${pct}%;background:${bc}"></div></div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2);flex-shrink:0">${count}x</span>
+        </div>`;
+      }).join('')}
+    </div>
+    <div class="stat-card">
+      <div class="section-lbl">🚗 Top Véhicules</div>
+      ${topVehicles.map(([name,count])=>`
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--b1)">
+          <span style="font-size:13px;font-weight:600">${name}</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--amber);font-weight:700">${count}x</span>
+        </div>`).join('')}
+    </div>
+  </div>`;
+}
+
+// ════════════════════════════════════════════════════
+//  INDICATEUR HORS-LIGNE
+// ════════════════════════════════════════════════════
+(function(){
+  const bar=document.getElementById('offline-bar');
+  if(!navigator.onLine) bar.classList.add('show');
+  window.addEventListener('offline',()=>{ bar.classList.add('show'); showToast('📵 Connexion perdue — mode hors-ligne'); });
+  window.addEventListener('online',()=>{ bar.classList.remove('show'); showToast('✅ Connexion rétablie !'); });
+})();
 
 // ════
 document.getElementById('c-mo').addEventListener('input',()=>{ document.getElementById('c-mo').dataset.touched='1'; calcPrice(); });
