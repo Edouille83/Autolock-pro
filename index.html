@@ -2850,7 +2850,7 @@ function showResult(v, year){
       <div style="margin-top:6px">
         <a href="${xhorseSearchUrl(v)}" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:var(--purple-d);border:1px solid rgba(168,85,247,.35);border-radius:8px;padding:9px 14px;transition:all .2s;color:#c084fc;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1px">
           🔍 CHERCHER SUR XHORSE
-          <span style="font-size:9px;opacity:.7">${(v.remotes&&v.remotes[0])||v.transponder}</span>
+          <span style="font-size:9px;opacity:.7">${v.brand} remote</span>
         </a>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:6px;letter-spacing:1px">
           → Ouvre xhorse.com avec la référence télécommande
@@ -3236,22 +3236,9 @@ function quickSelect(brand,model,year){
 //  XHORSE SEARCH
 // ════════════════════════════════════════════════════
 
-// Construit l'URL Xhorse la plus précise possible :
-// Utilise la référence télécommande Xhorse (ex: XKRN00EN) en priorité,
-// sinon marque + modèle + transpondeur
+// Construit l'URL Xhorse : recherche par marque + "remote" pour garantir des résultats
 function xhorseSearchUrl(v){
-  // Extraire la référence Xhorse propre (ex: XKRN00EN, XN004, XE-Wireless...)
-  const firstRemote = (v.remotes && v.remotes[0]) || '';
-  const refMatch = firstRemote.match(/X[KN]\w+|XE-\w+|XN-\w+/i);
-  const ref = refMatch ? refMatch[0] : '';
-
-  const chipMatch = v.transponder.match(/PCF\d+|4D\d+|ID\d+|Hitag\s*\w+|Megamos\s*\d+/i);
-  const chip = chipMatch ? chipMatch[0].replace(/\s+/g,'') : '';
-
-  const q = ref
-    ? ref
-    : [v.brand, v.model, chip].filter(Boolean).join(' ');
-
+  const q = [v.brand, 'remote'].filter(Boolean).join(' ');
   return `https://www.xhorsevvdi.com/search/?q=${encodeURIComponent(q)}`;
 }
 
