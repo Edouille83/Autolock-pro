@@ -352,9 +352,105 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   .hdr-stats{display:none;}
   .tab-nav-btn{font-size:9px;padding:7px 8px;}
 }
+/* ── PIN LOCK ── */
+#pin-lock{
+  position:fixed;inset:0;z-index:9999;
+  background:#080a0d;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:20px;padding:24px;
+}
+#pin-lock .pin-logo{
+  font-size:52px;margin-bottom:4px;
+  filter:drop-shadow(0 0 20px rgba(245,158,11,.5));
+}
+#pin-lock h2{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;letter-spacing:3px;color:var(--amber);
+  margin:0;
+}
+#pin-lock p{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:var(--muted);letter-spacing:2px;
+  text-transform:uppercase;margin:0;
+}
+.pin-dots{
+  display:flex;gap:14px;margin:8px 0;
+}
+.pin-dot{
+  width:16px;height:16px;border-radius:50%;
+  border:2px solid var(--amber);
+  background:transparent;
+  transition:background .15s;
+}
+.pin-dot.filled{background:var(--amber);}
+.pin-pad{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;width:240px;
+}
+.pin-btn{
+  background:var(--s2);
+  border:1px solid var(--b2);
+  border-radius:12px;
+  color:var(--txt);
+  font-family:'Bebas Neue',sans-serif;
+  font-size:24px;
+  padding:16px;cursor:pointer;
+  transition:all .15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.pin-btn:active{
+  background:var(--amber-d);
+  border-color:var(--amber);
+  color:var(--amber);
+  transform:scale(.95);
+}
+.pin-btn.zero{grid-column:2;}
+.pin-btn.del{
+  background:transparent;border-color:var(--b1);
+  color:var(--red);font-size:20px;
+}
+.pin-btn.del:active{background:var(--red-d);}
+.pin-error{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;color:var(--red);
+  letter-spacing:2px;text-transform:uppercase;
+  opacity:0;transition:opacity .2s;
+  height:16px;
+}
+.pin-error.show{opacity:1;}
 </style>
 </head>
 <body>
+
+<!-- PIN LOCK SCREEN -->
+<div id="pin-lock">
+  <div class="pin-logo">🔑</div>
+  <h2>AutoLock Pro</h2>
+  <p>Reparetonphone83 · Toulon 83</p>
+  <div class="pin-dots" id="pin-dots">
+    <div class="pin-dot" id="d0"></div>
+    <div class="pin-dot" id="d1"></div>
+    <div class="pin-dot" id="d2"></div>
+    <div class="pin-dot" id="d3"></div>
+    <div class="pin-dot" id="d4"></div>
+    <div class="pin-dot" id="d5"></div>
+  </div>
+  <div class="pin-error" id="pin-error">Code incorrect</div>
+  <div class="pin-pad">
+    <button class="pin-btn" onclick="pinPress('1')">1</button>
+    <button class="pin-btn" onclick="pinPress('2')">2</button>
+    <button class="pin-btn" onclick="pinPress('3')">3</button>
+    <button class="pin-btn" onclick="pinPress('4')">4</button>
+    <button class="pin-btn" onclick="pinPress('5')">5</button>
+    <button class="pin-btn" onclick="pinPress('6')">6</button>
+    <button class="pin-btn" onclick="pinPress('7')">7</button>
+    <button class="pin-btn" onclick="pinPress('8')">8</button>
+    <button class="pin-btn" onclick="pinPress('9')">9</button>
+    <button class="pin-btn zero" onclick="pinPress('0')">0</button>
+    <button class="pin-btn del" onclick="pinDel()">⌫</button>
+  </div>
+</div>
 
 <header>
   <div class="hdr">
@@ -578,6 +674,89 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 
 <footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
 <script>
+// ════════════════════════════════════════════════════
+//  PIN PROTECTION
+// ════════════════════════════════════════════════════
+(function(){
+  const PIN = '253115';
+  const SESSION_KEY = 'alp_unlocked';
+  let entered = '';
+
+  // Si déjà déverrouillé dans cette session → passer directement
+  if(sessionStorage.getItem(SESSION_KEY) === '1'){
+    document.getElementById('pin-lock').style.display = 'none';
+    return;
+  }
+
+  // Empêcher le scroll sur le body pendant le PIN
+  document.body.style.overflow = 'hidden';
+
+  window.pinPress = function(digit){
+    if(entered.length >= PIN.length) return;
+    entered += digit;
+    updateDots();
+    if(entered.length === PIN.length){
+      setTimeout(checkPin, 150);
+    }
+  };
+
+  window.pinDel = function(){
+    entered = entered.slice(0,-1);
+    updateDots();
+    hideError();
+  };
+
+  function updateDots(){
+    for(let i=0;i<PIN.length;i++){
+      document.getElementById('d'+i).classList.toggle('filled', i < entered.length);
+    }
+  }
+
+  function checkPin(){
+    if(entered === PIN){
+      // ✅ Correct — animer et ouvrir
+      sessionStorage.setItem(SESSION_KEY, '1');
+      const lock = document.getElementById('pin-lock');
+      lock.style.transition = 'opacity .35s ease';
+      lock.style.opacity = '0';
+      setTimeout(()=>{
+        lock.style.display = 'none';
+        document.body.style.overflow = '';
+      }, 350);
+    } else {
+      // ❌ Mauvais code — secouer et reset
+      showError();
+      // Animation shake sur les dots
+      const dots = document.getElementById('pin-dots');
+      dots.style.transition = 'transform .05s';
+      let count = 0;
+      const shake = setInterval(()=>{
+        dots.style.transform = count % 2 === 0 ? 'translateX(8px)' : 'translateX(-8px)';
+        count++;
+        if(count > 6){ clearInterval(shake); dots.style.transform = ''; }
+      }, 50);
+      setTimeout(()=>{
+        entered = '';
+        updateDots();
+      }, 600);
+    }
+  }
+
+  function showError(){
+    document.getElementById('pin-error').classList.add('show');
+  }
+  function hideError(){
+    document.getElementById('pin-error').classList.remove('show');
+  }
+
+  // Support clavier (sur iMac)
+  document.addEventListener('keydown', function(e){
+    if(document.getElementById('pin-lock').style.display === 'none') return;
+    if(e.key >= '0' && e.key <= '9') pinPress(e.key);
+    if(e.key === 'Backspace') pinDel();
+  });
+})();
+
 // ════════════════════════════════════════════════════
 //  DATABASE — enrichie avec nbKeys, obdPos, timeMin
 // ════════════════════════════════════════════════════
