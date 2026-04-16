@@ -2801,7 +2801,10 @@ function showResult(v, year){
     <div class="ig-block" style="grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;border-right:none">
       <div style="flex:2;min-width:200px">
         <div class="ig-label"><span class="dot" style="background:var(--amber)"></span>TRANSPONDEUR</div>
-        <div class="ig-val"><span class="tag ${v.tColor}" style="font-size:13px;padding:4px 12px">${v.transponder}</span></div>
+        <div class="ig-val" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+          <span class="tag ${v.tColor}" style="font-size:13px;padding:4px 12px">${v.transponder}</span>
+          ${(()=>{const cs=cloneStatus(v.transponder);return cs?`<span title="${cs.title}" style="background:${cs.bg};border:1px solid ${cs.color}44;color:${cs.color};border-radius:4px;font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:1px;white-space:nowrap;cursor:help">${cs.label}</span>`:''})()}
+        </div>
         ${v.superChip ? `<div style="margin-top:7px;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
           <span style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">SUPER CHIP :</span>
           ${v.superChip.split('/').map(s=>s.trim()).map(s=>{
@@ -3251,6 +3254,16 @@ function quickSelect(brand,model,year){
 // ════════════════════════════════════════════════════
 
 // Lien vers la page catégorie xhorsetool.com selon le type de télécommande
+function cloneStatus(transponder){
+  if(!transponder) return null;
+  const t = transponder.toLowerCase();
+  if(/temic 11|id11|verre|id33|crypto1|pcf7930|pcf7931|id40|4d6[012]\b|4c /.test(t))
+    return {label:'CLONABLE',color:'#10b981',bg:'rgba(16,185,129,.12)',title:'Clone direct — aucun accès voiture requis'};
+  if(/pcf7936|id46 crypto2|crypto2/.test(t))
+    return {label:'CLONE VVDI ①',color:'#60a5fa',bg:'rgba(96,165,250,.12)',title:'Clonable avec VVDI Key Tool Max — 1 crédit VVDI requis'};
+  return {label:'NON CLONABLE',color:'#ef4444',bg:'rgba(239,68,68,.12)',title:'Nécessite accès OBD / EEPROM / BENCH — pas de clone direct'};
+}
+
 function xhorseSearchUrl(v){
   const first = (v.remotes && v.remotes[0]) || '';
   if(/^XK/i.test(first)) return 'https://www.xhorsetool.com/wholesale/vvdi-remote/xk-wire-remote/';
