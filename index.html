@@ -2853,7 +2853,7 @@ function showResult(v, year){
           <span style="font-size:9px;opacity:.7">${v.brand} remote</span>
         </a>
         <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:6px;letter-spacing:1px">
-          → Ouvre xhorse.com avec la référence télécommande
+          → Recherche Google : Xhorse VVDI + marque + modèle
         </div>
       </div>
     </div>
@@ -3236,10 +3236,10 @@ function quickSelect(brand,model,year){
 //  XHORSE SEARCH
 // ════════════════════════════════════════════════════
 
-// Construit l'URL Xhorse : recherche par marque + "remote" pour garantir des résultats
+// Recherche Google pré-remplie : Xhorse VVDI + marque + modèle + télécommande
 function xhorseSearchUrl(v){
-  const q = [v.brand, 'remote'].filter(Boolean).join(' ');
-  return `https://www.xhorsevvdi.com/search/?q=${encodeURIComponent(q)}`;
+  const q = `Xhorse VVDI ${v.brand} ${v.model} telecommande remote`;
+  return `https://www.google.com/search?q=${encodeURIComponent(q)}`;
 }
 
 function openXhorse(){
