@@ -823,16 +823,16 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Renault",model:"Clio II",yearStart:1998,yearEnd:2001,version:"Phase 1",diff:"easy",
  transponder:"PCF7930 / PCF7931 (ID33 Crypto1)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN (Universel fil)","XN004 coque 3 boutons"],
  protocol:"BSI Sagem",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
  notes:"Crypto1 — version la plus simple. PCF7930 clonable avec pince magnétique standard.",
- tips:["VA6 + PCF7930 = combo Clio II Phase 1 indispensable en stock","PIN calculable sans outil"]},
+ tips:["VA6 + PCF7930 = combo Clio II Phase 1 indispensable en stock","PIN calculable sans outil","VA6 = réf. Silca officielle Renault (aussi Nissan/Opel/Smart/Dacia)"]},
 
 {brand:"Renault",model:"Clio II",yearStart:2001,yearEnd:2005,version:"Phase 2",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XKRN04EN","XN004 coque 3 boutons"],
  protocol:"BSI Sagem / Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -841,7 +841,7 @@ const DB = [
 
 {brand:"Renault",model:"Clio III",yearStart:2005,yearEnd:2009,version:"Phase 1",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XN004 coque 3 boutons"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -850,7 +850,7 @@ const DB = [
 
 {brand:"Renault",model:"Clio III",yearStart:2009,yearEnd:2012,version:"Phase 2 / RS",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XKRN04EN"],
  protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -858,7 +858,7 @@ const DB = [
 
 {brand:"Renault",model:"Clio IV",yearStart:2012,yearEnd:2019,version:"Phase 1 & 2",diff:"medium",
  transponder:"PCF7961 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -867,7 +867,7 @@ const DB = [
 
 {brand:"Renault",model:"Mégane II",yearStart:2002,yearEnd:2006,version:"Phase 1",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XKRN04EN"],
  protocol:"BSM2 Siemens",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -876,7 +876,7 @@ const DB = [
 
 {brand:"Renault",model:"Mégane II",yearStart:2006,yearEnd:2009,version:"Phase 2 / Facelift",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"BSM2 Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -884,7 +884,7 @@ const DB = [
 
 {brand:"Renault",model:"Mégane III",yearStart:2008,yearEnd:2012,version:"Phase 1",diff:"hard",
  transponder:"PCF7947 (ID46 AES)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XN004 coque"],
  protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:60,
@@ -893,7 +893,7 @@ const DB = [
 
 {brand:"Renault",model:"Mégane III",yearStart:2012,yearEnd:2016,version:"Phase 2 / Facelift",diff:"hard",
  transponder:"PCF7947 (ID46 AES / CAN)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN Valeo renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:75,
@@ -902,7 +902,7 @@ const DB = [
 
 {brand:"Renault",model:"Scénic II",yearStart:2003,yearEnd:2009,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XKRN04EN"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -910,7 +910,7 @@ const DB = [
 
 {brand:"Renault",model:"Scénic III",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"hard",
  transponder:"PCF7947 (ID46 AES)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:65,
@@ -918,7 +918,7 @@ const DB = [
 
 {brand:"Renault",model:"Laguna II",yearStart:2001,yearEnd:2007,version:"Toutes phases",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XKRN04EN"],
  protocol:"UCH Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -927,7 +927,7 @@ const DB = [
 
 {brand:"Renault",model:"Laguna III",yearStart:2007,yearEnd:2015,version:"Toutes phases",diff:"hard",
  transponder:"PCF7947 (ID46 AES)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:70,
@@ -936,7 +936,7 @@ const DB = [
 
 {brand:"Renault",model:"Kangoo II",yearStart:2008,yearEnd:2013,version:"Phase 1",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN","XN004 coque"],
  protocol:"BSI UCH",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -945,7 +945,7 @@ const DB = [
 
 {brand:"Renault",model:"Kangoo II",yearStart:2013,yearEnd:2021,version:"Phase 2",diff:"easy",
  transponder:"PCF7947 (ID46 AES)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -953,7 +953,7 @@ const DB = [
 
 {brand:"Renault",model:"Trafic II",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -962,7 +962,7 @@ const DB = [
 
 {brand:"Renault",model:"Trafic III",yearStart:2014,yearEnd:2022,version:"Toutes versions",diff:"medium",
  transponder:"PCF7961 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -971,7 +971,7 @@ const DB = [
 
 {brand:"Renault",model:"Master III",yearStart:2010,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"PCF7947 (ID46 AES)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -979,7 +979,7 @@ const DB = [
 
 {brand:"Renault",model:"Captur I",yearStart:2013,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"PCF7961 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -988,7 +988,7 @@ const DB = [
 
 {brand:"Renault",model:"Duster I",yearStart:2010,yearEnd:2018,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / PCF7947 selon année",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -997,7 +997,7 @@ const DB = [
 
 {brand:"Renault",model:"Twingo II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1008,15 +1008,16 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Peugeot",model:"106",yearStart:1996,yearEnd:2003,version:"Toutes versions",diff:"easy",
  transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
- superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
- notes:"Temic 11 verre très simple. BSI basique. Clé et plip séparés."},
+ notes:"Temic 11 verre très simple. BSI basique. Clé et plip séparés.",
+ tips:["VA2 = réf. Silca officielle Peugeot & Citroën (lame plate 2 pistes)"]},
 
 {brand:"Peugeot",model:"206",yearStart:1998,yearEnd:2003,version:"Phase 1",diff:"easy",
  transponder:"Temic 11 (ID11 — verre cylindrique)",tColor:"tg",
- superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN","XN001 coque Peugeot 3 boutons"],
  protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -1025,7 +1026,7 @@ const DB = [
 
 {brand:"Peugeot",model:"206",yearStart:2003,yearEnd:2010,version:"Phase 2 / SW / CC",diff:"easy",
  transponder:"Temic 11 / PCF7936 selon version",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN","XN001 coque"],
  protocol:"BSI Siemens",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -1034,16 +1035,16 @@ const DB = [
 
 {brand:"Peugeot",model:"207",yearStart:2006,yearEnd:2010,version:"Phase 1",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN","XN001 coque"],
  protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
  notes:"PIN OBD G3 rapide.",
- tips:["VA2 et HU83 = profils interchangeables sur 207"]},
+ },
 
 {brand:"Peugeot",model:"207",yearStart:2010,yearEnd:2014,version:"Phase 2 / SW",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1051,7 +1052,7 @@ const DB = [
 
 {brand:"Peugeot",model:"307 / 307 CC / 307 SW",yearStart:2001,yearEnd:2005,version:"Phase 1",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / SX9",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN","XN001 coque"],
  protocol:"BSI Siemens",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Console centrale, à côté du pommeau de vitesse",obdVerified:true,timeMin:40,
@@ -1060,7 +1061,7 @@ const DB = [
 
 {brand:"Peugeot",model:"307 / 307 CC / 307 SW",yearStart:2005,yearEnd:2008,version:"Phase 2",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Console centrale, à côté du pommeau de vitesse",obdVerified:true,timeMin:40,
@@ -1069,7 +1070,7 @@ const DB = [
 
 {brand:"Peugeot",model:"308 Gen1",yearStart:2007,yearEnd:2011,version:"Phase 1",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 3G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1077,7 +1078,7 @@ const DB = [
 
 {brand:"Peugeot",model:"308 Gen1",yearStart:2011,yearEnd:2013,version:"Phase 2 / SW",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Delphi / Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1086,7 +1087,7 @@ const DB = [
 
 {brand:"Peugeot",model:"308 Gen2",yearStart:2013,yearEnd:2021,version:"Toutes phases",diff:"hard",
  transponder:"Hitag2 / ID49",tColor:"tr",
- superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B / XT57B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 4G / Delphi renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1095,7 +1096,7 @@ const DB = [
 
 {brand:"Peugeot",model:"406",yearStart:1995,yearEnd:2004,version:"Toutes phases",diff:"easy",
  transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
- superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -1103,7 +1104,7 @@ const DB = [
 
 {brand:"Peugeot",model:"407",yearStart:2004,yearEnd:2011,version:"Toutes phases",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1111,7 +1112,7 @@ const DB = [
 
 {brand:"Peugeot",model:"508",yearStart:2011,yearEnd:2014,version:"Phase 1",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1119,7 +1120,7 @@ const DB = [
 
 {brand:"Peugeot",model:"508",yearStart:2014,yearEnd:2018,version:"Phase 2",diff:"hard",
  transponder:"Hitag2 / ID49 renforcé",tColor:"tr",
- superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B / XT57B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 4G CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:75,
@@ -1128,7 +1129,7 @@ const DB = [
 
 {brand:"Peugeot",model:"2008 Gen1",yearStart:2013,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1137,7 +1138,7 @@ const DB = [
 
 {brand:"Peugeot",model:"3008 Gen1",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1145,7 +1146,7 @@ const DB = [
 
 {brand:"Peugeot",model:"Partner II",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo partagé Citroën",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1154,7 +1155,7 @@ const DB = [
 
 {brand:"Peugeot",model:"Expert II",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKPU01EN"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1162,7 +1163,7 @@ const DB = [
 
 {brand:"Peugeot",model:"Boxer III",yearStart:2006,yearEnd:2021,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / PCF7947 selon millésime",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKPU01EN"],
  protocol:"BSI Fiat/PSA partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1174,7 +1175,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Citroën",model:"Saxo",yearStart:1996,yearEnd:2004,version:"Toutes versions",diff:"easy",
  transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
- superChip:"XT27A",blade:"VA2 / SX9",pick:"Litchi VA2",
+ superChip:"XT27A",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -1190,7 +1191,7 @@ const DB = [
 
 {brand:"Citroën",model:"C2",yearStart:2003,yearEnd:2009,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1198,7 +1199,7 @@ const DB = [
 
 {brand:"Citroën",model:"C3 Gen1",yearStart:2002,yearEnd:2009,version:"Phase 1 & 2",diff:"easy",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN","XN001 coque"],
  protocol:"BSI Valeo / Siemens",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1206,7 +1207,7 @@ const DB = [
 
 {brand:"Citroën",model:"C3 Gen2",yearStart:2009,yearEnd:2016,version:"Phase 1 & 2",diff:"easy",
  transponder:"PCF7936 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 3G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1215,7 +1216,7 @@ const DB = [
 
 {brand:"Citroën",model:"C3 Aircross",yearStart:2017,yearEnd:2022,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / ID49",tColor:"tr",
- superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B / XT57B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 5G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1224,7 +1225,7 @@ const DB = [
 
 {brand:"Citroën",model:"C4 Gen1",yearStart:2004,yearEnd:2010,version:"Berline / Coupé / Picasso",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 2G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1232,7 +1233,7 @@ const DB = [
 
 {brand:"Citroën",model:"C4 Picasso / Grand C4",yearStart:2006,yearEnd:2013,version:"Gen1",diff:"medium",
  transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27A / XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 3G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1240,7 +1241,7 @@ const DB = [
 
 {brand:"Citroën",model:"C4 Picasso / Grand C4",yearStart:2013,yearEnd:2018,version:"Gen2",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 4G / Delphi",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1249,7 +1250,7 @@ const DB = [
 
 {brand:"Citroën",model:"C5 Gen2",yearStart:2008,yearEnd:2017,version:"Toutes phases",diff:"medium",
  transponder:"Hitag2 / ID46",tColor:"ta",
- superChip:"XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
@@ -1257,7 +1258,7 @@ const DB = [
 
 {brand:"Citroën",model:"C8",yearStart:2002,yearEnd:2014,version:"Toutes versions",diff:"medium",
  transponder:"PCF7936 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA2",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -1265,7 +1266,7 @@ const DB = [
 
 {brand:"Citroën",model:"Berlingo II",yearStart:2008,yearEnd:2018,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / Hitag2 selon année",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1274,7 +1275,7 @@ const DB = [
 
 {brand:"Citroën",model:"Dispatch / Jumpy II",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ superChip:"XT27B",blade:"VA2",bladeVerified:true,pick:"Litchi VA2",
  remotes:["XKCU00EN"],
  protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1282,7 +1283,7 @@ const DB = [
 
 {brand:"Citroën",model:"Jumper",yearStart:2006,yearEnd:2021,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / PCF7947",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKCU00EN"],
  protocol:"BSI Fiat/PSA",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1293,16 +1294,16 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Volkswagen",model:"Golf III",yearStart:1991,yearEnd:1997,version:"Toutes versions",diff:"easy",
  transponder:"Sans immobilisant / Temic 11 tardif",tColor:"tg",
- superChip:"XT27A",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"Sans IMMO (pré-1997)",method:["CALC"],freq:"433.92 MHz ASK",
  nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:10,
  notes:"Golf III sans immobilisant sur les versions avant 1997. Temic 11 verre sur les tardives.",
- tips:["Pas d'immo = double simple sans programmation"]},
+ tips:["Pas d'immo = double simple sans programmation","HU66 = réf. Silca officielle groupe VW/Audi/Seat/Skoda"]},
 
 {brand:"Volkswagen",model:"Golf IV",yearStart:1997,yearEnd:2003,version:"Phase 1",diff:"medium",
  transponder:"Megamos 48 (ID48 Crypto1)",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN","XKB501EN"],
  protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord gauche, colonne de direction",timeMin:35,
@@ -1311,7 +1312,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Golf IV",yearStart:2003,yearEnd:2006,version:"Phase 2 / GTI",diff:"medium",
  transponder:"Megamos 48 (ID48) — IMMO3+",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"IMMO3+",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord gauche, colonne de direction",timeMin:40,
@@ -1320,7 +1321,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Golf V",yearStart:2003,yearEnd:2006,version:"Phase 1",diff:"medium",
  transponder:"ID48 Megamos 48",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN","XKVW00EN"],
  protocol:"IMMO3+",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -1328,7 +1329,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Golf V",yearStart:2006,yearEnd:2008,version:"Phase 2 / GTI / R32",diff:"hard",
  transponder:"Hitag2 (ID46 PCF7936)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1337,7 +1338,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Golf VI",yearStart:2008,yearEnd:2013,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN","XKVW01EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
@@ -1346,7 +1347,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Polo 9N / 9N3",yearStart:2001,yearEnd:2009,version:"Toutes versions",diff:"medium",
  transponder:"Megamos 48 (ID48)",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1354,7 +1355,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Polo 6R",yearStart:2009,yearEnd:2014,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1363,7 +1364,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Passat B6",yearStart:2005,yearEnd:2010,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN","XKVW01EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
@@ -1372,7 +1373,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Passat B7",yearStart:2010,yearEnd:2015,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
- superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT57B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN"],
  protocol:"IMMO4 CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
@@ -1380,7 +1381,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Transporter T5",yearStart:2003,yearEnd:2009,version:"Phase 1",diff:"medium",
  transponder:"ID48 Megamos 48",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1389,7 +1390,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Transporter T5",yearStart:2009,yearEnd:2015,version:"Restylé / Phase 2",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1398,7 +1399,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Caddy III",yearStart:2004,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"ID48 / Hitag2 selon année",tColor:"tb",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW01EN"],
  protocol:"IMMO3/IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -1407,7 +1408,7 @@ const DB = [
 
 {brand:"Volkswagen",model:"Tiguan I",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKVW00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
@@ -1418,7 +1419,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Audi",model:"A3 8L",yearStart:1996,yearEnd:2003,version:"Toutes versions",diff:"medium",
  transponder:"Megamos 48 (ID48 Crypto1)",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU01EN","XKB502EN"],
  protocol:"IMMO2 / IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
@@ -1427,7 +1428,7 @@ const DB = [
 
 {brand:"Audi",model:"A3 8P",yearStart:2003,yearEnd:2008,version:"Phase 1",diff:"hard",
  transponder:"Hitag2 (ID46 PCF7936)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU01EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1436,7 +1437,7 @@ const DB = [
 
 {brand:"Audi",model:"A3 8P",yearStart:2008,yearEnd:2013,version:"Phase 2 / S3",diff:"hard",
  transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
- superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT57B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU02EN"],
  protocol:"IMMO4 renforcé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:80,
@@ -1444,7 +1445,7 @@ const DB = [
 
 {brand:"Audi",model:"A4 B6",yearStart:2000,yearEnd:2004,version:"Toutes versions",diff:"medium",
  transponder:"ID48 Megamos 48",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU01EN"],
  protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
@@ -1453,7 +1454,7 @@ const DB = [
 
 {brand:"Audi",model:"A4 B7",yearStart:2004,yearEnd:2008,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU01EN","XKAU02EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1462,7 +1463,7 @@ const DB = [
 
 {brand:"Audi",model:"A4 B8",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
- superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT57B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU02EN"],
  protocol:"IMMO4 MQB",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
@@ -1470,7 +1471,7 @@ const DB = [
 
 {brand:"Audi",model:"A6 C6",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU02EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
@@ -1478,7 +1479,7 @@ const DB = [
 
 {brand:"Audi",model:"Q5 (8R)",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro",tColor:"tr",
- superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT57B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKAU02EN"],
  protocol:"IMMO4 MQB",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
@@ -1490,7 +1491,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Seat",model:"Ibiza 6L",yearStart:2002,yearEnd:2008,version:"Toutes versions",diff:"medium",
  transponder:"Megamos 48 (ID48)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSE00EN","XKVW01EN"],
  protocol:"IMMO3 VW partagé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
@@ -1499,7 +1500,7 @@ const DB = [
 
 {brand:"Seat",model:"Ibiza 6J",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSE00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1508,7 +1509,7 @@ const DB = [
 
 {brand:"Seat",model:"León 1P",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSE00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1517,7 +1518,7 @@ const DB = [
 
 {brand:"Seat",model:"Altea / Toledo III",yearStart:2004,yearEnd:2015,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tr",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSE00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1528,7 +1529,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Skoda",model:"Fabia I",yearStart:1999,yearEnd:2007,version:"Toutes versions",diff:"medium",
  transponder:"Megamos 48 (ID48)",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSK00EN","XKVW01EN"],
  protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1537,7 +1538,7 @@ const DB = [
 
 {brand:"Skoda",model:"Fabia II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tg",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSK00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1546,7 +1547,7 @@ const DB = [
 
 {brand:"Skoda",model:"Octavia I",yearStart:1996,yearEnd:2004,version:"Toutes versions",diff:"medium",
  transponder:"Megamos 48 (ID48)",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27A / XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSK00EN","XKVW01EN"],
  protocol:"IMMO2 / IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
@@ -1554,7 +1555,7 @@ const DB = [
 
 {brand:"Skoda",model:"Octavia II",yearStart:2004,yearEnd:2013,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tg",
- superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT27B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSK00EN"],
  protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1563,7 +1564,7 @@ const DB = [
 
 {brand:"Skoda",model:"Superb II",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro tardif",tColor:"tg",
- superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ superChip:"XT57B",blade:"HU66",bladeVerified:true,pick:"Litchi HU66",
  remotes:["XKSK00EN"],
  protocol:"IMMO4",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
@@ -1574,16 +1575,16 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"BMW",model:"Série 3 E46",yearStart:1998,yearEnd:2006,version:"Toutes versions",diff:"medium",
  transponder:"PCF7930 / PCF7931 (ID33 / ID11)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ superChip:"XT27A / XT27B",blade:"HU58",bladeVerified:true,pick:"Litchi HU58",
  remotes:["XKBM00EN"],
  protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:40,
  notes:"EWS3 = Electronic Wallet System. Pas de CAS.",
- tips:["EWS3 boîtier noir sous colonne de direction","Lecture EEPROM EWS3 si all-keys-lost"]},
+ tips:["EWS3 boîtier noir sous colonne de direction","Lecture EEPROM EWS3 si all-keys-lost","HU58 = réf. Silca officielle BMW ancienne génération (E36/E39/E46)"]},
 
 {brand:"BMW",model:"Série 5 E39",yearStart:1995,yearEnd:2003,version:"Toutes versions",diff:"medium",
  transponder:"PCF7930 / PCF7931 (ID11/ID33)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ superChip:"XT27A / XT27B",blade:"HU58",bladeVerified:true,pick:"Litchi HU58",
  remotes:["XKBM00EN"],
  protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:40,
@@ -1592,16 +1593,16 @@ const DB = [
 
 {brand:"BMW",model:"Série 1 E87",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"hard",
  transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27A / XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKBM00EN","XKBM01EN"],
  protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
  notes:"CAS2 jusqu'en 2008, CAS3 ensuite. Crypto3 — très sécurisé.",
- tips:["CAS2 = boîtier noir","CAS3 = boîtier vert, encore plus sécurisé"]},
+ tips:["CAS2 = boîtier noir","CAS3 = boîtier vert, encore plus sécurisé","HU92 = réf. Silca officielle BMW E/F-Series moderne"]},
 
 {brand:"BMW",model:"Série 3 E90 / E91 / E92",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"hard",
  transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27A / XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKBM00EN","XKBM01EN"],
  protocol:"CAS2 / CAS3 / CAS3+",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:100,
@@ -1610,7 +1611,7 @@ const DB = [
 
 {brand:"BMW",model:"Série 5 E60 / E61",yearStart:2003,yearEnd:2010,version:"Toutes versions",diff:"hard",
  transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27A / XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKBM01EN"],
  protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:100,
@@ -1628,7 +1629,7 @@ const DB = [
 
 {brand:"BMW",model:"X3 E83",yearStart:2003,yearEnd:2010,version:"Toutes versions",diff:"hard",
  transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27A / XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKBM01EN"],
  protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
@@ -1645,7 +1646,7 @@ const DB = [
 
 {brand:"MINI",model:"Cooper R50 / R52 / R53",yearStart:2001,yearEnd:2006,version:"Toutes versions",diff:"medium",
  transponder:"PCF7930 / PCF7931 (ID33/ID11)",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ superChip:"XT27A / XT27B",blade:"HU58",bladeVerified:true,pick:"Litchi HU58",
  remotes:["XKBM00EN"],
  protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous colonne de direction",timeMin:40,
@@ -1653,7 +1654,7 @@ const DB = [
 
 {brand:"MINI",model:"Cooper R55 / R56 / R57",yearStart:2006,yearEnd:2014,version:"Toutes versions",diff:"hard",
  transponder:"PCF7944 / ID46 Hitag2",tColor:"tr",
- superChip:"XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKBM00EN"],
  protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
@@ -1664,7 +1665,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Mercedes",model:"Classe A W168",yearStart:1997,yearEnd:2004,version:"Toutes versions",diff:"medium",
  transponder:"IR Infrarouge + ID40 verre",tColor:"tc",
- superChip:"XT27A",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN","XKE001"],
  protocol:"EIS Infrarouge",method:["IR","OBD"],freq:"433 MHz (EU) / 315 MHz (US) / IR",
  nbKeys:3,obdPos:"Tableau de bord central, sous radio",timeMin:30,
@@ -1673,7 +1674,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe A W169",yearStart:2004,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"NEC + ID46 Philips",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
@@ -1681,7 +1682,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe B W245",yearStart:2005,yearEnd:2011,version:"Toutes versions",diff:"medium",
  transponder:"NEC + ID46 Philips",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
@@ -1689,7 +1690,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe C W203",yearStart:2000,yearEnd:2004,version:"Phase 1",diff:"medium",
  transponder:"NEC + ID40",tColor:"tc",
- superChip:"NEC BGA (pas de super chip)",blade:"HU64",pick:"Litchi HU64",
+ superChip:"NEC BGA (pas de super chip)",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
@@ -1697,7 +1698,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe C W203",yearStart:2004,yearEnd:2007,version:"Facelift",diff:"medium",
  transponder:"NEC + ID46 Philips",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:55,
@@ -1705,7 +1706,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe C W204",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"hard",
  transponder:"ID46 NEC+Philips / Hitag Pro tardif",tColor:"tr",
- superChip:"XT57B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT57B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC avancé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:80,
@@ -1713,7 +1714,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe E W211",yearStart:2002,yearEnd:2009,version:"Toutes versions",diff:"hard",
  transponder:"NEC + ID46 Philips",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:75,
@@ -1721,7 +1722,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe E W212",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"hard",
  transponder:"ID46 NEC+Philips / Hitag Pro",tColor:"tr",
- superChip:"XT57B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT57B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC avancé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:85,
@@ -1729,7 +1730,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Classe ML W163 / W164",yearStart:1997,yearEnd:2011,version:"Toutes versions",diff:"medium",
  transponder:"ID40 → ID46 NEC selon génération",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:55,
@@ -1737,7 +1738,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Sprinter W906",yearStart:2006,yearEnd:2018,version:"Toutes versions",diff:"medium",
  transponder:"NEC + ID46 Philips",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64 / CR2",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
@@ -1746,7 +1747,7 @@ const DB = [
 
 {brand:"Mercedes",model:"Vito / Viano W639",yearStart:2003,yearEnd:2014,version:"Toutes versions",diff:"medium",
  transponder:"ID40 / ID46 NEC",tColor:"tc",
- superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ superChip:"XT27A / XT27B",blade:"HU64",bladeVerified:true,pick:"Litchi HU64",
  remotes:["XKME00EN"],
  protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
@@ -1758,7 +1759,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Opel",model:"Corsa C",yearStart:2000,yearEnd:2006,version:"Toutes versions",diff:"easy",
  transponder:"Temic 11 (ID11 verre)",tColor:"tg",
- superChip:"XT27A",blade:"HU43",pick:"Litchi HU43",
+ superChip:"XT27A",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN","XN002 coque Opel"],
  protocol:"BCM Corsa simple",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -1766,7 +1767,7 @@ const DB = [
 
 {brand:"Opel",model:"Corsa D",yearStart:2006,yearEnd:2014,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ superChip:"XT27A / XT27B",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN"],
  protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1774,15 +1775,15 @@ const DB = [
 
 {brand:"Opel",model:"Astra G",yearStart:1998,yearEnd:2004,version:"Toutes versions",diff:"easy",
  transponder:"Temic 11 (ID11 verre)",tColor:"tg",
- superChip:"XT27A",blade:"HU43 / YM28",pick:"Litchi HU43",
+ superChip:"XT27A",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN"],
  protocol:"BCM simple",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
- notes:"Temic 11. YM28 = lame alternative."},
+ notes:"Temic 11. HU43 = lame Opel standard (Silca)."},
 
 {brand:"Opel",model:"Astra H",yearStart:2004,yearEnd:2010,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ superChip:"XT27A / XT27B",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN"],
  protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1790,7 +1791,7 @@ const DB = [
 
 {brand:"Opel",model:"Astra J",yearStart:2009,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"HU100",pick:"Litchi HU100",
+ superChip:"XT27B",blade:"HU100",bladeVerified:true,pick:"Litchi HU100",
  remotes:["XKOP00EN"],
  protocol:"BCM CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1799,7 +1800,7 @@ const DB = [
 
 {brand:"Opel",model:"Zafira A / B",yearStart:1999,yearEnd:2011,version:"Toutes versions",diff:"easy",
  transponder:"Temic 11 / ID46 selon année",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ superChip:"XT27A / XT27B",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN"],
  protocol:"BCM",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1807,7 +1808,7 @@ const DB = [
 
 {brand:"Opel",model:"Vectra C",yearStart:2002,yearEnd:2008,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ superChip:"XT27A / XT27B",blade:"HU43",bladeVerified:true,pick:"Litchi HU43",
  remotes:["XKOP00EN"],
  protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1815,7 +1816,7 @@ const DB = [
 
 {brand:"Opel",model:"Vivaro X83",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKOP00EN"],
  protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1824,7 +1825,7 @@ const DB = [
 
 {brand:"Opel",model:"Movano B",yearStart:2010,yearEnd:2021,version:"Toutes versions",diff:"medium",
  transponder:"PCF7947 (ID46 AES)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKOP00EN"],
  protocol:"UCH CAN Renault partagé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -1844,7 +1845,7 @@ const DB = [
 
 {brand:"Ford",model:"Fiesta VI (CB1)",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT27A / XT27B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1852,7 +1853,7 @@ const DB = [
 
 {brand:"Ford",model:"Focus II",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT27A / XT27B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1860,7 +1861,7 @@ const DB = [
 
 {brand:"Ford",model:"Focus III",yearStart:2011,yearEnd:2018,version:"Toutes versions",diff:"hard",
  transponder:"Hitag Pro (4D80 / DST AES)",tColor:"tr",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1869,7 +1870,7 @@ const DB = [
 
 {brand:"Ford",model:"C-Max / S-Max",yearStart:2007,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit / Hitag Pro",tColor:"ta",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1886,7 +1887,7 @@ const DB = [
 
 {brand:"Ford",model:"Transit Custom V362",yearStart:2012,yearEnd:2022,version:"Toutes versions",diff:"hard",
  transponder:"Hitag Pro (4D80)",tColor:"tr",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS avancé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -1894,7 +1895,7 @@ const DB = [
 
 {brand:"Ford",model:"Kuga I / II",yearStart:2008,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"4D63 / Hitag Pro",tColor:"ta",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -1902,7 +1903,7 @@ const DB = [
 
 {brand:"Ford",model:"Mondeo IV",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit / Hitag Pro",tColor:"ta",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -1910,7 +1911,7 @@ const DB = [
 
 {brand:"Ford",model:"Galaxy II",yearStart:2006,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT27A / XT27B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKFO01EN"],
  protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -1921,7 +1922,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Fiat",model:"Punto II (188)",yearStart:1999,yearEnd:2005,version:"Phase 1",diff:"easy",
  transponder:"Temic 11 / ID48 Crypto2 selon version",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN","XN005 coque Fiat"],
  protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1930,7 +1931,7 @@ const DB = [
 
 {brand:"Fiat",model:"Grande Punto (199)",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Marelli / Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1938,7 +1939,7 @@ const DB = [
 
 {brand:"Fiat",model:"Punto Evo",yearStart:2009,yearEnd:2012,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1946,7 +1947,7 @@ const DB = [
 
 {brand:"Fiat",model:"Ducato III",yearStart:2006,yearEnd:2014,version:"Phase 1",diff:"easy",
  transponder:"PCF7936 (ID46)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"BSI Fiat/PSA partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1954,7 +1955,7 @@ const DB = [
 
 {brand:"Fiat",model:"Ducato III",yearStart:2014,yearEnd:2021,version:"Phase 2 / Facelift",diff:"easy",
  transponder:"PCF7947 (ID46 AES)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"BSI Fiat/PSA renforcé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1962,7 +1963,7 @@ const DB = [
 
 {brand:"Fiat",model:"500 (312)",yearStart:2007,yearEnd:2015,version:"Phase 1",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -1970,7 +1971,7 @@ const DB = [
 
 {brand:"Fiat",model:"500 (312)",yearStart:2015,yearEnd:2019,version:"Phase 2",diff:"medium",
  transponder:"Hitag2 (ID46)",tColor:"ta",
- superChip:"XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Bosch renforcé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -1978,7 +1979,7 @@ const DB = [
 
 {brand:"Fiat",model:"Bravo II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -1986,7 +1987,7 @@ const DB = [
 
 {brand:"Fiat",model:"Doblo II",yearStart:2009,yearEnd:2015,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2002,7 +2003,7 @@ const DB = [
 
 {brand:"Alfa Romeo",model:"159 / Brera",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2010,7 +2011,7 @@ const DB = [
 
 {brand:"Alfa Romeo",model:"Giulietta (940)",yearStart:2010,yearEnd:2020,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / Hitag2",tColor:"tr",
- superChip:"XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Bosch / Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
@@ -2018,7 +2019,7 @@ const DB = [
 
 {brand:"Lancia",model:"Ypsilon (843)",yearStart:2003,yearEnd:2011,version:"Toutes versions",diff:"easy",
  transponder:"ID48 / ID46",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2026,7 +2027,7 @@ const DB = [
 
 {brand:"Lancia",model:"Musa / Delta",yearStart:2004,yearEnd:2014,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ superChip:"XT27A / XT27B",blade:"SIP22",bladeVerified:true,pick:"Litchi SIP22",
  remotes:["XKFI00EN"],
  protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2037,7 +2038,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Nissan",model:"Micra K11",yearStart:1992,yearEnd:2002,version:"Toutes versions",diff:"easy",
  transponder:"Sans immobilisant / Temic 11 tardif",tColor:"tg",
- superChip:"XT27A",blade:"NSN14",pick:"Litchi NSN14",
+ superChip:"XT27A",blade:"NSN14",bladeVerified:true,pick:"Litchi NSN14",
  remotes:["XKNI00EN"],
  protocol:"Sans IMMO",method:["CALC"],freq:"433.92 MHz ASK",
  nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:10,
@@ -2045,7 +2046,7 @@ const DB = [
 
 {brand:"Nissan",model:"Micra K12",yearStart:2002,yearEnd:2010,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ superChip:"XT27A / XT27B",blade:"NSN14",bladeVerified:true,pick:"Litchi NSN14",
  remotes:["XKNI00EN"],
  protocol:"NATS4",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2053,7 +2054,7 @@ const DB = [
 
 {brand:"Nissan",model:"Qashqai J10",yearStart:2006,yearEnd:2013,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ superChip:"XT27A / XT27B",blade:"NSN14",bladeVerified:true,pick:"Litchi NSN14",
  remotes:["XKNI00EN"],
  protocol:"NATS5",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2070,7 +2071,7 @@ const DB = [
 
 {brand:"Nissan",model:"Note E11 / E12",yearStart:2005,yearEnd:2016,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ superChip:"XT27A / XT27B",blade:"NSN14",bladeVerified:true,pick:"Litchi NSN14",
  remotes:["XKNI00EN"],
  protocol:"NATS4/5",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2078,7 +2079,7 @@ const DB = [
 
 {brand:"Nissan",model:"Juke F15",yearStart:2010,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / Hitag2",tColor:"ta",
- superChip:"XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ superChip:"XT27B",blade:"NSN14",bladeVerified:true,pick:"Litchi NSN14",
  remotes:["XKNI00EN"],
  protocol:"NATS5/6",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2094,7 +2095,7 @@ const DB = [
 
 {brand:"Nissan",model:"Primastar",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 (ID46)",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKNI00EN"],
  protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2105,7 +2106,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Toyota",model:"Yaris P1",yearStart:1999,yearEnd:2005,version:"Toutes versions",diff:"easy",
  transponder:"4C (verre cylindrique)",tColor:"tg",
- superChip:"XT27A",blade:"TOY43",pick:"Litchi TOY43",
+ superChip:"XT27A",blade:"TOY43",bladeVerified:true,pick:"Litchi TOY43",
  remotes:["XKTO00EN","XKT002"],
  protocol:"Toyota Immo Standard",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
@@ -2113,7 +2114,7 @@ const DB = [
 
 {brand:"Toyota",model:"Yaris P2",yearStart:2005,yearEnd:2011,version:"Toutes versions",diff:"medium",
  transponder:"4D67",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ superChip:"XT27A / XT27B",blade:"TOY43",bladeVerified:true,pick:"Litchi TOY43",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2129,7 +2130,7 @@ const DB = [
 
 {brand:"Toyota",model:"Corolla E150",yearStart:2006,yearEnd:2013,version:"Toutes versions",diff:"medium",
  transponder:"4D67 / 4D68",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ superChip:"XT27A / XT27B",blade:"TOY43",bladeVerified:true,pick:"Litchi TOY43",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2146,7 +2147,7 @@ const DB = [
 
 {brand:"Toyota",model:"RAV4 III",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"4D67",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ superChip:"XT27A / XT27B",blade:"TOY43",bladeVerified:true,pick:"Litchi TOY43",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2162,7 +2163,7 @@ const DB = [
 
 {brand:"Toyota",model:"Avensis T27",yearStart:2008,yearEnd:2018,version:"Toutes versions",diff:"medium",
  transponder:"4D67 / G chip selon année",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ superChip:"XT27A / XT27B",blade:"TOY43",bladeVerified:true,pick:"Litchi TOY43",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo G / H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2179,7 +2180,7 @@ const DB = [
 
 {brand:"Toyota",model:"Hilux VIII",yearStart:2015,yearEnd:2022,version:"Toutes versions",diff:"medium",
  transponder:"G chip / H chip",tColor:"tg",
- superChip:"XT27B",blade:"TOY48",pick:"Litchi TOY48",
+ superChip:"XT27B",blade:"TOY48",bladeVerified:true,pick:"Litchi TOY48",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
@@ -2188,7 +2189,7 @@ const DB = [
 
 {brand:"Toyota",model:"Land Cruiser 150 (Prado)",yearStart:2009,yearEnd:2020,version:"Toutes versions",diff:"hard",
  transponder:"G chip / H chip",tColor:"tg",
- superChip:"XT27B",blade:"TOY48",pick:"Litchi TOY48",
+ superChip:"XT27B",blade:"TOY48",bladeVerified:true,pick:"Litchi TOY48",
  remotes:["XKTO00EN"],
  protocol:"Toyota Immo H + Smart Key",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -2200,7 +2201,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Honda",model:"Civic VII (EP/EU)",yearStart:2000,yearEnd:2005,version:"Toutes versions",diff:"medium",
  transponder:"ID13 (Honda verre)",tColor:"tg",
- superChip:"XT27A",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda standard",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2209,7 +2210,7 @@ const DB = [
 
 {brand:"Honda",model:"Civic VIII (FN/FK)",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A / XT27B",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2217,7 +2218,7 @@ const DB = [
 
 {brand:"Honda",model:"Jazz II / III",yearStart:2001,yearEnd:2015,version:"Toutes versions",diff:"easy",
  transponder:"ID13 / ID46",tColor:"tg",
- superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A / XT27B",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2226,7 +2227,7 @@ const DB = [
 
 {brand:"Honda",model:"CR-V II / III",yearStart:2001,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID13 / ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A / XT27B",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2234,7 +2235,7 @@ const DB = [
 
 {brand:"Honda",model:"HR-V (GH)",yearStart:1998,yearEnd:2006,version:"Toutes versions",diff:"easy",
  transponder:"ID13 (Honda verre)",tColor:"tg",
- superChip:"XT27A",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2242,7 +2243,7 @@ const DB = [
 
 {brand:"Honda",model:"Accord VII / VIII",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"ta",
- superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ superChip:"XT27A / XT27B",blade:"HON66",bladeVerified:true,pick:"Litchi HON66",
  remotes:["XKHO01EN"],
  protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2253,7 +2254,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Hyundai",model:"i10 (PA/IA)",yearStart:2007,yearEnd:2019,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY01EN"],
  protocol:"IMMO Hyundai",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2261,7 +2262,7 @@ const DB = [
 
 {brand:"Hyundai",model:"i20 PB",yearStart:2008,yearEnd:2014,version:"Gen1",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY01EN"],
  protocol:"IMMO Hyundai standard",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2269,7 +2270,7 @@ const DB = [
 
 {brand:"Hyundai",model:"i30 FD",yearStart:2007,yearEnd:2012,version:"Gen1",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY01EN"],
  protocol:"IMMO Hyundai",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2301,7 +2302,7 @@ const DB = [
 
 {brand:"Kia",model:"Picanto (SA/TA)",yearStart:2004,yearEnd:2017,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY01EN"],
  protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2309,7 +2310,7 @@ const DB = [
 
 {brand:"Kia",model:"Ceed ED",yearStart:2006,yearEnd:2012,version:"Gen1",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY01EN"],
  protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2325,7 +2326,7 @@ const DB = [
 
 {brand:"Kia",model:"Sportage II",yearStart:2004,yearEnd:2010,version:"Toutes versions",diff:"easy",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ superChip:"XT27A / XT27B",blade:"HY22",bladeVerified:true,pick:"Litchi HY22",
  remotes:["XKHY02EN"],
  protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2362,7 +2363,7 @@ const DB = [
 
 {brand:"Dacia",model:"Sandero II",yearStart:2012,yearEnd:2020,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / PCF7947 selon millésime",tColor:"to",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2371,7 +2372,7 @@ const DB = [
 
 {brand:"Dacia",model:"Duster I",yearStart:2010,yearEnd:2018,version:"Toutes versions",diff:"easy",
  transponder:"PCF7936 / PCF7947 selon millésime",tColor:"to",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2380,7 +2381,7 @@ const DB = [
 
 {brand:"Dacia",model:"Lodgy / Dokker",yearStart:2012,yearEnd:2021,version:"Toutes versions",diff:"easy",
  transponder:"PCF7947 (ID46 AES)",tColor:"to",
- superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ superChip:"XT27A / XT27B",blade:"VA6",bladeVerified:true,pick:"Litchi VA6",
  remotes:["XKRN00EN"],
  protocol:"UCH CAN Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
@@ -2401,7 +2402,7 @@ const DB = [
 
 {brand:"Suzuki",model:"SX4 / S-Cross",yearStart:2006,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936 / Hitag2",tColor:"to",
- superChip:"XT27B",blade:"HU133R",pick:"Litchi HU133R",
+ superChip:"XT27B",blade:"HU133R",bladeVerified:true,pick:"Litchi HU133R",
  remotes:["XKSU00EN"],
  protocol:"Immo Suzuki / Fiat partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2417,7 +2418,7 @@ const DB = [
 
 {brand:"Suzuki",model:"Jimny (SJ413/SN)",yearStart:1998,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"to",
- superChip:"XT27A / XT27B",blade:"HU133R",pick:"Litchi HU133R",
+ superChip:"XT27A / XT27B",blade:"HU133R",bladeVerified:true,pick:"Litchi HU133R",
  remotes:["XKSU00EN"],
  protocol:"Immo Suzuki",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2429,7 +2430,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Mazda",model:"Mazda 3 (BK/BL)",yearStart:2003,yearEnd:2013,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ superChip:"XT27A / XT27B",blade:"MAZ24",bladeVerified:true,pick:"Litchi MAZ24",
  remotes:["XKMA00EN"],
  protocol:"Immo Mazda / Ford partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2438,7 +2439,7 @@ const DB = [
 
 {brand:"Mazda",model:"Mazda 6 (GG/GH)",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ superChip:"XT27A / XT27B",blade:"MAZ24",bladeVerified:true,pick:"Litchi MAZ24",
  remotes:["XKMA00EN"],
  protocol:"Immo Mazda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2446,7 +2447,7 @@ const DB = [
 
 {brand:"Mazda",model:"CX-5 (KE)",yearStart:2011,yearEnd:2017,version:"Toutes versions",diff:"hard",
  transponder:"Hitag Pro",tColor:"tr",
- superChip:"XT57B",blade:"MAZ24",pick:"Litchi MAZ24",
+ superChip:"XT57B",blade:"MAZ24",bladeVerified:true,pick:"Litchi MAZ24",
  remotes:["XKMA00EN"],
  protocol:"Immo Mazda avancé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
@@ -2454,7 +2455,7 @@ const DB = [
 
 {brand:"Mazda",model:"MX-5 (NB/NC)",yearStart:1998,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"4D63 80-bit",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ superChip:"XT27A / XT27B",blade:"MAZ24",bladeVerified:true,pick:"Litchi MAZ24",
  remotes:["XKMA00EN"],
  protocol:"Immo Mazda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2493,7 +2494,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Land Rover",model:"Freelander 2 (LF)",yearStart:2006,yearEnd:2015,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro",tColor:"tg",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKLR00EN"],
  protocol:"CAN JLR sécurisé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
@@ -2501,7 +2502,7 @@ const DB = [
 
 {brand:"Land Rover",model:"Discovery 3 / 4",yearStart:2004,yearEnd:2016,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 / Hitag Pro",tColor:"tg",
- superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ superChip:"XT57B",blade:"HU101",bladeVerified:true,pick:"Litchi HU101",
  remotes:["XKLR00EN"],
  protocol:"CAN JLR avancé",method:["BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:120,
@@ -2510,7 +2511,7 @@ const DB = [
 
 {brand:"Land Rover",model:"Range Rover Sport (L320)",yearStart:2005,yearEnd:2013,version:"Toutes versions",diff:"hard",
  transponder:"Hitag2 (ID46)",tColor:"tg",
- superChip:"XT27B",blade:"HU92",pick:"Litchi HU92",
+ superChip:"XT27B",blade:"HU92",bladeVerified:true,pick:"Litchi HU92",
  remotes:["XKLR00EN"],
  protocol:"CAN JLR avancé",method:["BENCH"],freq:"433.92 MHz ASK",
  nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:120,
@@ -2521,7 +2522,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Mitsubishi",model:"Colt (Z30)",yearStart:2003,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / 4D65",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ superChip:"XT27A / XT27B",blade:"MIT11",bladeVerified:true,pick:"Litchi MIT11",
  remotes:["XKMI00EN"],
  protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2530,7 +2531,7 @@ const DB = [
 
 {brand:"Mitsubishi",model:"Lancer (CS/CY)",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ superChip:"XT27A / XT27B",blade:"MIT11",bladeVerified:true,pick:"Litchi MIT11",
  remotes:["XKMI00EN"],
  protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
@@ -2546,7 +2547,7 @@ const DB = [
 
 {brand:"Mitsubishi",model:"L200 (KA/KB)",yearStart:2005,yearEnd:2019,version:"Toutes versions",diff:"medium",
  transponder:"ID46 PCF7936",tColor:"tr",
- superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ superChip:"XT27A / XT27B",blade:"MIT11",bladeVerified:true,pick:"Litchi MIT11",
  remotes:["XKMI00EN"],
  protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2555,7 +2556,7 @@ const DB = [
 
 {brand:"Mitsubishi",model:"ASX (GA)",yearStart:2010,yearEnd:2020,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / Hitag2",tColor:"tr",
- superChip:"XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ superChip:"XT27B",blade:"MIT11",bladeVerified:true,pick:"Litchi MIT11",
  remotes:["XKMI00EN"],
  protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
@@ -2566,7 +2567,7 @@ const DB = [
 // ══════════════════════════════════════════
 {brand:"Subaru",model:"Impreza / Forester / Outback",yearStart:2003,yearEnd:2015,version:"Toutes versions",diff:"medium",
  transponder:"ID46 / 4D62",tColor:"tb",
- superChip:"XT27A / XT27B",blade:"DAT17",pick:"Litchi DAT17",
+ superChip:"XT27A / XT27B",blade:"DAT17",bladeVerified:true,pick:"Litchi DAT17",
  remotes:["XKSU01EN"],
  protocol:"Immo Subaru",method:["OBD","CALC"],freq:"433.92 MHz ASK",
  nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
