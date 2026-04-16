@@ -1,0 +1,3031 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AutoLock Pro">
+<meta name="application-name" content="AutoLock Pro">
+<meta name="theme-color" content="#f59e0b">
+<meta name="description" content="Référence serrurier auto — Reparetonphone83 Toulon">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="manifest" href="manifest.json">
+<title>AutoLock Pro — Serrurier Auto</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════ THÈMES ═══════════════ */
+:root[data-theme="dark"] {
+  --bg:#080a0d; --s1:#0f1318; --s2:#161b23; --s3:#1d2330;
+  --b1:#252d3a; --b2:#2e3847;
+  --txt:#e2e8f0; --txt2:#94a3b8; --muted:#4a5568;
+  --card-hover:rgba(245,158,11,0.04);
+  --grid-line:rgba(245,158,11,0.025);
+}
+:root[data-theme="light"] {
+  --bg:#f1f5f9; --s1:#ffffff; --s2:#f8fafc; --s3:#f1f5f9;
+  --b1:#e2e8f0; --b2:#cbd5e1;
+  --txt:#0f172a; --txt2:#475569; --muted:#94a3b8;
+  --card-hover:rgba(245,158,11,0.06);
+  --grid-line:rgba(0,0,0,0.04);
+}
+:root {
+  --amber:#f59e0b; --amber-d:rgba(245,158,11,0.12);
+  --blue:#3b82f6; --blue-d:rgba(59,130,246,0.12);
+  --green:#10b981; --green-d:rgba(16,185,129,0.12);
+  --red:#ef4444; --red-d:rgba(239,68,68,0.12);
+  --purple:#a855f7; --purple-d:rgba(168,85,247,0.12);
+  --orange:#f97316; --orange-d:rgba(249,115,22,0.12);
+  --cyan:#06b6d4; --cyan-d:rgba(6,182,212,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);color:var(--txt);
+  font-family:'Rajdhani',sans-serif;
+  min-height:100vh;overflow-x:hidden;
+  transition:background .3s,color .3s;
+  padding-top:env(safe-area-inset-top);
+  padding-bottom:env(safe-area-inset-bottom);
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;z-index:0;
+}
+
+/* ═══════════════ HEADER ═══════════════ */
+header{
+  position:sticky;top:0;z-index:200;
+  background:var(--s1);
+  border-bottom:1px solid var(--b1);
+  padding:0 16px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+[data-theme="dark"] header{background:rgba(8,10,13,.96);backdrop-filter:blur(12px);}
+.hdr{max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 0;}
+.logo-ic{
+  width:40px;height:40px;
+  background:linear-gradient(135deg,#f59e0b,#d97706);
+  border-radius:10px;display:flex;align-items:center;
+  justify-content:center;font-size:19px;flex-shrink:0;
+  box-shadow:0 0 16px rgba(245,158,11,.3);
+}
+.logo-tx h1{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--amber);line-height:1;}
+.logo-tx p{font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;}
+.hdr-actions{margin-left:auto;display:flex;align-items:center;gap:8px;}
+.hdr-stats{display:flex;gap:16px;flex-shrink:0;}
+.hs{text-align:center;}
+.hs-v{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--amber);line-height:1;}
+.hs-l{font-family:'JetBrains Mono',monospace;font-size:7px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;}
+
+/* Theme toggle */
+.theme-btn{
+  background:var(--s2);border:1px solid var(--b2);
+  border-radius:8px;width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:17px;transition:all .2s;
+  flex-shrink:0;
+}
+.theme-btn:hover{border-color:var(--amber);background:var(--amber-d);}
+
+/* History btn */
+.hist-btn{
+  background:var(--s2);border:1px solid var(--b2);
+  border-radius:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;letter-spacing:1px;
+  color:var(--txt2);padding:6px 10px;
+  cursor:pointer;transition:all .2s;
+  display:flex;align-items:center;gap:5px;
+  white-space:nowrap;
+}
+.hist-btn:hover{border-color:var(--amber);color:var(--amber);}
+
+/* ═══════════════ MAIN ═══════════════ */
+main{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:20px 16px;}
+
+/* ═══════════════ CASCADE ═══════════════ */
+.cascade{background:var(--s1);border:1px solid var(--b1);border-radius:14px;padding:20px;margin-bottom:20px;}
+.section-lbl{
+  font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.section-lbl::after{content:'';flex:1;height:1px;background:var(--b1);}
+.cascade-steps{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;}
+.step{display:flex;flex-direction:column;gap:5px;flex:1;min-width:140px;opacity:.35;transition:opacity .3s;pointer-events:none;}
+.step.active,.step.done{opacity:1;pointer-events:all;}
+.step-header{display:flex;align-items:center;gap:6px;}
+.step-num{
+  width:20px;height:20px;border-radius:50%;
+  background:var(--s3);border:1px solid var(--b2);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);
+  flex-shrink:0;transition:all .3s;
+}
+.step.active .step-num{background:var(--amber-d);border-color:rgba(245,158,11,.5);color:var(--amber);}
+.step.done .step-num{background:var(--green-d);border-color:rgba(16,185,129,.5);color:var(--green);}
+.step-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);transition:color .3s;}
+.step.active .step-label{color:var(--amber);}
+.step.done .step-label{color:var(--green);}
+.step select{
+  width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:7px;
+  color:var(--txt);font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;
+  padding:10px 34px 10px 12px;outline:none;
+  transition:border-color .2s,box-shadow .2s;
+  -webkit-appearance:none;appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;
+}
+.step.active select{border-color:rgba(245,158,11,.4);box-shadow:0 0 0 2px var(--amber-d);}
+.step.active select:focus{border-color:var(--amber);}
+.step select option{background:var(--s2);}
+.step-arrow{color:var(--muted);font-size:16px;padding-bottom:11px;flex-shrink:0;}
+.btn-reset-cascade{
+  background:transparent;border:1px solid var(--b2);border-radius:7px;color:var(--txt2);
+  font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;
+  padding:10px 14px;cursor:pointer;transition:all .2s;white-space:nowrap;align-self:flex-end;
+}
+.btn-reset-cascade:hover{border-color:var(--txt2);color:var(--txt);}
+
+/* Last used banner */
+.last-used-bar{
+  background:var(--amber-d);border:1px solid rgba(245,158,11,.25);
+  border-radius:10px;padding:10px 14px;margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  cursor:pointer;transition:all .2s;
+}
+.last-used-bar:hover{background:rgba(245,158,11,.18);border-color:rgba(245,158,11,.4);}
+.last-used-bar .lu-label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);}
+.last-used-bar .lu-val{font-size:15px;font-weight:700;color:var(--txt);}
+.last-used-bar .lu-hint{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2);margin-left:auto;}
+
+/* ═══════════════ RESULT PANEL ═══════════════ */
+#result-panel{display:none;}
+#result-panel.visible{display:block;}
+.result-hero{background:var(--s1);border:1px solid var(--b1);border-radius:14px;overflow:hidden;margin-bottom:16px;animation:slideIn .3s ease;}
+@keyframes slideIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.hero-head{padding:16px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--b1);}
+.hero-brand{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:1.5px;padding:3px 10px;border-radius:4px;flex-shrink:0;}
+.hero-info{flex:1;}
+.hero-model{font-size:22px;font-weight:700;line-height:1.1;}
+.hero-sub{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2);letter-spacing:1px;margin-top:2px;}
+.hero-year-badge{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--amber);
+  background:var(--amber-d);border:1px solid rgba(245,158,11,.3);
+  border-radius:8px;padding:5px 14px;flex-shrink:0;
+}
+.diff-badge{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;padding:3px 9px;border-radius:4px;letter-spacing:1px;flex-shrink:0;}
+.d-easy{background:var(--green-d);color:var(--green);border:1px solid rgba(16,185,129,.3);}
+.d-medium{background:var(--orange-d);color:var(--orange);border:1px solid rgba(249,115,22,.3);}
+.d-hard{background:var(--red-d);color:var(--red);border:1px solid rgba(239,68,68,.3);}
+
+/* Info grid */
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--b1);}
+.ig-block{padding:14px 16px;border-right:1px solid var(--b1);transition:background .2s;}
+.ig-block:last-child{border-right:none;}
+.ig-block:hover{background:var(--card-hover);}
+.ig-label{font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;display:flex;align-items:center;gap:4px;}
+.dot{width:5px;height:5px;border-radius:50%;display:inline-block;flex-shrink:0;}
+.ig-val{font-size:15px;font-weight:700;line-height:1.3;}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;}
+.ta{background:var(--amber-d);color:var(--amber);border:1px solid rgba(245,158,11,.25);}
+.tb{background:var(--blue-d);color:#60a5fa;border:1px solid rgba(59,130,246,.25);}
+.tg{background:var(--green-d);color:#34d399;border:1px solid rgba(16,185,129,.25);}
+.tp{background:var(--purple-d);color:#c084fc;border:1px solid rgba(168,85,247,.25);}
+.tr{background:var(--red-d);color:#f87171;border:1px solid rgba(239,68,68,.25);}
+.to{background:var(--orange-d);color:var(--orange);border:1px solid rgba(249,115,22,.25);}
+.tc{background:var(--cyan-d);color:var(--cyan);border:1px solid rgba(6,182,212,.25);}
+.mbadge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:600;padding:2px 7px;border-radius:4px;letter-spacing:1px;}
+.m-obd{background:var(--green-d);color:var(--green);}
+.m-calc{background:var(--blue-d);color:#60a5fa;}
+.m-eeprom{background:var(--orange-d);color:var(--orange);}
+.m-bench{background:var(--red-d);color:var(--red);}
+.m-ir{background:var(--cyan-d);color:var(--cyan);}
+
+/* Action bar */
+.action-bar{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--b1);background:var(--s2);flex-wrap:wrap;}
+.btn-action{
+  background:var(--s3);border:1px solid var(--b2);color:var(--txt2);
+  border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;
+  padding:9px 13px;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;white-space:nowrap;
+}
+.btn-action:hover{border-color:var(--amber);color:var(--amber);}
+.btn-action.green:hover{border-color:var(--green);color:var(--green);}
+.btn-action.blue:hover{border-color:var(--blue);color:#60a5fa;}
+.btn-action.primary{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;border-color:transparent;font-weight:700;}
+.btn-action.primary:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(245,158,11,.4);color:#000;}
+
+/* Version alert */
+.version-alert{background:var(--blue-d);border:1px solid rgba(59,130,246,.25);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:13px;color:#93c5fd;line-height:1.5;display:flex;align-items:flex-start;gap:8px;}
+
+/* Nota boxes */
+.note-box{background:rgba(245,158,11,.06);border-left:3px solid var(--amber);border-radius:0 7px 7px 0;padding:11px 13px;font-size:13px;color:#fbbf24;line-height:1.6;}
+.tips-box{background:rgba(16,185,129,.06);border-left:3px solid var(--green);border-radius:0 7px 7px 0;padding:11px 13px;}
+.tips-box li{font-size:13px;color:#34d399;line-height:1.7;list-style:none;padding:1px 0;}
+.tips-box li::before{content:'→ ';}
+.edited-badge{display:inline-flex;align-items:center;gap:3px;background:var(--green-d);border:1px solid rgba(16,185,129,.3);color:var(--green);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:600;letter-spacing:1px;padding:1px 6px;margin-left:5px;}
+
+/* ═══════════════ TABS ═══════════════ */
+.tab-nav{display:flex;gap:2px;margin-bottom:16px;background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:4px;flex-wrap:wrap;}
+.tab-nav-btn{
+  background:transparent;border:none;border-radius:7px;
+  color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;
+  padding:8px 14px;cursor:pointer;transition:all .2s;flex:1;white-space:nowrap;min-width:80px;
+}
+.tab-nav-btn:hover{background:var(--s3);color:var(--txt);}
+.tab-nav-btn.active{background:var(--amber);color:#000;font-weight:700;}
+.tab-content{display:none;}
+.tab-content.active{display:block;}
+
+/* ═══════════════ BROWSE ═══════════════ */
+.brand-tabs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;}
+.btab{background:transparent;border:1px solid var(--b1);border-radius:6px;color:var(--txt2);font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;padding:5px 10px;cursor:pointer;transition:all .2s;}
+.btab:hover{border-color:var(--b2);color:var(--txt);}
+.btab.active{background:var(--amber-d);border-color:rgba(245,158,11,.4);color:var(--amber);}
+.browse-search{display:flex;gap:8px;margin-bottom:12px;}
+.browse-search input{flex:1;background:var(--s2);border:1px solid var(--b2);border-radius:7px;color:var(--txt);font-family:'Rajdhani',sans-serif;font-size:14px;padding:9px 13px;outline:none;transition:border-color .2s;}
+.browse-search input:focus{border-color:var(--amber);}
+.btn-sm{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;border:none;border-radius:7px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:2px;padding:9px 16px;cursor:pointer;}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;}
+.bcard{background:var(--s1);border:1px solid var(--b1);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;animation:fadeIn .2s ease both;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+.bcard:hover{border-color:rgba(245,158,11,.3);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.25);}
+.bc-head{background:var(--s2);padding:9px 13px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--b1);}
+.bc-brand{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:1px;padding:2px 7px;border-radius:4px;flex-shrink:0;}
+.bc-model{font-size:13px;font-weight:700;}
+.bc-years{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt2);}
+.bc-body{padding:9px 13px;display:grid;grid-template-columns:1fr 1fr;gap:5px;}
+.bc-item{font-size:11px;color:var(--txt2);}
+.bc-item strong{color:var(--txt);font-weight:600;}
+.done-badge{display:inline-flex;align-items:center;gap:3px;background:var(--green-d);border:1px solid rgba(16,185,129,.3);color:var(--green);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:8px;padding:1px 5px;margin-left:4px;}
+
+/* ═══════════════ CALCULATEUR ═══════════════ */
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+.calc-block{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:14px;}
+.calc-block.full{grid-column:1/-1;}
+.calc-block label{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:6px;}
+.calc-block input,.calc-block select{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:6px;color:var(--txt);font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:600;padding:9px 12px;outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.calc-block input:focus,.calc-block select:focus{border-color:var(--amber);}
+.calc-result{background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.06));border:1px solid rgba(245,158,11,.3);border-radius:10px;padding:16px;text-align:center;}
+.calc-total{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--amber);line-height:1;}
+.calc-detail{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2);margin-top:6px;line-height:1.8;}
+
+/* ═══════════════ HISTORIQUE ═══════════════ */
+.hist-list{display:flex;flex-direction:column;gap:8px;}
+.hist-item{background:var(--s1);border:1px solid var(--b1);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;}
+.hist-item:hover{border-color:rgba(245,158,11,.3);background:var(--card-hover);}
+.hist-brand{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:1px;padding:2px 8px;border-radius:4px;flex-shrink:0;}
+.hist-info{flex:1;}
+.hist-model{font-size:14px;font-weight:700;}
+.hist-meta{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--txt2);}
+.hist-date{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);flex-shrink:0;}
+.hist-empty{text-align:center;padding:40px 20px;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* ═══════════════ MODALS ═══════════════ */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.82);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:16px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--s1);border:1px solid var(--b2);border-radius:14px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;animation:slideIn .2s ease;}
+.modal-head{background:var(--s2);padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--b2);position:sticky;top:0;z-index:10;}
+.modal-head h3{font-size:16px;font-weight:700;flex:1;}
+.modal-close{background:var(--s3);border:1px solid var(--b2);color:var(--txt2);border-radius:7px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;transition:all .2s;}
+.modal-close:hover{background:var(--red-d);border-color:var(--red);color:var(--red);}
+.modal-body{padding:16px;}
+.modal-footer{padding:12px 16px;border-top:1px solid var(--b2);background:var(--s2);display:flex;gap:8px;border-radius:0 0 14px 14px;}
+
+/* Edit fields */
+.edit-field{margin-bottom:14px;}
+.edit-field label{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:5px;}
+.edit-field input,.edit-field textarea{width:100%;background:var(--s2);border:1px solid var(--b2);border-radius:7px;color:var(--txt);font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:500;padding:9px 12px;outline:none;transition:border-color .2s;resize:vertical;}
+.edit-field input:focus,.edit-field textarea:focus{border-color:var(--amber);box-shadow:0 0 0 2px var(--amber-d);}
+.edit-field .hint{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:3px;}
+.edit-remote-list{display:flex;flex-direction:column;gap:5px;}
+.edit-remote-row{display:flex;gap:5px;align-items:center;}
+.edit-remote-row input{flex:1;}
+.btn-remove{background:var(--red-d);border:1px solid rgba(239,68,68,.3);color:var(--red);border-radius:6px;width:28px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;flex-shrink:0;transition:all .2s;}
+.btn-remove:hover{background:var(--red);color:#fff;}
+.btn-add-row{background:var(--green-d);border:1px solid rgba(16,185,129,.3);color:var(--green);border-radius:6px;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;padding:6px 12px;cursor:pointer;transition:all .2s;margin-top:3px;}
+.btn-add-row:hover{background:var(--green);color:#000;}
+
+/* Buttons */
+.btn-save{background:linear-gradient(135deg,#f59e0b,#d97706);color:#000;border:none;border-radius:7px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;padding:10px 22px;cursor:pointer;flex:1;transition:all .2s;}
+.btn-save:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(245,158,11,.4);}
+.btn-cancel{background:transparent;border:1px solid var(--b2);color:var(--txt2);border-radius:7px;font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;padding:10px 14px;cursor:pointer;transition:all .2s;}
+.btn-cancel:hover{border-color:var(--red);color:var(--red);}
+
+/* Copy toast */
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);
+  background:var(--green);color:#000;
+  font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;
+  padding:10px 20px;border-radius:8px;
+  z-index:999;transition:transform .3s ease;
+  white-space:nowrap;pointer-events:none;
+}
+.toast.show{transform:translateX(-50%) translateY(0);}
+
+/* Print overlay */
+#print-overlay{display:none;position:fixed;inset:0;z-index:999;background:#fff;overflow-y:auto;padding:20px;}
+
+/* No results */
+.no-res{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted);}
+.no-res .ico{font-size:36px;margin-bottom:8px;}
+
+/* Footer */
+footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--b1);margin-top:32px;}
+
+@media(max-width:640px){
+  .cascade-steps{flex-direction:column;}
+  .step-arrow{display:none;}
+  .info-grid{grid-template-columns:1fr!important;}
+  .ig-block{border-right:none!important;border-bottom:1px solid var(--b1);}
+  .cards-grid{grid-template-columns:1fr;}
+  .calc-grid{grid-template-columns:1fr;}
+  .hdr-stats{display:none;}
+  .tab-nav-btn{font-size:9px;padding:7px 8px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="logo-ic">🔑</div>
+    <div class="logo-tx">
+      <h1>AutoLock Pro</h1>
+      <p>Serrurier Auto · Reparetonphone83 · Toulon 83</p>
+    </div>
+    <div class="hdr-actions">
+      <div class="hdr-stats">
+        <div class="hs"><div class="hs-v" id="s-total">0</div><div class="hs-l">Véhicules</div></div>
+        <div class="hs"><div class="hs-v" id="s-hist">0</div><div class="hs-l">Interventions</div></div>
+      </div>
+      <button class="hist-btn" onclick="showTab('tab-history')">📅 Historique</button>
+      <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Mode jour/nuit">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- LAST USED -->
+  <div id="last-used-bar" style="display:none" class="last-used-bar" onclick="reloadLast()">
+    <span class="lu-label">🔁 Dernier véhicule</span>
+    <span class="lu-val" id="lu-text"></span>
+    <span class="lu-hint">Appuyer pour recharger →</span>
+  </div>
+
+  <!-- ONGLETS -->
+  <div class="tab-nav">
+    <button class="tab-nav-btn active" id="btn-tab-search" onclick="showTab('tab-search')">🔍 Recherche</button>
+    <button class="tab-nav-btn" id="btn-tab-browse" onclick="showTab('tab-browse')">📋 Catalogue</button>
+    <button class="tab-nav-btn" id="btn-tab-calc" onclick="showTab('tab-calc')">💰 Calculateur</button>
+    <button class="tab-nav-btn" id="btn-tab-history" onclick="showTab('tab-history')">📅 Historique</button>
+  </div>
+
+  <!-- ═══ ONGLET RECHERCHE ═══ -->
+  <div class="tab-content active" id="tab-search">
+
+    <div class="cascade">
+      <div class="section-lbl">🔍 Sélection du véhicule client</div>
+      <div class="cascade-steps">
+        <div class="step active" id="step1">
+          <div class="step-header"><div class="step-num">1</div><div class="step-label">Marque</div></div>
+          <select id="sel-brand" onchange="onBrandChange()"><option value="">— Choisir la marque —</option></select>
+        </div>
+        <div class="step-arrow">›</div>
+        <div class="step" id="step2">
+          <div class="step-header"><div class="step-num">2</div><div class="step-label">Modèle</div></div>
+          <select id="sel-model" onchange="onModelChange()"><option value="">— Choisir le modèle —</option></select>
+        </div>
+        <div class="step-arrow">›</div>
+        <div class="step" id="step3">
+          <div class="step-header"><div class="step-num">3</div><div class="step-label">Année</div></div>
+          <select id="sel-year" onchange="onYearChange()"><option value="">— Choisir l'année —</option></select>
+        </div>
+        <div class="step-arrow">›</div>
+        <div class="step" id="step4">
+          <div class="step-header"><div class="step-num">4</div><div class="step-label">Résultat</div></div>
+          <select disabled style="opacity:.35;cursor:not-allowed"><option>Infos complètes ↓</option></select>
+        </div>
+        <button class="btn-reset-cascade" onclick="resetAll()">✕ Reset</button>
+      </div>
+    </div>
+
+    <!-- RESULT PANEL -->
+    <div id="result-panel">
+      <div id="version-alert-box"></div>
+      <div class="result-hero">
+        <div class="hero-head" id="hero-head"></div>
+        <div class="info-grid" id="info-grid-top" style="grid-template-columns:1fr"></div>
+        <div class="info-grid" id="info-grid-mid" style="grid-template-columns:1fr 1fr 1fr"></div>
+        <div class="action-bar">
+          <button class="btn-action primary" onclick="addToHistory()">✅ Marquer intervention</button>
+          <button class="btn-action" onclick="openEdit()" style="border-color:rgba(245,158,11,.3);color:var(--amber)">✏️ Modifier</button>
+          <button class="btn-action blue" onclick="copyInfos()">📋 Copier infos</button>
+          <button class="btn-action" onclick="openMK3()" style="border-color:rgba(168,85,247,.4);color:#c084fc">🔍 MK3</button>
+          <button class="btn-action" onclick="printFiche()">🖨️ Imprimer</button>
+          <button class="btn-action" onclick="resetAll()" style="margin-left:auto">← Nouveau</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-search -->
+
+  <!-- ═══ ONGLET CATALOGUE ═══ -->
+  <div class="tab-content" id="tab-browse">
+    <div class="brand-tabs" id="brand-tabs"></div>
+    <div class="browse-search">
+      <input type="text" id="browse-search" placeholder="Recherche : modèle, ID46, HU66, transpondeur, lame..." oninput="browseFilter()">
+      <button class="btn-sm" onclick="browseReset()">✕</button>
+    </div>
+    <div id="browse-results-count" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:10px;"></div>
+    <div class="cards-grid" id="browse-grid"></div>
+  </div>
+
+  <!-- ═══ ONGLET CALCULATEUR ═══ -->
+  <div class="tab-content" id="tab-calc">
+    <div class="calc-grid">
+      <div class="calc-block">
+        <label>Type d'intervention</label>
+        <select id="c-type" onchange="calcPrice()">
+          <option value="double">Double de clé</option>
+          <option value="akl">All-Keys-Lost</option>
+          <option value="plip">Programmation télécommande</option>
+          <option value="eeprom">Lecture EEPROM</option>
+          <option value="custom">Personnalisé</option>
+        </select>
+      </div>
+      <div class="calc-block">
+        <label>Coût pièce (€ HT)</label>
+        <input type="number" id="c-piece" value="0" min="0" oninput="calcPrice()">
+      </div>
+      <div class="calc-block">
+        <label>Main d'œuvre (€ HT)</label>
+        <input type="number" id="c-mo" value="60" min="0" oninput="calcPrice()">
+      </div>
+      <div class="calc-block">
+        <label>Déplacement (€ HT)</label>
+        <input type="number" id="c-dep" value="20" min="0" oninput="calcPrice()">
+      </div>
+      <div class="calc-block">
+        <label>TVA (%)</label>
+        <select id="c-tva" onchange="calcPrice()">
+          <option value="20">20% (standard)</option>
+          <option value="10">10%</option>
+          <option value="0">0% (auto-entrepreneur)</option>
+        </select>
+      </div>
+      <div class="calc-block">
+        <label>Marge souhaitée (%)</label>
+        <input type="number" id="c-marge" value="0" min="0" max="200" oninput="calcPrice()">
+      </div>
+      <div class="calc-block full calc-result">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px;">TOTAL À FACTURER</div>
+        <div class="calc-total" id="c-total">0,00 €</div>
+        <div class="calc-detail" id="c-detail"></div>
+      </div>
+      <div class="calc-block full">
+        <label>Notes devis (optionnel)</label>
+        <input type="text" id="c-notes" placeholder="Ex: Peugeot 307 CC 2006 — All-keys-lost — ID46">
+      </div>
+      <div class="calc-block full" style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="btn-save" style="flex:1" onclick="copyDevis()">📋 Copier le devis SMS</button>
+        <button class="btn-cancel" onclick="resetCalc()">🗑 Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ONGLET HISTORIQUE ═══ -->
+  <div class="tab-content" id="tab-history">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt2)"><span id="hist-count">0</span> interventions enregistrées</div>
+      <button class="btn-cancel" onclick="clearHistory()" style="font-size:11px;padding:6px 12px;">🗑 Effacer tout</button>
+    </div>
+    <div class="hist-list" id="hist-list">
+      <div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>
+    </div>
+  </div>
+
+</main>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="edit-overlay">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>✏️</div><h3 id="edit-title">Modifier la fiche</h3>
+      <div class="modal-close" onclick="closeEdit()">✕</div>
+    </div>
+    <div class="modal-body">
+      <div style="background:var(--blue-d);border:1px solid rgba(59,130,246,.25);border-radius:8px;padding:10px 12px;margin-bottom:14px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#93c5fd;line-height:1.6;">
+        ℹ️ Corrige les données depuis l'app Xhorse. Sauvegardé sur cet appareil.
+      </div>
+      <div class="edit-field">
+        <label>Télécommandes Xhorse</label>
+        <div class="edit-remote-list" id="edit-remote-list"></div>
+        <button class="btn-add-row" onclick="addRemoteField()">+ Ajouter</button>
+        <div class="hint">Ex: XN-Wireless · XE-Wireless · ID: 0524 443</div>
+      </div>
+      <div class="edit-field">
+        <label>Fréquence exacte</label>
+        <input type="text" id="edit-freq" placeholder="433.92 MHz ASK">
+      </div>
+      <div class="edit-field">
+        <label>Transpondeur (si différent)</label>
+        <input type="text" id="edit-transponder">
+      </div>
+      <div class="edit-field">
+        <label>Lame (si différente)</label>
+        <input type="text" id="edit-blade">
+      </div>
+      <div class="edit-field">
+        <label>Mes notes personnelles</label>
+        <textarea id="edit-notes" rows="3" placeholder="Remarques après intervention..."></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-save" onclick="saveEdit()">💾 SAUVEGARDER</button>
+      <button class="btn-cancel" onclick="resetEdit()">🗑 Effacer modifs</button>
+    </div>
+  </div>
+</div>
+
+<!-- PRINT OVERLAY -->
+<div id="print-overlay">
+  <div style="max-width:640px;margin:0 auto;font-family:Arial,sans-serif;color:#111;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <span style="font-size:11px;color:#666;">AutoLock Pro — Reparetonphone83 — Toulon (83)</span>
+      <button onclick="closePrint()" style="background:#111;color:#fff;border:none;border-radius:6px;padding:7px 14px;font-size:12px;cursor:pointer;">✕ Fermer</button>
+    </div>
+    <div id="print-content"></div>
+    <div style="margin-top:16px;display:flex;gap:8px;">
+      <button onclick="window.print()" style="background:#f59e0b;color:#000;border:none;border-radius:6px;padding:11px 20px;font-size:14px;font-weight:bold;cursor:pointer;flex:1;">🖨️ Imprimer / PDF</button>
+      <button onclick="closePrint()" style="background:#e5e7eb;color:#111;border:none;border-radius:6px;padding:11px 16px;font-size:13px;cursor:pointer;">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
+<script>
+// ════════════════════════════════════════════════════
+//  DATABASE — enrichie avec nbKeys, obdPos, timeMin
+// ════════════════════════════════════════════════════
+const DB = [
+// ══════════════════════════════════════════
+// RENAULT
+// ══════════════════════════════════════════
+{brand:"Renault",model:"Clio II",yearStart:1998,yearEnd:2001,version:"Phase 1",diff:"easy",
+ transponder:"PCF7930 / PCF7931 (ID33 Crypto1)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN (Universel fil)","XN004 coque 3 boutons"],
+ protocol:"BSI Sagem",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Crypto1 — version la plus simple. PCF7930 clonable avec pince magnétique standard.",
+ tips:["VA6 + PCF7930 = combo Clio II Phase 1 indispensable en stock","PIN calculable sans outil"]},
+
+{brand:"Renault",model:"Clio II",yearStart:2001,yearEnd:2005,version:"Phase 2",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XKRN04EN","XN004 coque 3 boutons"],
+ protocol:"BSI Sagem / Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Phase 2 passe en Crypto2 (ID46). PIN OBD via OBDStar G3.",
+ tips:["Vérifier le millésime : 2001 peut être Phase 1 ou Phase 2"]},
+
+{brand:"Renault",model:"Clio III",yearStart:2005,yearEnd:2009,version:"Phase 1",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XN004 coque 3 boutons"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PIN via OBD G3. Clé plip intégrée sur la plupart des versions.",
+ tips:["ID46 clone standard — prévoir en stock"]},
+
+{brand:"Renault",model:"Clio III",yearStart:2009,yearEnd:2012,version:"Phase 2 / RS",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XKRN04EN"],
+ protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Phase 2 identique côté immo. RS même base électronique."},
+
+{brand:"Renault",model:"Clio IV",yearStart:2012,yearEnd:2019,version:"Phase 1 & 2",diff:"medium",
+ transponder:"PCF7961 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"UCH renforcé. PIN OBD possible mais certaines versions nécessitent EEPROM.",
+ tips:["Clio IV = UCH différent de Clio III — ne pas confondre les procédures"]},
+
+{brand:"Renault",model:"Mégane II",yearStart:2002,yearEnd:2006,version:"Phase 1",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XKRN04EN"],
+ protocol:"BSM2 Siemens",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"BSM2 = boîtier servitude moteur. PIN OBD en premier, EEPROM si verrouillé.",
+ tips:["BSM2 sous capot côté droit passager","Clé carte Mégane 2 non compatible universelle"]},
+
+{brand:"Renault",model:"Mégane II",yearStart:2006,yearEnd:2009,version:"Phase 2 / Facelift",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"BSM2 Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Facelift 2006 — BSM2 Valeo. Certains BSM2 Valeo bloquent après 5 tentatives OBD."},
+
+{brand:"Renault",model:"Mégane III",yearStart:2008,yearEnd:2012,version:"Phase 1",diff:"hard",
+ transponder:"PCF7947 (ID46 AES)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XN004 coque"],
+ protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:60,
+ notes:"UCH crypté AES — sécurité renforcée. PIN OBD en premier systématiquement.",
+ tips:["10 tentatives max avant verrouillage UCH","EEPROM UCH = HC12 ou ST95P08"]},
+
+{brand:"Renault",model:"Mégane III",yearStart:2012,yearEnd:2016,version:"Phase 2 / Facelift",diff:"hard",
+ transponder:"PCF7947 (ID46 AES / CAN)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN Valeo renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:75,
+ notes:"Facelift 2012 — UCH encore plus sécurisé.",
+ tips:["Outil OBDStar G3 recommandé pour lecture PIN"]},
+
+{brand:"Renault",model:"Scénic II",yearStart:2003,yearEnd:2009,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XKRN04EN"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Identique Mégane II côté immo."},
+
+{brand:"Renault",model:"Scénic III",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7947 (ID46 AES)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:65,
+ notes:"Même architecture que Mégane III."},
+
+{brand:"Renault",model:"Laguna II",yearStart:2001,yearEnd:2007,version:"Toutes phases",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XKRN04EN"],
+ protocol:"UCH Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Clé carte Laguna II spécifique — non reproductible par télécommande universelle.",
+ tips:["Clé carte = outil spécialisé ou OEM uniquement"]},
+
+{brand:"Renault",model:"Laguna III",yearStart:2007,yearEnd:2015,version:"Toutes phases",diff:"hard",
+ transponder:"PCF7947 (ID46 AES)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord gauche",timeMin:70,
+ notes:"Laguna III = UCH renforcé. Clé carte ou clé plip selon version.",
+ tips:["Vérifier le type de clé présente avant commande pièce"]},
+
+{brand:"Renault",model:"Kangoo II",yearStart:2008,yearEnd:2013,version:"Phase 1",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN","XN004 coque"],
+ protocol:"BSI UCH",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PIN OBD G3 rapide. ID46 clone standard.",
+ tips:["Utilitaire très courant — stock VA6 + PCF7936 obligatoire"]},
+
+{brand:"Renault",model:"Kangoo II",yearStart:2013,yearEnd:2021,version:"Phase 2",diff:"easy",
+ transponder:"PCF7947 (ID46 AES)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Phase 2 passe en PCF7947. PIN OBD toujours disponible via G3."},
+
+{brand:"Renault",model:"Trafic II",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Triple jumeau : Renault Trafic / Opel Vivaro / Nissan Primastar.",
+ tips:["VA6 + PCF7936 = même clé pour les 3 marques","Très répandu en milieu artisanal zone 83"]},
+
+{brand:"Renault",model:"Trafic III",yearStart:2014,yearEnd:2022,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7961 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"Trafic III = UCH renforcé par rapport au II. Partagé NV300/Primastar III.",
+ tips:["Confirmer génération Trafic avant choisir la procédure"]},
+
+{brand:"Renault",model:"Master III",yearStart:2010,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7947 (ID46 AES)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Versions NV400/Interstar partagées."},
+
+{brand:"Renault",model:"Captur I",yearStart:2013,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7961 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Crossover très populaire. UCH Valeo renforcé.",
+ tips:["Très courant — à traiter comme Mégane III côté procédure"]},
+
+{brand:"Renault",model:"Duster I",yearStart:2010,yearEnd:2018,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / PCF7947 selon année",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Avant 2014 : PCF7936. Après 2014 : PCF7947.",
+ tips:["Très répandu en PACA/Var — prévoir en stock permanent"]},
+
+{brand:"Renault",model:"Twingo II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Même base UCH que Clio III. Simple à programmer."},
+
+// ══════════════════════════════════════════
+// PEUGEOT
+// ══════════════════════════════════════════
+{brand:"Peugeot",model:"106",yearStart:1996,yearEnd:2003,version:"Toutes versions",diff:"easy",
+ transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
+ superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Temic 11 verre très simple. BSI basique. Clé et plip séparés."},
+
+{brand:"Peugeot",model:"206",yearStart:1998,yearEnd:2003,version:"Phase 1",diff:"easy",
+ transponder:"Temic 11 (ID11 — verre cylindrique)",tColor:"tg",
+ superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN","XN001 coque Peugeot 3 boutons"],
+ protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Transpondeur verre ID11 — copie magnétique directe.",
+ tips:["Temic 11 = verre transparent sans puce externe","Lame VA2 = standard PSA — stock impératif"]},
+
+{brand:"Peugeot",model:"206",yearStart:2003,yearEnd:2010,version:"Phase 2 / SW / CC",diff:"easy",
+ transponder:"Temic 11 / PCF7936 selon version",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN","XN001 coque"],
+ protocol:"BSI Siemens",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Majorité Temic 11. Certains post-2005 en ID46 PCF7936.",
+ tips:["Lire le transpondeur en place avant commande"]},
+
+{brand:"Peugeot",model:"207",yearStart:2006,yearEnd:2010,version:"Phase 1",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN","XN001 coque"],
+ protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PIN OBD G3 rapide.",
+ tips:["VA2 et HU83 = profils interchangeables sur 207"]},
+
+{brand:"Peugeot",model:"207",yearStart:2010,yearEnd:2014,version:"Phase 2 / SW",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Phase 2 sans changement d'immobilisant."},
+
+{brand:"Peugeot",model:"307 / 307 CC / 307 SW",yearStart:2001,yearEnd:2005,version:"Phase 1",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / SX9",pick:"Litchi VA2",
+ remotes:["XKPU01EN","XN001 coque"],
+ protocol:"BSI Siemens",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord gauche, derrière le volant",timeMin:40,
+ notes:"All-keys-lost : PIN BSI via OBD DiagBox 9. Si BSI corrompu → EEPROM HC08.",
+ tips:["BSI Siemens sous tableau de bord côté conducteur","HC08 = puce EEPROM — lecture EZP2019+"]},
+
+{brand:"Peugeot",model:"307 / 307 CC / 307 SW",yearStart:2005,yearEnd:2008,version:"Phase 2",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord gauche, derrière le volant",timeMin:40,
+ notes:"Phase 2 = BSI Valeo remplace Siemens. Même workflow DiagBox 9.",
+ tips:["DiagBox 9 via VMware opérationnel"]},
+
+{brand:"Peugeot",model:"308 Gen1",yearStart:2007,yearEnd:2011,version:"Phase 1",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 3G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"Même plateforme que 207 Phase 2."},
+
+{brand:"Peugeot",model:"308 Gen1",yearStart:2011,yearEnd:2013,version:"Phase 2 / SW",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Delphi / Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"Transition vers Hitag2.",
+ tips:["Lire le type de BSI avant de choisir la procédure"]},
+
+{brand:"Peugeot",model:"308 Gen2",yearStart:2013,yearEnd:2021,version:"Toutes phases",diff:"hard",
+ transponder:"Hitag2 / ID49",tColor:"tr",
+ superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 4G / Delphi renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Gen2 = sécurité renforcée. EEPROM souvent nécessaire pour AKL.",
+ tips:["BSI Delphi ou Valeo — vérifier avant intervention"]},
+
+{brand:"Peugeot",model:"406",yearStart:1995,yearEnd:2004,version:"Toutes phases",diff:"easy",
+ transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
+ superChip:"XT27A",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Temic 11 verre. BSI simple."},
+
+{brand:"Peugeot",model:"407",yearStart:2004,yearEnd:2011,version:"Toutes phases",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 2G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PIN OBD standard. Très courant en flotte."},
+
+{brand:"Peugeot",model:"508",yearStart:2011,yearEnd:2014,version:"Phase 1",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"Hitag2 standard. PEPS possible sur haut de gamme."},
+
+{brand:"Peugeot",model:"508",yearStart:2014,yearEnd:2018,version:"Phase 2",diff:"hard",
+ transponder:"Hitag2 / ID49 renforcé",tColor:"tr",
+ superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 4G CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:75,
+ notes:"Sécurité renforcée post-2014.",
+ tips:["EEPROM BSI = ST95P08 sur versions Valeo — lecture EZP2019+"]},
+
+{brand:"Peugeot",model:"2008 Gen1",yearStart:2013,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"Crossover populaire. Même base 208/308 Gen1.",
+ tips:["Très répandu en zone urbaine"]},
+
+{brand:"Peugeot",model:"3008 Gen1",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"SUV populaire. Même architecture 308 Gen1."},
+
+{brand:"Peugeot",model:"Partner II",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo partagé Citroën",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Partagé avec Citroën Berlingo II.",
+ tips:["Très répandu livraison — interventions fréquentes"]},
+
+{brand:"Peugeot",model:"Expert II",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Partagé Citroën Jumpy / Toyota ProAce."},
+
+{brand:"Peugeot",model:"Boxer III",yearStart:2006,yearEnd:2021,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / PCF7947 selon millésime",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKPU01EN"],
+ protocol:"BSI Fiat/PSA partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Triple jumeau Peugeot Boxer / Citroën Jumper / Fiat Ducato.",
+ tips:["SIP22 = lame laser crantée — indispensable en stock"]},
+
+// ══════════════════════════════════════════
+// CITROËN
+// ══════════════════════════════════════════
+{brand:"Citroën",model:"Saxo",yearStart:1996,yearEnd:2004,version:"Toutes versions",diff:"easy",
+ transponder:"Temic 11 (ID11 — verre)",tColor:"tg",
+ superChip:"XT27A",blade:"VA2 / SX9",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Siemens Gen1",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Temic 11 verre. Voiture ancienne mais encore présente."},
+
+{brand:"Citroën",model:"C1 (P10)",yearStart:2005,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"4D65 / ID47 (Toyota partagé)",tColor:"tg",
+ superChip:"XT27B",blade:"TOY43 / VA2",pick:"Litchi TOY43",
+ remotes:["XKCU00EN","XKTO00EN"],
+ protocol:"Toyota partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Partagé avec Peugeot 107 / Toyota Aygo. Transpondeur Toyota standard."},
+
+{brand:"Citroën",model:"C2",yearStart:2003,yearEnd:2009,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Citadine sportive. Même base PSA ID46."},
+
+{brand:"Citroën",model:"C3 Gen1",yearStart:2002,yearEnd:2009,version:"Phase 1 & 2",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN","XN001 coque"],
+ protocol:"BSI Valeo / Siemens",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Architecture BSI partagée Peugeot 207."},
+
+{brand:"Citroën",model:"C3 Gen2",yearStart:2009,yearEnd:2016,version:"Phase 1 & 2",diff:"easy",
+ transponder:"PCF7936 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 3G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Post-2012 : Hitag2 possible.",
+ tips:["2009–2012 = PCF7936 / 2012–2016 = Hitag2 possible"]},
+
+{brand:"Citroën",model:"C3 Aircross",yearStart:2017,yearEnd:2022,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / ID49",tColor:"tr",
+ superChip:"XT27B / XT57B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 5G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Génération récente — sécurité renforcée BSI 5G.",
+ tips:["Crossover très populaire — prévoir outillage adapté"]},
+
+{brand:"Citroën",model:"C4 Gen1",yearStart:2004,yearEnd:2010,version:"Berline / Coupé / Picasso",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 2G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"PIN OBD DiagBox 9."},
+
+{brand:"Citroën",model:"C4 Picasso / Grand C4",yearStart:2006,yearEnd:2013,version:"Gen1",diff:"medium",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 3G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"BSI Valeo 3G standard."},
+
+{brand:"Citroën",model:"C4 Picasso / Grand C4",yearStart:2013,yearEnd:2018,version:"Gen2",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 4G / Delphi",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"Gen2 = Hitag2.",
+ tips:["Identifier fabricant BSI (Valeo vs Delphi)"]},
+
+{brand:"Citroën",model:"C5 Gen2",yearStart:2008,yearEnd:2017,version:"Toutes phases",diff:"medium",
+ transponder:"Hitag2 / ID46",tColor:"ta",
+ superChip:"XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo 4G",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:45,
+ notes:"Certaines versions ProxiCard — protocole différent des clés classiques."},
+
+{brand:"Citroën",model:"C8",yearStart:2002,yearEnd:2014,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7936 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA2",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Monospace partagé Peugeot 807 / Fiat Ulysse."},
+
+{brand:"Citroën",model:"Berlingo II",yearStart:2008,yearEnd:2018,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / Hitag2 selon année",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Identique Partner II.",
+ tips:["Utilitaire incontournable — stock permanent VA2 + PCF7936"]},
+
+{brand:"Citroën",model:"Dispatch / Jumpy II",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"VA2 / HU83",pick:"Litchi VA2",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Valeo",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Partagé Peugeot Expert / Toyota ProAce."},
+
+{brand:"Citroën",model:"Jumper",yearStart:2006,yearEnd:2021,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / PCF7947",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKCU00EN"],
+ protocol:"BSI Fiat/PSA",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Identique Peugeot Boxer / Fiat Ducato."},
+
+// ══════════════════════════════════════════
+// VOLKSWAGEN
+// ══════════════════════════════════════════
+{brand:"Volkswagen",model:"Golf III",yearStart:1991,yearEnd:1997,version:"Toutes versions",diff:"easy",
+ transponder:"Sans immobilisant / Temic 11 tardif",tColor:"tg",
+ superChip:"XT27A",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"Sans IMMO (pré-1997)",method:["CALC"],freq:"433.92 MHz ASK",
+ nbKeys:6,obdPos:"Sous tableau de bord, côté conducteur",timeMin:10,
+ notes:"Golf III sans immobilisant sur les versions avant 1997. Temic 11 verre sur les tardives.",
+ tips:["Pas d'immo = double simple sans programmation"]},
+
+{brand:"Volkswagen",model:"Golf IV",yearStart:1997,yearEnd:2003,version:"Phase 1",diff:"medium",
+ transponder:"Megamos 48 (ID48 Crypto1)",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN","XKB501EN"],
+ protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord gauche, colonne de direction",timeMin:35,
+ notes:"IMMO3 standard VW Groupe. ID48 Crypto1 clonable.",
+ tips:["IMMO3 = boîtier séparé sous tableau de bord","HU66 = lame double tranchant VW Groupe"]},
+
+{brand:"Volkswagen",model:"Golf IV",yearStart:2003,yearEnd:2006,version:"Phase 2 / GTI",diff:"medium",
+ transponder:"Megamos 48 (ID48) — IMMO3+",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"IMMO3+",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord gauche, colonne de direction",timeMin:40,
+ notes:"IMMO3+ = version renforcée fin de vie Golf IV.",
+ tips:["Distinguer IMMO3 et IMMO3+ avant intervention"]},
+
+{brand:"Volkswagen",model:"Golf V",yearStart:2003,yearEnd:2006,version:"Phase 1",diff:"medium",
+ transponder:"ID48 Megamos 48",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN","XKVW00EN"],
+ protocol:"IMMO3+",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Début Golf V encore sur IMMO3+."},
+
+{brand:"Volkswagen",model:"Golf V",yearStart:2006,yearEnd:2008,version:"Phase 2 / GTI / R32",diff:"hard",
+ transponder:"Hitag2 (ID46 PCF7936)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Phase 2 Golf V passe en IMMO4 Hitag2.",
+ tips:["IMMO4 = niveau de difficulté nettement supérieur à IMMO3"]},
+
+{brand:"Volkswagen",model:"Golf VI",yearStart:2008,yearEnd:2013,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN","XKVW01EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
+ notes:"IMMO4 Hitag2 généralisé. KESSY fréquent.",
+ tips:["Préparer VVDI2 ou outil IMMO4 compatible avant intervention"]},
+
+{brand:"Volkswagen",model:"Polo 9N / 9N3",yearStart:2001,yearEnd:2009,version:"Toutes versions",diff:"medium",
+ transponder:"Megamos 48 (ID48)",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"IMMO3 classique. PIN souvent calculable."},
+
+{brand:"Volkswagen",model:"Polo 6R",yearStart:2009,yearEnd:2014,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Polo 6R = IMMO4 Hitag2.",
+ tips:["Même procédure Golf VI"]},
+
+{brand:"Volkswagen",model:"Passat B6",yearStart:2005,yearEnd:2010,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN","XKVW01EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
+ notes:"B6 Hitag2. KESSY possible.",
+ tips:["Clé flip disponible Xhorse"]},
+
+{brand:"Volkswagen",model:"Passat B7",yearStart:2010,yearEnd:2015,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
+ superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN"],
+ protocol:"IMMO4 CAN",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
+ notes:"B7 tardif peut passer en Hitag Pro. KESSY fréquent."},
+
+{brand:"Volkswagen",model:"Transporter T5",yearStart:2003,yearEnd:2009,version:"Phase 1",diff:"medium",
+ transponder:"ID48 Megamos 48",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"T5 précoce : IMMO3 ID48.",
+ tips:["Clé longue double tranchant HU66 — stock permanent recommandé"]},
+
+{brand:"Volkswagen",model:"Transporter T5",yearStart:2009,yearEnd:2015,version:"Restylé / Phase 2",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"T5 restylé 2009 passe en IMMO4 Hitag2.",
+ tips:["Confirmer millésime exact — bascule IMMO3/IMMO4 variable"]},
+
+{brand:"Volkswagen",model:"Caddy III",yearStart:2004,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"ID48 / Hitag2 selon année",tColor:"tb",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW01EN"],
+ protocol:"IMMO3/IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Caddy III 2004–2010 : IMMO3. 2010–2015 : IMMO4.",
+ tips:["Vérifier millésime pour choisir la procédure"]},
+
+{brand:"Volkswagen",model:"Tiguan I",yearStart:2007,yearEnd:2016,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKVW00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:65,
+ notes:"SUV très courant. IMMO4 Hitag2. KESSY sur versions Premium."},
+
+// ══════════════════════════════════════════
+// AUDI
+// ══════════════════════════════════════════
+{brand:"Audi",model:"A3 8L",yearStart:1996,yearEnd:2003,version:"Toutes versions",diff:"medium",
+ transponder:"Megamos 48 (ID48 Crypto1)",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU01EN","XKB502EN"],
+ protocol:"IMMO2 / IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
+ notes:"8L précoce : IMMO2. Tardif : IMMO3. ID48 standard VW Groupe.",
+ tips:["Identifier version IMMO (2 vs 3) avant intervention"]},
+
+{brand:"Audi",model:"A3 8P",yearStart:2003,yearEnd:2008,version:"Phase 1",diff:"hard",
+ transponder:"Hitag2 (ID46 PCF7936)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU01EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"IMMO4 Hitag2. KESSY optionnel.",
+ tips:["VVDI2 ou outil IMMO4 nécessaire","EEPROM calculateur moteur pour AKL"]},
+
+{brand:"Audi",model:"A3 8P",yearStart:2008,yearEnd:2013,version:"Phase 2 / S3",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
+ superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU02EN"],
+ protocol:"IMMO4 renforcé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:80,
+ notes:"Phase 2 tardive 2011+ peut passer en Hitag Pro."},
+
+{brand:"Audi",model:"A4 B6",yearStart:2000,yearEnd:2004,version:"Toutes versions",diff:"medium",
+ transponder:"ID48 Megamos 48",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU01EN"],
+ protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
+ notes:"IMMO3 standard. ID48 clonable.",
+ tips:["Même base Golf IV tardif / A3 8L"]},
+
+{brand:"Audi",model:"A4 B7",yearStart:2004,yearEnd:2008,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU01EN","XKAU02EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"B7 passe en IMMO4 Hitag2.",
+ tips:["Confirmer B6 vs B7 — look identique, immo très différent"]},
+
+{brand:"Audi",model:"A4 B8",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro tardif",tColor:"tr",
+ superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU02EN"],
+ protocol:"IMMO4 MQB",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
+ notes:"B8 post-2012 : Hitag Pro. IMMO4 renforcé. Smart Key possible."},
+
+{brand:"Audi",model:"A6 C6",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU02EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
+ notes:"C6 avec IMMO4. Clé longue Smart optionnelle."},
+
+{brand:"Audi",model:"Q5 (8R)",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro",tColor:"tr",
+ superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKAU02EN"],
+ protocol:"IMMO4 MQB",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
+ notes:"SUV premium très courant. KESSY standard sur la plupart des versions.",
+ tips:["Smart Key = protocole séparé du double de clé standard"]},
+
+// ══════════════════════════════════════════
+// SEAT
+// ══════════════════════════════════════════
+{brand:"Seat",model:"Ibiza 6L",yearStart:2002,yearEnd:2008,version:"Toutes versions",diff:"medium",
+ transponder:"Megamos 48 (ID48)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSE00EN","XKVW01EN"],
+ protocol:"IMMO3 VW partagé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
+ notes:"Architecture VW Groupe. IMMO3 ID48.",
+ tips:["Même procédure Polo 9N"]},
+
+{brand:"Seat",model:"Ibiza 6J",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSE00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"6J passe en IMMO4 Hitag2.",
+ tips:["Même procédure Polo 6R"]},
+
+{brand:"Seat",model:"León 1P",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSE00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Plateforme Golf V/VI. IMMO4.",
+ tips:["Même procédure Golf V Phase 2"]},
+
+{brand:"Seat",model:"Altea / Toledo III",yearStart:2004,yearEnd:2015,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tr",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSE00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Plateforme Golf V. Altea XL même base."},
+
+// ══════════════════════════════════════════
+// SKODA
+// ══════════════════════════════════════════
+{brand:"Skoda",model:"Fabia I",yearStart:1999,yearEnd:2007,version:"Toutes versions",diff:"medium",
+ transponder:"Megamos 48 (ID48)",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSK00EN","XKVW01EN"],
+ protocol:"IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"IMMO3 standard. ID48.",
+ tips:["Même procédure Polo 9N"]},
+
+{brand:"Skoda",model:"Fabia II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tg",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSK00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Fabia II = IMMO4 Hitag2.",
+ tips:["Même procédure Polo 6R"]},
+
+{brand:"Skoda",model:"Octavia I",yearStart:1996,yearEnd:2004,version:"Toutes versions",diff:"medium",
+ transponder:"Megamos 48 (ID48)",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSK00EN","XKVW01EN"],
+ protocol:"IMMO2 / IMMO3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:35,
+ notes:"IMMO2 sur les précoces, IMMO3 sur tardifs."},
+
+{brand:"Skoda",model:"Octavia II",yearStart:2004,yearEnd:2013,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tg",
+ superChip:"XT27B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSK00EN"],
+ protocol:"IMMO4",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Octavia II = IMMO4 Hitag2. Très répandu en Europe.",
+ tips:["Même procédure Golf V Phase 2 / Golf VI"]},
+
+{brand:"Skoda",model:"Superb II",yearStart:2008,yearEnd:2015,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro tardif",tColor:"tg",
+ superChip:"XT57B",blade:"HU66",pick:"Litchi HU66",
+ remotes:["XKSK00EN"],
+ protocol:"IMMO4",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:70,
+ notes:"Berline premium Skoda. KESSY optionnel."},
+
+// ══════════════════════════════════════════
+// BMW / MINI
+// ══════════════════════════════════════════
+{brand:"BMW",model:"Série 3 E46",yearStart:1998,yearEnd:2006,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7930 / PCF7931 (ID33 / ID11)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ remotes:["XKBM00EN"],
+ protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:40,
+ notes:"EWS3 = Electronic Wallet System. Pas de CAS.",
+ tips:["EWS3 boîtier noir sous colonne de direction","Lecture EEPROM EWS3 si all-keys-lost"]},
+
+{brand:"BMW",model:"Série 5 E39",yearStart:1995,yearEnd:2003,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7930 / PCF7931 (ID11/ID33)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ remotes:["XKBM00EN"],
+ protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, colonne de direction",timeMin:40,
+ notes:"Même EWS3 que E46.",
+ tips:["Procédures identiques à la Série 3 E46"]},
+
+{brand:"BMW",model:"Série 1 E87",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKBM00EN","XKBM01EN"],
+ protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
+ notes:"CAS2 jusqu'en 2008, CAS3 ensuite. Crypto3 — très sécurisé.",
+ tips:["CAS2 = boîtier noir","CAS3 = boîtier vert, encore plus sécurisé"]},
+
+{brand:"BMW",model:"Série 3 E90 / E91 / E92",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKBM00EN","XKBM01EN"],
+ protocol:"CAS2 / CAS3 / CAS3+",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:100,
+ notes:"CAS3+ sur E90 tardif (2010+).",
+ tips:["Confirmer version CAS avant commande clé"]},
+
+{brand:"BMW",model:"Série 5 E60 / E61",yearStart:2003,yearEnd:2010,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKBM01EN"],
+ protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:100,
+ notes:"CAS3 sur versions tardives post-2007.",
+ tips:["E60 2003–2007 : CAS2 / E60 2007–2010 : CAS3"]},
+
+{brand:"BMW",model:"Série 5 F10 / F11",yearStart:2010,yearEnd:2017,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag Pro (ID4A — CAS4)",tColor:"tr",
+ superChip:"XT57B",blade:"HU100 / HU100R",pick:"Litchi HU100",
+ remotes:["XKBM01EN","XKBM02EN"],
+ protocol:"CAS4 / CAS4+",method:["BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous tableau de bord central",timeMin:120,
+ notes:"CAS4+ = sécurité maximale BMW. Clé KESSY obligatoire.",
+ tips:["HU100 = lame F-Series BMW","Budget intervention élevé à prévoir"]},
+
+{brand:"BMW",model:"X3 E83",yearStart:2003,yearEnd:2010,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7944 (ID44 Crypto3)",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKBM01EN"],
+ protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
+ notes:"CAS2 début, CAS3 après 2007."},
+
+{brand:"BMW",model:"X5 E53 / E70",yearStart:1999,yearEnd:2013,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7930 / PCF7944 selon année",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HU58 / HU92",pick:"Litchi HU58",
+ remotes:["XKBM01EN"],
+ protocol:"EWS3 / CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS/EWS sous colonne de direction",timeMin:90,
+ notes:"E53 : EWS3. E70 2007+ : CAS3.",
+ tips:["Confirmer génération E53 vs E70 et version CAS"]},
+
+{brand:"MINI",model:"Cooper R50 / R52 / R53",yearStart:2001,yearEnd:2006,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7930 / PCF7931 (ID33/ID11)",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"HU58",pick:"Litchi HU58",
+ remotes:["XKBM00EN"],
+ protocol:"EWS3",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous colonne de direction",timeMin:40,
+ notes:"Architecture BMW E46. EWS3 identique."},
+
+{brand:"MINI",model:"Cooper R55 / R56 / R57",yearStart:2006,yearEnd:2014,version:"Toutes versions",diff:"hard",
+ transponder:"PCF7944 / ID46 Hitag2",tColor:"tr",
+ superChip:"XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKBM00EN"],
+ protocol:"CAS2 / CAS3",method:["EEPROM","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Boîtier CAS sous colonne de direction",timeMin:90,
+ notes:"R55/R56 début : CAS2. Tardifs : CAS3."},
+
+// ══════════════════════════════════════════
+// MERCEDES
+// ══════════════════════════════════════════
+{brand:"Mercedes",model:"Classe A W168",yearStart:1997,yearEnd:2004,version:"Toutes versions",diff:"medium",
+ transponder:"IR Infrarouge + ID40 verre",tColor:"tc",
+ superChip:"XT27A",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN","XKE001"],
+ protocol:"EIS Infrarouge",method:["IR","OBD"],freq:"433 MHz (EU) / 315 MHz (US) / IR",
+ nbKeys:3,obdPos:"Tableau de bord central, sous radio",timeMin:30,
+ notes:"Télécommande IR. Tester réception IR avant de conclure à une clé défectueuse.",
+ tips:["315 MHz aux USA, 433 MHz en Europe"]},
+
+{brand:"Mercedes",model:"Classe A W169",yearStart:2004,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"NEC + ID46 Philips",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
+ notes:"Passage à NEC sur W169."},
+
+{brand:"Mercedes",model:"Classe B W245",yearStart:2005,yearEnd:2011,version:"Toutes versions",diff:"medium",
+ transponder:"NEC + ID46 Philips",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
+ notes:"Même famille que W169."},
+
+{brand:"Mercedes",model:"Classe C W203",yearStart:2000,yearEnd:2004,version:"Phase 1",diff:"medium",
+ transponder:"NEC + ID40",tColor:"tc",
+ superChip:"NEC BGA (pas de super chip)",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
+ notes:"EIS = Electronic Ignition Switch. NEC + ID40."},
+
+{brand:"Mercedes",model:"Classe C W203",yearStart:2004,yearEnd:2007,version:"Facelift",diff:"medium",
+ transponder:"NEC + ID46 Philips",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:55,
+ notes:"Facelift 2004 : NEC renforcé, passage partiel à ID46."},
+
+{brand:"Mercedes",model:"Classe C W204",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"hard",
+ transponder:"ID46 NEC+Philips / Hitag Pro tardif",tColor:"tr",
+ superChip:"XT57B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC avancé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:80,
+ notes:"W204 nettement plus sécurisé que W203."},
+
+{brand:"Mercedes",model:"Classe E W211",yearStart:2002,yearEnd:2009,version:"Toutes versions",diff:"hard",
+ transponder:"NEC + ID46 Philips",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:75,
+ notes:"W211 berline/break très répandu. Smart Key possible sur finitions AMG."},
+
+{brand:"Mercedes",model:"Classe E W212",yearStart:2009,yearEnd:2016,version:"Toutes versions",diff:"hard",
+ transponder:"ID46 NEC+Philips / Hitag Pro",tColor:"tr",
+ superChip:"XT57B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC avancé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:85,
+ notes:"W212 = sécurité renforcée par rapport à W211."},
+
+{brand:"Mercedes",model:"Classe ML W163 / W164",yearStart:1997,yearEnd:2011,version:"Toutes versions",diff:"medium",
+ transponder:"ID40 → ID46 NEC selon génération",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:55,
+ notes:"W163 : ID40 simple. W164 : ID46 NEC."},
+
+{brand:"Mercedes",model:"Sprinter W906",yearStart:2006,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"NEC + ID46 Philips",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64 / CR2",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
+ notes:"Utilitaire très répandu. PIN EIS calculable.",
+ tips:["W906 = intervention courante — procédure maîtrisée"]},
+
+{brand:"Mercedes",model:"Vito / Viano W639",yearStart:2003,yearEnd:2014,version:"Toutes versions",diff:"medium",
+ transponder:"ID40 / ID46 NEC",tColor:"tc",
+ superChip:"XT27A / XT27B",blade:"HU64",pick:"Litchi HU64",
+ remotes:["XKME00EN"],
+ protocol:"EIS NEC",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"EIS = contacteur d'allumage lui-même",timeMin:50,
+ notes:"Même famille W203/W204.",
+ tips:["Avant 2007 : NEC+ID40 / Après 2007 : NEC+ID46"]},
+
+// ══════════════════════════════════════════
+// OPEL
+// ══════════════════════════════════════════
+{brand:"Opel",model:"Corsa C",yearStart:2000,yearEnd:2006,version:"Toutes versions",diff:"easy",
+ transponder:"Temic 11 (ID11 verre)",tColor:"tg",
+ superChip:"XT27A",blade:"HU43",pick:"Litchi HU43",
+ remotes:["XKOP00EN","XN002 coque Opel"],
+ protocol:"BCM Corsa simple",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"ID11 verre transparent standard. Très simple."},
+
+{brand:"Opel",model:"Corsa D",yearStart:2006,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ remotes:["XKOP00EN"],
+ protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Corsa D : passage à ID46 clé flip."},
+
+{brand:"Opel",model:"Astra G",yearStart:1998,yearEnd:2004,version:"Toutes versions",diff:"easy",
+ transponder:"Temic 11 (ID11 verre)",tColor:"tg",
+ superChip:"XT27A",blade:"HU43 / YM28",pick:"Litchi HU43",
+ remotes:["XKOP00EN"],
+ protocol:"BCM simple",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"Temic 11. YM28 = lame alternative."},
+
+{brand:"Opel",model:"Astra H",yearStart:2004,yearEnd:2010,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ remotes:["XKOP00EN"],
+ protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"ID46 clé flip. PIN BCM calculable G3."},
+
+{brand:"Opel",model:"Astra J",yearStart:2009,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"HU100",pick:"Litchi HU100",
+ remotes:["XKOP00EN"],
+ protocol:"BCM CAN renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"Astra J = nouvelle lame HU100. Hitag2 sur versions post-2012.",
+ tips:["HU100 = nouvelle lame Opel Astra J — différente de HU43"]},
+
+{brand:"Opel",model:"Zafira A / B",yearStart:1999,yearEnd:2011,version:"Toutes versions",diff:"easy",
+ transponder:"Temic 11 / ID46 selon année",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ remotes:["XKOP00EN"],
+ protocol:"BCM",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"A : Temic 11. B : ID46."},
+
+{brand:"Opel",model:"Vectra C",yearStart:2002,yearEnd:2008,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU43",pick:"Litchi HU43",
+ remotes:["XKOP00EN"],
+ protocol:"BCM CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"PIN Tech2 ou G3. Clé flip fréquente."},
+
+{brand:"Opel",model:"Vivaro X83",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKOP00EN"],
+ protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Triple jumeau Renault Trafic / Opel Vivaro / Nissan Primastar.",
+ tips:["Lame VA6 = même clé que Renault Trafic","EDC17C94 Diesel — suppression FAP/EGR possible"]},
+
+{brand:"Opel",model:"Movano B",yearStart:2010,yearEnd:2021,version:"Toutes versions",diff:"medium",
+ transponder:"PCF7947 (ID46 AES)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKOP00EN"],
+ protocol:"UCH CAN Renault partagé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Partagé avec Renault Master III / Nissan NV400."},
+
+// ══════════════════════════════════════════
+// FORD
+// ══════════════════════════════════════════
+{brand:"Ford",model:"Fiesta V (JH1/JD3)",yearStart:2001,yearEnd:2008,version:"Toutes versions",diff:"easy",
+ transponder:"4D60 (DST Long)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"FO21 / HU101",pick:"Litchi FO21",
+ remotes:["XKFO01EN","XKF001"],
+ protocol:"PATS (Passive Anti-Theft System)",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PATS standard Ford. 4D60 clonable.",
+ tips:["FO21 = lame Ford standard","4D60 = transpondeur Ford simple"]},
+
+{brand:"Ford",model:"Fiesta VI (CB1)",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"4D63 80-bit — plus sécurisé que 4D60."},
+
+{brand:"Ford",model:"Focus II",yearStart:2004,yearEnd:2011,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Même transpondeur que Fiesta VI."},
+
+{brand:"Ford",model:"Focus III",yearStart:2011,yearEnd:2018,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag Pro (4D80 / DST AES)",tColor:"tr",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS renforcé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Hitag Pro post-2012.",
+ tips:["Focus III 2011–2012 peut encore avoir 4D63 — vérifier VIN"]},
+
+{brand:"Ford",model:"C-Max / S-Max",yearStart:2007,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit / Hitag Pro",tColor:"ta",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"C-Max/S-Max : 4D63. Versions tardives : Hitag Pro possible."},
+
+{brand:"Ford",model:"Transit V347",yearStart:2006,yearEnd:2013,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"FO21 / HU101",pick:"Litchi FO21",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Utilitaire très courant.",
+ tips:["Stock FO21 + 4D63 obligatoire pour zone artisanale"]},
+
+{brand:"Ford",model:"Transit Custom V362",yearStart:2012,yearEnd:2022,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag Pro (4D80)",tColor:"tr",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS avancé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Hitag Pro généralisé."},
+
+{brand:"Ford",model:"Kuga I / II",yearStart:2008,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 / Hitag Pro",tColor:"ta",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"Kuga I : 4D63. Kuga II post-2013 : Hitag Pro possible."},
+
+{brand:"Ford",model:"Mondeo IV",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit / Hitag Pro",tColor:"ta",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Mondeo IV : 4D63 majoritaire. Tardifs : Hitag Pro."},
+
+{brand:"Ford",model:"Galaxy II",yearStart:2006,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKFO01EN"],
+ protocol:"PATS CAN",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:8,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Monospace 7 places Ford. Base Focus/S-Max."},
+
+// ══════════════════════════════════════════
+// FIAT / ALFA / LANCIA
+// ══════════════════════════════════════════
+{brand:"Fiat",model:"Punto II (188)",yearStart:1999,yearEnd:2005,version:"Phase 1",diff:"easy",
+ transponder:"Temic 11 / ID48 Crypto2 selon version",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN","XN005 coque Fiat"],
+ protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"1999–2003 : Temic 11. 2003–2005 : ID48.",
+ tips:["SIP22 = lame laser indispensable groupe Fiat/Alfa/PSA"]},
+
+{brand:"Fiat",model:"Grande Punto (199)",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli / Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"ID46 clone standard."},
+
+{brand:"Fiat",model:"Punto Evo",yearStart:2009,yearEnd:2012,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Même base Grande Punto."},
+
+{brand:"Fiat",model:"Ducato III",yearStart:2006,yearEnd:2014,version:"Phase 1",diff:"easy",
+ transponder:"PCF7936 (ID46)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"BSI Fiat/PSA partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Triple jumeau Fiat Ducato / Peugeot Boxer / Citroën Jumper."},
+
+{brand:"Fiat",model:"Ducato III",yearStart:2014,yearEnd:2021,version:"Phase 2 / Facelift",diff:"easy",
+ transponder:"PCF7947 (ID46 AES)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"BSI Fiat/PSA renforcé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Phase 2 passe en PCF7947."},
+
+{brand:"Fiat",model:"500 (312)",yearStart:2007,yearEnd:2015,version:"Phase 1",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Citadine très populaire."},
+
+{brand:"Fiat",model:"500 (312)",yearStart:2015,yearEnd:2019,version:"Phase 2",diff:"medium",
+ transponder:"Hitag2 (ID46)",tColor:"ta",
+ superChip:"XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Bosch renforcé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Phase 2 post-2015 : Hitag2."},
+
+{brand:"Fiat",model:"Bravo II",yearStart:2007,yearEnd:2014,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"PIN OBD. SIP22 standard."},
+
+{brand:"Fiat",model:"Doblo II",yearStart:2009,yearEnd:2015,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Utilitaire compact très courant."},
+
+{brand:"Alfa Romeo",model:"147 / 156",yearStart:1997,yearEnd:2007,version:"Toutes versions",diff:"medium",
+ transponder:"Temic 11 / ID48 selon année",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"SIP22 / GT15R",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli / Bosch",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"147/156 avant 2003 : Temic 11. Après 2003 : ID48."},
+
+{brand:"Alfa Romeo",model:"159 / Brera",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"ID46 clone standard."},
+
+{brand:"Alfa Romeo",model:"Giulietta (940)",yearStart:2010,yearEnd:2020,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2",tColor:"tr",
+ superChip:"XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Bosch / Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"Giulietta = architecture modernisée. Hitag2 sur versions post-2015."},
+
+{brand:"Lancia",model:"Ypsilon (843)",yearStart:2003,yearEnd:2011,version:"Toutes versions",diff:"easy",
+ transponder:"ID48 / ID46",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Même groupe Fiat. SIP22 lame laser. Simple à programmer."},
+
+{brand:"Lancia",model:"Musa / Delta",yearStart:2004,yearEnd:2014,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"SIP22",pick:"Litchi SIP22",
+ remotes:["XKFI00EN"],
+ protocol:"Immo Marelli",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Même base Fiat de même génération."},
+
+// ══════════════════════════════════════════
+// NISSAN
+// ══════════════════════════════════════════
+{brand:"Nissan",model:"Micra K11",yearStart:1992,yearEnd:2002,version:"Toutes versions",diff:"easy",
+ transponder:"Sans immobilisant / Temic 11 tardif",tColor:"tg",
+ superChip:"XT27A",blade:"NSN14",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"Sans IMMO",method:["CALC"],freq:"433.92 MHz ASK",
+ nbKeys:5,obdPos:"Sous tableau de bord, côté conducteur",timeMin:10,
+ notes:"K11 précoce sans immo. Temic 11 sur versions tardives post-1998."},
+
+{brand:"Nissan",model:"Micra K12",yearStart:2002,yearEnd:2010,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS4",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"NATS4 standard."},
+
+{brand:"Nissan",model:"Qashqai J10",yearStart:2006,yearEnd:2013,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS5",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"NATS5. PIN OBD G3. Très répandu.",
+ tips:["SUV le plus courant en France"]},
+
+{brand:"Nissan",model:"Qashqai J11",yearStart:2013,yearEnd:2021,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag Pro (ID4A)",tColor:"tr",
+ superChip:"XT57B",blade:"NSN14 / NSN11",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS6 Hitag Pro",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"NATS6 = sécurité élevée. Hitag Pro difficile à cloner."},
+
+{brand:"Nissan",model:"Note E11 / E12",yearStart:2005,yearEnd:2016,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS4/5",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Note familiale. E11 : ID46. E12 : Hitag2 possible."},
+
+{brand:"Nissan",model:"Juke F15",yearStart:2010,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2",tColor:"ta",
+ superChip:"XT27B",blade:"NSN14",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS5/6",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Juke très populaire. Post-2014 : Hitag2 possible."},
+
+{brand:"Nissan",model:"Navara D40 / NP300",yearStart:2005,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"NSN14 / NSN11",pick:"Litchi NSN14",
+ remotes:["XKNI00EN"],
+ protocol:"NATS5",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Pick-up très répandu. NSN11 sur certaines versions de marché."},
+
+{brand:"Nissan",model:"Primastar",yearStart:2001,yearEnd:2014,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46)",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKNI00EN"],
+ protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Triple jumeau Renault Trafic / Opel Vivaro."},
+
+// ══════════════════════════════════════════
+// TOYOTA
+// ══════════════════════════════════════════
+{brand:"Toyota",model:"Yaris P1",yearStart:1999,yearEnd:2005,version:"Toutes versions",diff:"easy",
+ transponder:"4C (verre cylindrique)",tColor:"tg",
+ superChip:"XT27A",blade:"TOY43",pick:"Litchi TOY43",
+ remotes:["XKTO00EN","XKT002"],
+ protocol:"Toyota Immo Standard",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:15,
+ notes:"4C verre transparent — copie magnétique directe."},
+
+{brand:"Toyota",model:"Yaris P2",yearStart:2005,yearEnd:2011,version:"Toutes versions",diff:"medium",
+ transponder:"4D67",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"4D67 clonable. PIN OBD G3."},
+
+{brand:"Toyota",model:"Yaris P13",yearStart:2011,yearEnd:2020,version:"Toutes versions",diff:"medium",
+ transponder:"G chip (Hitag Toyota)",tColor:"tg",
+ superChip:"XT27B",blade:"TOY43 / TOY47",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"G chip = système Toyota propriétaire."},
+
+{brand:"Toyota",model:"Corolla E150",yearStart:2006,yearEnd:2013,version:"Toutes versions",diff:"medium",
+ transponder:"4D67 / 4D68",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"4D67 majoritaire sur E150."},
+
+{brand:"Toyota",model:"Auris E150 / E180",yearStart:2006,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"4D67 / G chip selon année",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43 / TOY47",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G / H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"E150 : 4D67. E180 post-2012 : G chip.",
+ tips:["Vérifier la génération pour choisir le bon transpondeur"]},
+
+{brand:"Toyota",model:"RAV4 III",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"4D67",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"4D67 standard RAV4 III."},
+
+{brand:"Toyota",model:"RAV4 IV",yearStart:2012,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"G chip (Hitag Toyota)",tColor:"tg",
+ superChip:"XT27B",blade:"TOY43 / TOY47",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:35,
+ notes:"RAV4 IV passe en G chip."},
+
+{brand:"Toyota",model:"Avensis T27",yearStart:2008,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"4D67 / G chip selon année",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G / H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"T27 : 4D67 début, G chip après 2012."},
+
+{brand:"Toyota",model:"Hilux VII",yearStart:2004,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"4D65 / 4D67",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"TOY43 / TOY48",pick:"Litchi TOY43",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo G",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Pick-up très répandu.",
+ tips:["Lire transpondeur en place — 4D65 vs 4D67 selon production"]},
+
+{brand:"Toyota",model:"Hilux VIII",yearStart:2015,yearEnd:2022,version:"Toutes versions",diff:"medium",
+ transponder:"G chip / H chip",tColor:"tg",
+ superChip:"XT27B",blade:"TOY48",pick:"Litchi TOY48",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo H",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:40,
+ notes:"Hilux VIII = G/H chip. Lame TOY48 spécifique.",
+ tips:["TOY48 = nouvelle lame Toyota sur les récents — différente de TOY43"]},
+
+{brand:"Toyota",model:"Land Cruiser 150 (Prado)",yearStart:2009,yearEnd:2020,version:"Toutes versions",diff:"hard",
+ transponder:"G chip / H chip",tColor:"tg",
+ superChip:"XT27B",blade:"TOY48",pick:"Litchi TOY48",
+ remotes:["XKTO00EN"],
+ protocol:"Toyota Immo H + Smart Key",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"Prado = Smart Key standard. H chip. TOY48 lame.",
+ tips:["Smart Key = programmation différente du double standard"]},
+
+// ══════════════════════════════════════════
+// HONDA
+// ══════════════════════════════════════════
+{brand:"Honda",model:"Civic VII (EP/EU)",yearStart:2000,yearEnd:2005,version:"Toutes versions",diff:"medium",
+ transponder:"ID13 (Honda verre)",tColor:"tg",
+ superChip:"XT27A",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda standard",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"ID13 verre Honda. HON66 = lame standard Honda.",
+ tips:["ID13 Honda = puce verre cylindrique petite taille"]},
+
+{brand:"Honda",model:"Civic VIII (FN/FK)",yearStart:2005,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Civic VIII : passage à ID46."},
+
+{brand:"Honda",model:"Jazz II / III",yearStart:2001,yearEnd:2015,version:"Toutes versions",diff:"easy",
+ transponder:"ID13 / ID46",tColor:"tg",
+ superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Jazz II : ID13. Jazz III : ID46.",
+ tips:["Citadine populaire — vérifier génération pour le transpondeur"]},
+
+{brand:"Honda",model:"CR-V II / III",yearStart:2001,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID13 / ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"CR-V II : ID13/ID46 mixte. CR-V III : ID46 standard."},
+
+{brand:"Honda",model:"HR-V (GH)",yearStart:1998,yearEnd:2006,version:"Toutes versions",diff:"easy",
+ transponder:"ID13 (Honda verre)",tColor:"tg",
+ superChip:"XT27A",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"HR-V première génération. ID13 verre simple."},
+
+{brand:"Honda",model:"Accord VII / VIII",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"ta",
+ superChip:"XT27A / XT27B",blade:"HON66",pick:"Litchi HON66",
+ remotes:["XKHO01EN"],
+ protocol:"Immo Honda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Accord VII : ID13/ID46. VIII : ID46 standard."},
+
+// ══════════════════════════════════════════
+// HYUNDAI / KIA
+// ══════════════════════════════════════════
+{brand:"Hyundai",model:"i10 (PA/IA)",yearStart:2007,yearEnd:2019,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO Hyundai",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Petite citadine. ID46 simple."},
+
+{brand:"Hyundai",model:"i20 PB",yearStart:2008,yearEnd:2014,version:"Gen1",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO Hyundai standard",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"PIN OBD G3."},
+
+{brand:"Hyundai",model:"i30 FD",yearStart:2007,yearEnd:2012,version:"Gen1",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO Hyundai",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"ID46 standard."},
+
+{brand:"Hyundai",model:"i30 GD / PD",yearStart:2012,yearEnd:2022,version:"Gen2 / Gen3",diff:"medium",
+ transponder:"ID47 Hitag3",tColor:"tb",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO CAN Hyundai",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Gen2/3 passe en ID47 Hitag3."},
+
+{brand:"Hyundai",model:"Tucson JM / LM",yearStart:2004,yearEnd:2015,version:"Gen1 & Gen2",diff:"medium",
+ transponder:"ID46 / ID47 selon génération",tColor:"tb",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY02EN"],
+ protocol:"IMMO CAN",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"JM : ID46. LM : ID47 Hitag3."},
+
+{brand:"Hyundai",model:"Santa Fe CM / DM",yearStart:2006,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / ID47",tColor:"tb",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY02EN"],
+ protocol:"IMMO CAN",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"CM : ID46. DM post-2012 : ID47."},
+
+{brand:"Kia",model:"Picanto (SA/TA)",yearStart:2004,yearEnd:2017,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Petite citadine populaire."},
+
+{brand:"Kia",model:"Ceed ED",yearStart:2006,yearEnd:2012,version:"Gen1",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Identique Hyundai i30 FD."},
+
+{brand:"Kia",model:"Ceed JD / CD",yearStart:2012,yearEnd:2022,version:"Gen2 / Gen3",diff:"medium",
+ transponder:"ID47 Hitag3",tColor:"tr",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY01EN"],
+ protocol:"IMMO CAN Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Gen2/3 passe en ID47."},
+
+{brand:"Kia",model:"Sportage II",yearStart:2004,yearEnd:2010,version:"Toutes versions",diff:"easy",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"HY22",pick:"Litchi HY22",
+ remotes:["XKHY02EN"],
+ protocol:"IMMO Kia",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"SUV compact populaire."},
+
+{brand:"Kia",model:"Sportage III / IV",yearStart:2010,yearEnd:2021,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / ID47 Hitag3",tColor:"tr",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY02EN"],
+ protocol:"IMMO CAN",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"III : ID46. IV post-2016 : ID47 Hitag3.",
+ tips:["Confirmer millésime pour ID46 vs ID47"]},
+
+{brand:"Kia",model:"Sorento BL / XM",yearStart:2002,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / ID47",tColor:"tr",
+ superChip:"XT27B",blade:"HY22 / HYN14",pick:"Litchi HY22",
+ remotes:["XKHY02EN"],
+ protocol:"IMMO CAN",method:["OBD","CALC"],freq:"433.92 MHz FSK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Gros SUV Kia. BL : ID46. XM : ID47."},
+
+// ══════════════════════════════════════════
+// DACIA
+// ══════════════════════════════════════════
+{brand:"Dacia",model:"Logan I / Sandero I",yearStart:2004,yearEnd:2012,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 (ID46 Crypto2)",tColor:"to",
+ superChip:"XT27A / XT27B",blade:"VA6 / HU55",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Renault partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Architecture 100% Renault.",
+ tips:["Stock Dacia = stock Renault — mêmes pièces","Très répandu en Var 83"]},
+
+{brand:"Dacia",model:"Sandero II",yearStart:2012,yearEnd:2020,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / PCF7947 selon millésime",tColor:"to",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Avant 2014 : PCF7936. Après : PCF7947.",
+ tips:["Citadine low-cost très courante en zone 83"]},
+
+{brand:"Dacia",model:"Duster I",yearStart:2010,yearEnd:2018,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7936 / PCF7947 selon millésime",tColor:"to",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"Avant 2014 : PCF7936. Après 2014 : PCF7947.",
+ tips:["Très répandu en PACA — prévoir en stock permanent"]},
+
+{brand:"Dacia",model:"Lodgy / Dokker",yearStart:2012,yearEnd:2021,version:"Toutes versions",diff:"easy",
+ transponder:"PCF7947 (ID46 AES)",tColor:"to",
+ superChip:"XT27A / XT27B",blade:"VA6",pick:"Litchi VA6",
+ remotes:["XKRN00EN"],
+ protocol:"UCH CAN Renault",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:20,
+ notes:"UCH Renault moderne.",
+ tips:["Dokker utilitaire = très courant artisans/livraison"]},
+
+// ══════════════════════════════════════════
+// SUZUKI
+// ══════════════════════════════════════════
+{brand:"Suzuki",model:"Swift (MZ/EZ)",yearStart:2004,yearEnd:2017,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936 / ID47",tColor:"to",
+ superChip:"XT27B",blade:"HU133R / HU100",pick:"Litchi HU133R",
+ remotes:["XKSU00EN"],
+ protocol:"Immo Suzuki standard",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Swift : ID46 sur anciens, ID47 sur récents. HU133R = lame spécifique Suzuki.",
+ tips:["HU133R = lame Suzuki standard — à avoir en stock"]},
+
+{brand:"Suzuki",model:"SX4 / S-Cross",yearStart:2006,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936 / Hitag2",tColor:"to",
+ superChip:"XT27B",blade:"HU133R",pick:"Litchi HU133R",
+ remotes:["XKSU00EN"],
+ protocol:"Immo Suzuki / Fiat partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"SX4 partagé avec Fiat Sedici. ID46 standard."},
+
+{brand:"Suzuki",model:"Vitara / Grand Vitara",yearStart:2005,yearEnd:2020,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2 selon année",tColor:"to",
+ superChip:"XT27B",blade:"HU133R / HU100",pick:"Litchi HU133R",
+ remotes:["XKSU00EN"],
+ protocol:"Immo Suzuki",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Vitara récent (post-2015) : Hitag2. Lame HU100 sur certaines versions."},
+
+{brand:"Suzuki",model:"Jimny (SJ413/SN)",yearStart:1998,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"to",
+ superChip:"XT27A / XT27B",blade:"HU133R",pick:"Litchi HU133R",
+ remotes:["XKSU00EN"],
+ protocol:"Immo Suzuki",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"4x4 compact très courant. ID46 standard.",
+ tips:["Jimny = clientèle rurale et montagne — courant en zone 83 / Var"]},
+
+// ══════════════════════════════════════════
+// MAZDA
+// ══════════════════════════════════════════
+{brand:"Mazda",model:"Mazda 3 (BK/BL)",yearStart:2003,yearEnd:2013,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ remotes:["XKMA00EN"],
+ protocol:"Immo Mazda / Ford partagé",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Mazda 3 partage la plateforme Ford Focus. 4D63 standard.",
+ tips:["MAZ24 = lame Mazda standard"]},
+
+{brand:"Mazda",model:"Mazda 6 (GG/GH)",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ remotes:["XKMA00EN"],
+ protocol:"Immo Mazda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Berline familiale Mazda. 4D63 standard."},
+
+{brand:"Mazda",model:"CX-5 (KE)",yearStart:2011,yearEnd:2017,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag Pro",tColor:"tr",
+ superChip:"XT57B",blade:"MAZ24",pick:"Litchi MAZ24",
+ remotes:["XKMA00EN"],
+ protocol:"Immo Mazda avancé",method:["OBD","EEPROM"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:60,
+ notes:"CX-5 = Hitag Pro. Smart Key standard. Intervention avancée."},
+
+{brand:"Mazda",model:"MX-5 (NB/NC)",yearStart:1998,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"4D63 80-bit",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MAZ24",pick:"Litchi MAZ24",
+ remotes:["XKMA00EN"],
+ protocol:"Immo Mazda",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Roadster emblématique. 4D63 standard."},
+
+// ══════════════════════════════════════════
+// VOLVO
+// ══════════════════════════════════════════
+{brand:"Volvo",model:"S40 / V40 / V50",yearStart:2003,yearEnd:2012,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tb",
+ superChip:"XT27B",blade:"HU56 / HU101",pick:"Litchi HU56",
+ remotes:["XKVO00EN"],
+ protocol:"CEM Volvo sécurisé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:75,
+ notes:"CEM = Central Electronic Module. Chiffré — outil Volvo ou BENCH nécessaire AKL.",
+ tips:["HU56 = lame Volvo standard","CEM Volvo = très sécurisé, préparer l'outillage adapté"]},
+
+{brand:"Volvo",model:"V70 / S60 (P3)",yearStart:2006,yearEnd:2016,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro",tColor:"tb",
+ superChip:"XT57B",blade:"HU56 / HU101",pick:"Litchi HU56",
+ remotes:["XKVO00EN"],
+ protocol:"CEM Volvo avancé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
+ notes:"Architecture Volvo propriétaire difficile. Hitag2/Pro. Outil professionnel requis."},
+
+{brand:"Volvo",model:"XC60 (DZ)",yearStart:2008,yearEnd:2017,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro",tColor:"tb",
+ superChip:"XT57B",blade:"HU56 / HU101",pick:"Litchi HU56",
+ remotes:["XKVO00EN"],
+ protocol:"CEM Volvo sécurisé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
+ notes:"SUV premium Volvo. Même niveau CEM que V70/S60."},
+
+// ══════════════════════════════════════════
+// LAND ROVER / JAGUAR
+// ══════════════════════════════════════════
+{brand:"Land Rover",model:"Freelander 2 (LF)",yearStart:2006,yearEnd:2015,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro",tColor:"tg",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKLR00EN"],
+ protocol:"CAN JLR sécurisé",method:["OBD","BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:90,
+ notes:"JLR = Jaguar Land Rover. Architecture propriétaire. Outil JLR ou BENCH requis."},
+
+{brand:"Land Rover",model:"Discovery 3 / 4",yearStart:2004,yearEnd:2016,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 / Hitag Pro",tColor:"tg",
+ superChip:"XT57B",blade:"HU101",pick:"Litchi HU101",
+ remotes:["XKLR00EN"],
+ protocol:"CAN JLR avancé",method:["BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:120,
+ notes:"4x4 premium. Sécurité élevée. Outil JLR professionnel nécessaire.",
+ tips:["Intervention longue — prévoir 2h+ pour AKL"]},
+
+{brand:"Land Rover",model:"Range Rover Sport (L320)",yearStart:2005,yearEnd:2013,version:"Toutes versions",diff:"hard",
+ transponder:"Hitag2 (ID46)",tColor:"tg",
+ superChip:"XT27B",blade:"HU92",pick:"Litchi HU92",
+ remotes:["XKLR00EN"],
+ protocol:"CAN JLR avancé",method:["BENCH"],freq:"433.92 MHz ASK",
+ nbKeys:3,obdPos:"Sous tableau de bord, côté conducteur",timeMin:120,
+ notes:"SUV premium. Smart Key standard. Nécessite outil JLR professionnel."},
+
+// ══════════════════════════════════════════
+// MITSUBISHI
+// ══════════════════════════════════════════
+{brand:"Mitsubishi",model:"Colt (Z30)",yearStart:2003,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / 4D65",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ remotes:["XKMI00EN"],
+ protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"MIT11 = lame Mitsubishi standard. ID46 sur versions tardives.",
+ tips:["MIT11 = lame Mitsubishi — à avoir en stock"]},
+
+{brand:"Mitsubishi",model:"Lancer (CS/CY)",yearStart:2002,yearEnd:2012,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ remotes:["XKMI00EN"],
+ protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:25,
+ notes:"Berline populaire. ID46 standard."},
+
+{brand:"Mitsubishi",model:"Outlander (CU/GF)",yearStart:2001,yearEnd:2018,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2",tColor:"tr",
+ superChip:"XT27B",blade:"MIT11 / MIT8",pick:"Litchi MIT11",
+ remotes:["XKMI00EN"],
+ protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"CU : ID46. GF post-2012 : Hitag2. MIT8 sur certaines versions."},
+
+{brand:"Mitsubishi",model:"L200 (KA/KB)",yearStart:2005,yearEnd:2019,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 PCF7936",tColor:"tr",
+ superChip:"XT27A / XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ remotes:["XKMI00EN"],
+ protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Pick-up très utilisé. ID46 standard.",
+ tips:["Clientèle agricole / BTP — courant en Var"]},
+
+{brand:"Mitsubishi",model:"ASX (GA)",yearStart:2010,yearEnd:2020,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / Hitag2",tColor:"tr",
+ superChip:"XT27B",blade:"MIT11",pick:"Litchi MIT11",
+ remotes:["XKMI00EN"],
+ protocol:"Immo Mitsubishi",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"Crossover compact. ID46 début, Hitag2 post-2015."},
+
+// ══════════════════════════════════════════
+// SUBARU
+// ══════════════════════════════════════════
+{brand:"Subaru",model:"Impreza / Forester / Outback",yearStart:2003,yearEnd:2015,version:"Toutes versions",diff:"medium",
+ transponder:"ID46 / 4D62",tColor:"tb",
+ superChip:"XT27A / XT27B",blade:"DAT17",pick:"Litchi DAT17",
+ remotes:["XKSU01EN"],
+ protocol:"Immo Subaru",method:["OBD","CALC"],freq:"433.92 MHz ASK",
+ nbKeys:4,obdPos:"Sous tableau de bord, côté conducteur",timeMin:30,
+ notes:"4D62 sur anciens. ID46 sur post-2008. DAT17 = lame Subaru/Mitsubishi.",
+ tips:["DAT17 = lame commune Subaru/Mitsubishi"]},
+
+];
+
+// ════════════════════════════════════════════════════
+//  CONSTANTES
+// ════════════════════════════════════════════════════
+const BRAND_CLR = {
+  "Renault":"#efb21b","Peugeot":"#0087d2","Citroën":"#e30613",
+  "Volkswagen":"#5b7fb6","Audi":"#999","BMW":"#0066b1","MINI":"#00a859",
+  "Mercedes":"#aaa","Opel":"#e8c300","Ford":"#4a72c4","Fiat":"#bc0020",
+  "Nissan":"#cc0000","Toyota":"#eb0a1e","Hyundai":"#002c5f","Kia":"#bb162b",
+  "Alfa Romeo":"#c00","Lancia":"#00448e","Dacia":"#005c99"
+};
+const REMOTE_CLR = {
+  "Renault":"to","Dacia":"to","Peugeot":"tb","Citroën":"tr",
+  "Volkswagen":"tb","Audi":"tc","BMW":"tb","MINI":"tg",
+  "Mercedes":"tc","Opel":"ta","Ford":"tb","Fiat":"tr",
+  "Nissan":"tr","Toyota":"tr","Hyundai":"tb","Kia":"tr",
+  "Alfa Romeo":"tr","Lancia":"tb","Seat":"tr","Skoda":"tg"
+};
+const DIFF_LBL = {easy:"🟢 FACILE",medium:"🟡 MOYEN",hard:"🔴 EXPERT"};
+const MTH_CLR  = {OBD:"m-obd",CALC:"m-calc",EEPROM:"m-eeprom",BENCH:"m-bench",IR:"m-ir"};
+const MO_PRESETS = {double:60,akl:120,plip:45,eeprom:90,custom:0};
+
+let currentResult = null;
+let browseTab = "ALL";
+let currentTheme = localStorage.getItem('alp_theme') || 'dark';
+
+// ════════════════════════════════════════════════════
+//  THEME
+// ════════════════════════════════════════════════════
+function toggleTheme(){
+  currentTheme = currentTheme==='dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  document.getElementById('theme-btn').textContent = currentTheme==='dark' ? '🌙' : '☀️';
+  localStorage.setItem('alp_theme', currentTheme);
+}
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  document.getElementById('theme-btn').textContent = currentTheme==='dark' ? '🌙' : '☀️';
+}
+
+// ════════════════════════════════════════════════════
+//  TABS
+// ════════════════════════════════════════════════════
+function showTab(id){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.getElementById('btn-'+id).classList.add('active');
+}
+
+// ════════════════════════════════════════════════════
+//  TOAST
+// ════════════════════════════════════════════════════
+function showToast(msg, duration=2500){
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), duration);
+}
+
+// ════════════════════════════════════════════════════
+//  LOCALSTORAGE HELPERS
+// ════════════════════════════════════════════════════
+function editKey(v){ return `alp4_${v.brand}|${v.model}|${v.yearStart}`; }
+function getOverride(v){ try{return JSON.parse(localStorage.getItem(editKey(v)))||null;}catch{return null;} }
+function applyOverride(v){ const ov=getOverride(v); return ov ? {...v,...ov,_edited:true} : v; }
+
+// History
+function getHistory(){ try{return JSON.parse(localStorage.getItem('alp4_hist'))||[];}catch{return[];} }
+function saveHistory(h){ localStorage.setItem('alp4_hist', JSON.stringify(h)); }
+
+// ════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════
+function init(){
+  applyTheme();
+  const brands = [...new Set(DB.map(v=>v.brand))].sort();
+  document.getElementById('s-total').textContent = DB.length;
+  document.getElementById('f-count').textContent  = DB.length;
+
+  const sb = document.getElementById('sel-brand');
+  brands.forEach(b=>{ const o=document.createElement('option'); o.value=b; o.textContent=b; sb.appendChild(o); });
+
+  buildBrowseTabs(brands);
+  renderBrowse(DB);
+  renderHistory();
+  calcPrice();
+  showLastUsed();
+
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeEdit(); closePrint(); } });
+}
+
+// ════════════════════════════════════════════════════
+//  LAST USED
+// ════════════════════════════════════════════════════
+function showLastUsed(){
+  try{
+    const last = JSON.parse(localStorage.getItem('alp4_last'));
+    if(!last) return;
+    document.getElementById('lu-text').textContent = `${last.brand} ${last.model} ${last.year}`;
+    document.getElementById('last-used-bar').style.display = 'flex';
+  }catch{}
+}
+function reloadLast(){
+  try{
+    const last = JSON.parse(localStorage.getItem('alp4_last'));
+    if(!last) return;
+    quickSelect(last.brand, last.model, last.year);
+    showTab('tab-search');
+  }catch{}
+}
+function saveLastUsed(v, year){
+  localStorage.setItem('alp4_last', JSON.stringify({brand:v.brand,model:v.model,year}));
+  showLastUsed();
+}
+
+// ════════════════════════════════════════════════════
+//  CASCADE
+// ════════════════════════════════════════════════════
+function onBrandChange(){
+  const brand = document.getElementById('sel-brand').value;
+  const sm = document.getElementById('sel-model');
+  const sy = document.getElementById('sel-year');
+  sm.innerHTML='<option value="">— Choisir le modèle —</option>';
+  sy.innerHTML='<option value="">— Choisir l\'année —</option>';
+  document.getElementById('result-panel').style.display='none';
+  setStep(2,brand?'active':''); setStep(3,''); setStep(4,'');
+  if(!brand) return;
+  const models = [...new Set(DB.filter(v=>v.brand===brand).map(v=>v.model))].sort();
+  models.forEach(m=>{ const o=document.createElement('option'); o.value=m; o.textContent=m; sm.appendChild(o); });
+}
+function onModelChange(){
+  const brand = document.getElementById('sel-brand').value;
+  const model = document.getElementById('sel-model').value;
+  const sy = document.getElementById('sel-year');
+  sy.innerHTML='<option value="">— Choisir l\'année —</option>';
+  document.getElementById('result-panel').style.display='none';
+  setStep(2,'done'); setStep(3,model?'active':''); setStep(4,'');
+  if(!model) return;
+  const entries = DB.filter(v=>v.brand===brand&&v.model===model);
+  const allYears = new Set();
+  entries.forEach(e=>{ for(let y=e.yearStart;y<=e.yearEnd;y++) allYears.add(y); });
+  [...allYears].sort((a,b)=>a-b).forEach(y=>{ const o=document.createElement('option'); o.value=y; o.textContent=y; sy.appendChild(o); });
+}
+function onYearChange(){
+  const brand = document.getElementById('sel-brand').value;
+  const model = document.getElementById('sel-model').value;
+  const year  = parseInt(document.getElementById('sel-year').value);
+  document.getElementById('result-panel').style.display='none';
+  setStep(3,'done'); setStep(4,'');
+  if(!year) return;
+  const candidates = DB.filter(v=>v.brand===brand&&v.model===model&&year>=v.yearStart&&year<=v.yearEnd);
+  if(!candidates.length){ alert('Aucune donnée trouvée.'); return; }
+  candidates.sort((a,b)=>(a.yearEnd-a.yearStart)-(b.yearEnd-b.yearStart));
+  const v = candidates[0];
+  currentResult = applyOverride(v);
+  setStep(4,'active');
+  saveLastUsed(v, year);
+  showResult(currentResult, year);
+}
+function setStep(n,state){
+  const el=document.getElementById('step'+n);
+  el.classList.remove('active','done');
+  if(state) el.classList.add(state);
+  el.style.opacity=state?'1':'0.35';
+  el.style.pointerEvents=state?'all':'none';
+}
+function resetAll(){
+  document.getElementById('sel-brand').value='';
+  document.getElementById('sel-model').innerHTML='<option value="">— Choisir le modèle —</option>';
+  document.getElementById('sel-year').innerHTML='<option value="">— Choisir l\'année —</option>';
+  document.getElementById('result-panel').style.display='none';
+  currentResult=null;
+  setStep(1,'active'); setStep(2,''); setStep(3,''); setStep(4,'');
+  document.getElementById('step1').style.opacity='1';
+  document.getElementById('step1').style.pointerEvents='all';
+}
+
+// ════════════════════════════════════════════════════
+//  SHOW RESULT
+// ════════════════════════════════════════════════════
+function showResult(v, year){
+  const bc = BRAND_CLR[v.brand]||'#888';
+  const ov = getOverride(v);
+
+  // Version alert
+  const allVersions = DB.filter(x=>x.brand===v.brand&&x.model===v.model);
+  const alertBox = document.getElementById('version-alert-box');
+  alertBox.innerHTML = allVersions.length>1 ? `
+    <div class="version-alert">
+      <span>ℹ️</span>
+      <div><strong>${v.version}</strong> (${v.yearStart}–${v.yearEnd}) — ${allVersions.length} variantes en base. Données spécifiques à l'année ${year}.</div>
+    </div>` : '';
+
+  // Freq
+  const freqParts = v.freq.split(' ');
+  const mod = freqParts.find(p=>['ASK','FSK','NRZ','IR'].includes(p))||'';
+  const freqClr   = mod==='ASK'?'#f59e0b':mod==='FSK'?'#3b82f6':mod==='NRZ'?'#10b981':'#06b6d4';
+  const freqBg    = mod==='ASK'?'rgba(245,158,11,.12)':mod==='FSK'?'rgba(59,130,246,.12)':mod==='NRZ'?'rgba(16,185,129,.12)':'rgba(6,182,212,.12)';
+  const freqBord  = mod==='ASK'?'rgba(245,158,11,.3)':mod==='FSK'?'rgba(59,130,246,.3)':mod==='NRZ'?'rgba(16,185,129,.3)':'rgba(6,182,212,.3)';
+  const modLabel  = {ASK:'Amplitude Shift Keying',FSK:'Frequency Shift Keying',NRZ:'Non-Return-to-Zero',IR:'Infrarouge'}[mod]||'';
+  const freqNum   = freqParts.slice(0,freqParts.indexOf(mod)||freqParts.length).join(' ');
+
+  // Time badge
+  const timeBadge = v.timeMin ? `<span style="background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);color:#c084fc;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:5px;">⏱ ~${v.timeMin} min</span>` : '';
+  const keysBadge = v.nbKeys  ? `<span style="background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:#f59e0b;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:5px;">🔑 Max ${v.nbKeys} clés</span>` : '';
+
+  document.getElementById('hero-head').innerHTML = `
+    <div class="hero-brand" style="background:${bc}22;color:${bc};border:1px solid ${bc}44">${v.brand}</div>
+    <div class="hero-info">
+      <div class="hero-model">${v.model} <span style="color:var(--txt2);font-size:15px;font-weight:500">${v.version}</span>${ov?`<span class="edited-badge">✏️ MODIFIÉ · ${ov._savedAt||''}</span>`:''}
+      </div>
+      <div class="hero-sub">${v.yearStart}–${v.yearEnd} · ${v.protocol}</div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:5px">${timeBadge}${keysBadge}</div>
+    </div>
+    <div class="hero-year-badge">${year}</div>
+    <div class="diff-badge d-${v.diff}">${DIFF_LBL[v.diff]}</div>`;
+
+  // Top grid
+  document.getElementById('info-grid-top').innerHTML = `
+    <div class="ig-block" style="grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;border-right:none">
+      <div style="flex:2;min-width:200px">
+        <div class="ig-label"><span class="dot" style="background:var(--amber)"></span>TRANSPONDEUR</div>
+        <div class="ig-val"><span class="tag ${v.tColor}" style="font-size:13px;padding:4px 12px">${v.transponder}</span></div>
+        ${v.superChip ? `<div style="margin-top:7px;display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">SUPER CHIP :</span>
+          ${v.superChip.split('/').map(s=>s.trim()).map(s=>{
+            const isNEC = s.includes('NEC') || s.includes('pas de');
+            const isXT57 = s.includes('XT57');
+            const isXT27B = s.includes('XT27B');
+            const isXT27A = s.includes('XT27A');
+            const bg = isNEC ? 'rgba(100,116,139,.15)' : isXT57 ? 'rgba(239,68,68,.15)' : isXT27B ? 'rgba(245,158,11,.15)' : 'rgba(16,185,129,.15)';
+            const border = isNEC ? 'rgba(100,116,139,.3)' : isXT57 ? 'rgba(239,68,68,.35)' : isXT27B ? 'rgba(245,158,11,.35)' : 'rgba(16,185,129,.35)';
+            const color = isNEC ? '#94a3b8' : isXT57 ? '#f87171' : isXT27B ? '#f59e0b' : '#34d399';
+            return `<span style="background:${bg};border:1px solid ${border};color:${color};border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:3px 9px;letter-spacing:.5px">${s}</span>`;
+          }).join('')}
+        </div>` : ''}
+      </div>
+      <div style="flex:2;min-width:160px">
+        <div class="ig-label"><span class="dot" style="background:var(--cyan)"></span>PROTOCOLE IMMO</div>
+        <div class="ig-val" style="font-size:14px">${v.protocol}</div>
+      </div>
+      <div style="flex:1;min-width:120px">
+        <div class="ig-label"><span class="dot" style="background:var(--cyan)"></span>MÉTHODE</div>
+        <div class="tags" style="margin-top:4px">${v.method.map(m=>`<span class="mbadge ${MTH_CLR[m]||'m-obd'}">${m}</span>`).join('')}</div>
+      </div>
+      <div style="flex-shrink:0">
+        <div class="ig-label"><span class="dot" style="background:${freqClr}"></span>FRÉQUENCE</div>
+        <div style="background:${freqBg};border:1px solid ${freqBord};border-radius:8px;padding:7px 12px;margin-top:4px;display:inline-flex;flex-direction:column;gap:2px">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:${freqClr};line-height:1">${freqNum||'433.92'} <span style="font-size:14px">MHz</span></div>
+          <div style="display:flex;align-items:center;gap:5px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;background:${freqClr};color:#000;padding:1px 6px;border-radius:3px">${mod||v.freq}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--txt2)">${modLabel}</span>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  // Mid grid
+  document.getElementById('info-grid-mid').innerHTML = `
+    <div class="ig-block">
+      <div class="ig-label"><span class="dot" style="background:var(--blue)"></span>LAME À TAILLER</div>
+      <div class="ig-val" style="color:#60a5fa;font-size:26px;font-weight:900">${v.blade}</div>
+    </div>
+    <div class="ig-block">
+      <div class="ig-label"><span class="dot" style="background:var(--green)"></span>LITCHI CROCHETAGE</div>
+      <div class="ig-val" style="color:#34d399;font-size:26px;font-weight:900">${v.pick}</div>
+    </div>
+    <div class="ig-block" style="border-right:none">
+      <div class="ig-label"><span class="dot" style="background:var(--purple)"></span>TÉLÉCOMMANDE</div>
+      <div style="margin-top:6px">
+        <a href="${mk3SearchUrl(v)}" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:var(--purple-d);border:1px solid rgba(168,85,247,.35);border-radius:8px;padding:9px 14px;transition:all .2s;color:#c084fc;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:1px">
+          🔍 CHERCHER SUR MK3
+          <span style="font-size:9px;opacity:.7">${v.brand} ${v.model} ${document.getElementById('sel-year').value}</span>
+        </a>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-top:6px;letter-spacing:1px">
+          → Ouvre mk3.com avec les bons mots-clés
+        </div>
+      </div>
+    </div>
+    ${v.obdPos?`
+    <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
+      <div class="ig-label"><span class="dot" style="background:var(--cyan)"></span>PRISE OBD</div>
+      <div class="ig-val" style="font-size:14px">📍 ${v.obdPos}</div>
+    </div>`:''}
+    ${v.notes?`
+    <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
+      <div class="ig-label"><span class="dot" style="background:var(--amber)"></span>NOTES TECHNIQUES</div>
+      <div class="note-box" style="margin-top:6px">${v.notes}</div>
+    </div>`:''}
+    ${v.tips?`
+    <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
+      <div class="ig-label"><span class="dot" style="background:var(--green)"></span>CONSEILS TERRAIN</div>
+      <ul class="tips-box" style="margin-top:5px">${v.tips.map(t=>`<li>${t}</li>`).join('')}</ul>
+    </div>`:''}
+    ${v.userNotes?`
+    <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1;background:rgba(16,185,129,.04)">
+      <div class="ig-label"><span class="dot" style="background:var(--green)"></span>MES NOTES PERSO <span class="edited-badge">✏️ PERSO</span></div>
+      <div style="font-size:13px;color:#34d399;line-height:1.6;margin-top:5px;font-style:italic">${v.userNotes}</div>
+    </div>`:''}`;
+
+  document.getElementById('result-panel').style.display='block';
+  document.getElementById('result-panel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ════════════════════════════════════════════════════
+//  COPY INFOS → SMS/DEVIS
+// ════════════════════════════════════════════════════
+function copyInfos(){
+  if(!currentResult) return;
+  const v = currentResult;
+  const year = document.getElementById('sel-year').value;
+  const txt = [
+    `🔑 AutoLock Pro — ${v.brand} ${v.model} ${v.version} (${year})`,
+    ``,
+    `📡 Transpondeur : ${v.transponder}`,
+    v.superChip ? `🔮 Super Chip : ${v.superChip}` : '',
+    `🗝️ Lame : ${v.blade}`,
+    `🔧 Litchi : ${v.pick}`,
+    `📻 Fréquence : ${v.freq}`,
+    `📱 Xhorse : ${v.remotes.join(' / ')}`,
+    ``,
+    `⚙️ Protocole : ${v.protocol}`,
+    `🛠 Méthode : ${v.method.join(' + ')}`,
+    v.nbKeys  ? `🔑 Max clés : ${v.nbKeys}` : '',
+    v.obdPos  ? `📍 OBD : ${v.obdPos}` : '',
+    v.timeMin ? `⏱ Durée estimée : ~${v.timeMin} min` : '',
+    ``,
+    `Reparetonphone83 — Toulon (83)`,
+  ].filter(Boolean).join('\n');
+
+  navigator.clipboard.writeText(txt)
+    .then(()=>showToast('✅ Infos copiées ! Prêt à coller dans un SMS'))
+    .catch(()=>{ /* fallback */ const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); showToast('✅ Infos copiées !'); });
+}
+
+// ════════════════════════════════════════════════════
+//  HISTORIQUE
+// ════════════════════════════════════════════════════
+function addToHistory(){
+  if(!currentResult) return;
+  const v = currentResult;
+  const year = document.getElementById('sel-year').value;
+  const hist = getHistory();
+  hist.unshift({
+    brand:v.brand, model:v.model, version:v.version,
+    year, blade:v.blade, transponder:v.transponder,
+    diff:v.diff, date:new Date().toLocaleDateString('fr-FR'),
+    time:new Date().toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})
+  });
+  // Garder max 30
+  saveHistory(hist.slice(0,30));
+  document.getElementById('s-hist').textContent = hist.length>30?30:hist.length;
+  renderHistory();
+  showToast('✅ Intervention enregistrée dans l\'historique !');
+}
+
+function renderHistory(){
+  const hist = getHistory();
+  document.getElementById('hist-count').textContent = hist.length;
+  document.getElementById('s-hist').textContent = hist.length;
+  const list = document.getElementById('hist-list');
+  if(!hist.length){
+    list.innerHTML='<div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>';
+    return;
+  }
+  const bc = b=>BRAND_CLR[b]||'#888';
+  list.innerHTML = hist.map((h,i)=>`
+    <div class="hist-item" onclick="quickSelect('${h.brand}','${h.model}',${h.year})">
+      <div class="hist-brand" style="background:${bc(h.brand)}22;color:${bc(h.brand)};border:1px solid ${bc(h.brand)}44">${h.brand}</div>
+      <div class="hist-info">
+        <div class="hist-model">${h.model} ${h.version} <span style="font-size:11px;color:var(--txt2)">(${h.year})</span></div>
+        <div class="hist-meta">${h.blade} · ${h.transponder}</div>
+      </div>
+      <div class="hist-date">${h.date} ${h.time}</div>
+      <button onclick="event.stopPropagation();removeHistItem(${i})" style="background:var(--red-d);border:1px solid rgba(239,68,68,.3);color:var(--red);border-radius:5px;width:26px;height:26px;cursor:pointer;font-size:13px;flex-shrink:0">✕</button>
+    </div>`).join('');
+}
+
+function removeHistItem(idx){
+  const hist = getHistory();
+  hist.splice(idx,1);
+  saveHistory(hist);
+  renderHistory();
+}
+
+function clearHistory(){
+  if(!confirm('Effacer tout l\'historique ?')) return;
+  saveHistory([]);
+  renderHistory();
+  showToast('🗑 Historique effacé');
+}
+
+// ════════════════════════════════════════════════════
+//  CALCULATEUR
+// ════════════════════════════════════════════════════
+function calcPrice(){
+  const type  = document.getElementById('c-type').value;
+  const piece = parseFloat(document.getElementById('c-piece').value)||0;
+  const mo    = parseFloat(document.getElementById('c-mo').value)||0;
+  const dep   = parseFloat(document.getElementById('c-dep').value)||0;
+  const tva   = parseFloat(document.getElementById('c-tva').value)||0;
+  const marge = parseFloat(document.getElementById('c-marge').value)||0;
+
+  // Preset MO if changed type
+  if(type !== 'custom' && !document.getElementById('c-mo').dataset.touched){
+    document.getElementById('c-mo').value = MO_PRESETS[type];
+  }
+
+  const htBase = piece + mo + dep;
+  const htMarge = htBase * (1 + marge/100);
+  const tvaAmt  = htMarge * (tva/100);
+  const ttc     = htMarge + tvaAmt;
+
+  document.getElementById('c-total').textContent = ttc.toFixed(2).replace('.',',') + ' € TTC';
+  document.getElementById('c-detail').innerHTML = [
+    `Pièce ${piece.toFixed(2)}€ + MO ${mo.toFixed(2)}€ + Dépl. ${dep.toFixed(2)}€ = ${htBase.toFixed(2)}€ HT`,
+    marge>0 ? `Marge ${marge}% → ${htMarge.toFixed(2)}€ HT` : '',
+    tva>0 ? `TVA ${tva}% = ${tvaAmt.toFixed(2)}€ → ${ttc.toFixed(2)}€ TTC` : `Sans TVA (auto-entrepreneur) → ${htMarge.toFixed(2)}€`,
+  ].filter(Boolean).join('<br>');
+}
+
+function resetCalc(){
+  document.getElementById('c-type').value='double';
+  document.getElementById('c-piece').value=0;
+  document.getElementById('c-mo').value=60;
+  document.getElementById('c-dep').value=20;
+  document.getElementById('c-tva').value=20;
+  document.getElementById('c-marge').value=0;
+  document.getElementById('c-notes').value='';
+  calcPrice();
+}
+
+function copyDevis(){
+  const type  = document.getElementById('c-type').selectedOptions[0].text;
+  const total = document.getElementById('c-total').textContent;
+  const detail= document.getElementById('c-detail').innerText;
+  const notes = document.getElementById('c-notes').value;
+  const txt = [
+    `💰 DEVIS REPARETONPHONE83`,
+    `Toulon (83) — Serrurier Auto Mobile`,
+    ``,
+    notes ? `Intervention : ${notes}` : `Intervention : ${type}`,
+    ``,
+    detail,
+    ``,
+    `TOTAL : ${total}`,
+    ``,
+    `Devis établi le ${new Date().toLocaleDateString('fr-FR')}`,
+    `Contact : Reparetonphone83`,
+  ].join('\n');
+
+  navigator.clipboard.writeText(txt)
+    .then(()=>showToast('✅ Devis copié — prêt à envoyer'))
+    .catch(()=>{ const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); showToast('✅ Devis copié !'); });
+}
+
+// ════════════════════════════════════════════════════
+//  EDIT MODAL
+// ════════════════════════════════════════════════════
+function openEdit(){
+  if(!currentResult) return;
+  const v = currentResult;
+  const ov = getOverride(v)||{};
+  document.getElementById('edit-title').textContent = `${v.brand} ${v.model} — ${v.version}`;
+  const list = document.getElementById('edit-remote-list');
+  list.innerHTML='';
+  (ov.remotes||v.remotes).forEach(r=>addRemoteField(r));
+  document.getElementById('edit-freq').value        = ov.freq        || v.freq;
+  document.getElementById('edit-transponder').value = ov.transponder || v.transponder;
+  document.getElementById('edit-blade').value       = ov.blade       || v.blade;
+  document.getElementById('edit-notes').value       = ov.userNotes   || '';
+  document.getElementById('edit-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeEdit(){
+  document.getElementById('edit-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function addRemoteField(val=''){
+  const list = document.getElementById('edit-remote-list');
+  const row = document.createElement('div');
+  row.className='edit-remote-row';
+  row.innerHTML=`<input type="text" value="${val}" placeholder="Ref Xhorse (ex: XN-Wireless, ID: 0524 443)"><div class="btn-remove" onclick="this.parentElement.remove()">−</div>`;
+  list.appendChild(row);
+  if(!val) row.querySelector('input').focus();
+}
+function saveEdit(){
+  if(!currentResult) return;
+  const v = currentResult;
+  const remotes = [...document.querySelectorAll('#edit-remote-list .edit-remote-row input')].map(i=>i.value.trim()).filter(Boolean);
+  const freq = document.getElementById('edit-freq').value.trim();
+  const transponder = document.getElementById('edit-transponder').value.trim();
+  const blade = document.getElementById('edit-blade').value.trim();
+  const userNotes = document.getElementById('edit-notes').value.trim();
+  const ov={_savedAt:new Date().toLocaleDateString('fr-FR')};
+  if(remotes.length) ov.remotes=remotes;
+  if(freq)        ov.freq=freq;
+  if(transponder) ov.transponder=transponder;
+  if(blade)       ov.blade=blade;
+  if(userNotes)   ov.userNotes=userNotes;
+  try{ localStorage.setItem(editKey(v),JSON.stringify(ov)); }
+  catch(e){ alert('Erreur localStorage'); return; }
+  closeEdit();
+  const year = document.getElementById('sel-year').value;
+  currentResult = applyOverride(v);
+  showResult(currentResult, year);
+  showToast('✅ Fiche sauvegardée !');
+}
+function resetEdit(){
+  if(!currentResult) return;
+  if(!confirm('Effacer toutes les modifications ?')) return;
+  localStorage.removeItem(editKey(currentResult));
+  closeEdit();
+  const year = document.getElementById('sel-year').value;
+  const orig = DB.find(x=>x.brand===currentResult.brand&&x.model===currentResult.model&&parseInt(year)>=x.yearStart&&parseInt(year)<=x.yearEnd);
+  if(orig){ currentResult=orig; showResult(orig, year); }
+  showToast('🗑 Modifications effacées');
+}
+
+// ════════════════════════════════════════════════════
+//  PRINT
+// ════════════════════════════════════════════════════
+function printFiche(){
+  if(!currentResult) return;
+  const v = currentResult;
+  const year = document.getElementById('sel-year').value;
+  const freqBg    = v.freq.includes('ASK')?'#fef3c7':v.freq.includes('FSK')?'#dbeafe':'#e0f2fe';
+  const freqColor = v.freq.includes('ASK')?'#92400e':v.freq.includes('FSK')?'#1e40af':'#0e7490';
+  const diffBg    = v.diff==='easy'?'#d1fae5':v.diff==='medium'?'#fef3c7':'#fee2e2';
+  document.getElementById('print-content').innerHTML=`
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px">
+      <div>
+        <h1 style="font-size:20px;border-bottom:3px solid #333;padding-bottom:6px;margin:0 0 4px">${v.brand} ${v.model} — ${v.version}</h1>
+        <div style="font-size:11px;color:#666">${v.yearStart}–${v.yearEnd} · ${v.protocol}</div>
+      </div>
+      <div style="font-size:38px;font-weight:900;color:#f59e0b">${year}</div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
+      <span style="background:${diffBg};padding:3px 9px;border-radius:4px;font-size:11px;font-weight:bold">${DIFF_LBL[v.diff]}</span>
+      ${v.method.map(m=>`<span style="background:#e0f2fe;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:bold">${m}</span>`).join('')}
+      <span style="background:${freqBg};color:${freqColor};padding:3px 9px;border-radius:4px;font-size:11px;font-weight:bold">${v.freq}</span>
+      ${v.timeMin?`<span style="background:#ede9fe;color:#6d28d9;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:bold">⏱ ~${v.timeMin} min</span>`:''}
+      ${v.nbKeys?`<span style="background:#fef3c7;color:#92400e;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:bold">🔑 Max ${v.nbKeys} clés</span>`:''}
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+      <div style="grid-column:1/-1;background:#f5f5f5;border-radius:6px;padding:9px 11px">
+        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px">Transpondeur</div>
+        <div style="font-size:15px;font-weight:700">${v.transponder}</div>
+        ${v.superChip ? `<div style="margin-top:5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="font-size:8px;color:#666;text-transform:uppercase;letter-spacing:1px">Super Chip :</span><strong style="font-size:13px;color:#7c3aed">${v.superChip}</strong></div>` : ''}
+      </div>
+      <div style="background:#f5f5f5;border-radius:6px;padding:9px 11px">
+        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px">Lame à tailler</div>
+        <div style="font-size:22px;font-weight:900;color:#1d4ed8">${v.blade}</div>
+      </div>
+      <div style="background:#f5f5f5;border-radius:6px;padding:9px 11px">
+        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px">Litchi crochetage</div>
+        <div style="font-size:22px;font-weight:900;color:#065f46">${v.pick}</div>
+      </div>
+      <div style="grid-column:1/-1;background:#f5f5f5;border-radius:6px;padding:9px 11px">
+        <div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:5px">Télécommande — Recherche MK3</div>
+        <div style="font-size:12px;color:#6d28d9;word-break:break-all">${mk3SearchUrl(v)}</div>
+      </div>
+      ${v.obdPos?`<div style="grid-column:1/-1;background:#f0f9ff;border-radius:6px;padding:9px 11px"><div style="font-size:8px;text-transform:uppercase;letter-spacing:1px;color:#666;margin-bottom:3px">Position prise OBD</div><div style="font-size:13px;font-weight:600">📍 ${v.obdPos}</div></div>`:''}
+    </div>
+    ${v.notes?`<div style="background:#fff8e1;border-left:4px solid #f59e0b;padding:9px 11px;margin-bottom:8px;font-size:11px;line-height:1.6;border-radius:0 5px 5px 0"><strong>⚠ Notes :</strong> ${v.notes}</div>`:''}
+    ${v.userNotes?`<div style="background:#f0fdf4;border-left:4px solid #10b981;padding:9px 11px;margin-bottom:8px;font-size:11px;line-height:1.6;border-radius:0 5px 5px 0"><strong>✏️ Mes notes :</strong> ${v.userNotes}</div>`:''}
+    <div style="font-size:8px;color:#999;border-top:1px solid #ccc;padding-top:7px;margin-top:12px">
+      AutoLock Pro v4 — Reparetonphone83 — Toulon (83) — ${new Date().toLocaleDateString('fr-FR')}
+    </div>`;
+  document.getElementById('print-overlay').style.display='block';
+  document.body.style.overflow='hidden';
+  window.scrollTo(0,0);
+}
+function closePrint(){
+  document.getElementById('print-overlay').style.display='none';
+  document.body.style.overflow='';
+}
+
+// ════════════════════════════════════════════════════
+//  BROWSE
+// ════════════════════════════════════════════════════
+function buildBrowseTabs(brands){
+  const c=document.getElementById('brand-tabs');
+  let h=`<button class="btab active" onclick="setBrowseTab('ALL',this)">Tous (${DB.length})</button>`;
+  brands.forEach(b=>{ const n=DB.filter(v=>v.brand===b).length; h+=`<button class="btab" onclick="setBrowseTab('${b}',this)">${b} (${n})</button>`; });
+  c.innerHTML=h;
+}
+function setBrowseTab(brand,el){
+  browseTab=brand;
+  document.querySelectorAll('.btab').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  browseFilter();
+}
+function browseFilter(){
+  const search=document.getElementById('browse-search').value.toLowerCase().trim();
+  let data=browseTab==='ALL'?DB:DB.filter(v=>v.brand===browseTab);
+  if(search) data=data.filter(v=>[v.brand,v.model,v.version,v.transponder,v.blade,v.pick,v.protocol,...(v.remotes||[])].join(' ').toLowerCase().includes(search));
+  document.getElementById('browse-results-count').textContent=`${data.length} résultat(s)`;
+  renderBrowse(data);
+}
+function browseReset(){ document.getElementById('browse-search').value=''; browseFilter(); }
+
+function renderBrowse(data){
+  const grid=document.getElementById('browse-grid');
+  if(!data.length){ grid.innerHTML='<div class="no-res"><div class="ico">🔍</div><p>Aucun résultat</p></div>'; return; }
+  const bc=b=>BRAND_CLR[b]||'#888';
+  const hist=getHistory();
+  grid.innerHTML=data.map((v,i)=>{
+    const done=hist.some(h=>h.brand===v.brand&&h.model===v.model);
+    return `
+    <div class="bcard" style="animation-delay:${Math.min(i*12,200)}ms" onclick="quickSelect('${v.brand.replace(/'/g,"\\'")}','${v.model.replace(/'/g,"\\'")}',${v.yearStart})">
+      <div class="bc-head">
+        <div class="bc-brand" style="background:${bc(v.brand)}22;color:${bc(v.brand)};border:1px solid ${bc(v.brand)}44">${v.brand}</div>
+        <div>
+          <div class="bc-model">${v.model}${done?'<span class="done-badge">✓ déjà traité</span>':''}</div>
+          <div class="bc-years">${v.yearStart}–${v.yearEnd} · ${v.version}</div>
+        </div>
+        <div class="diff-badge d-${v.diff}" style="font-size:8px;padding:2px 6px;margin-left:auto">${DIFF_LBL[v.diff]}</div>
+      </div>
+      <div class="bc-body">
+        <div class="bc-item"><strong>${v.blade}</strong> <span style="color:var(--muted)">lame</span></div>
+        <div class="bc-item"><strong>${v.pick}</strong> <span style="color:var(--muted)">litchi</span></div>
+        <div class="bc-item" style="grid-column:1/-1"><span class="tag ${v.tColor}" style="font-size:9px">${v.transponder}</span></div>
+        ${v.timeMin?`<div class="bc-item" style="color:var(--muted)">⏱ ~${v.timeMin} min · 🔑 max ${v.nbKeys||'?'}</div>`:''}
+      </div>
+    </div>`; }).join('');
+}
+
+function quickSelect(brand,model,year){
+  document.getElementById('sel-brand').value=brand;
+  onBrandChange();
+  setTimeout(()=>{
+    document.getElementById('sel-model').value=model;
+    onModelChange();
+    setTimeout(()=>{
+      document.getElementById('sel-year').value=year;
+      onYearChange();
+      showTab('tab-search');
+      window.scrollTo({top:0,behavior:'smooth'});
+    },60);
+  },60);
+}
+
+// ════════════════════════════════════════════════════
+//  MK3 SEARCH
+// ════════════════════════════════════════════════════
+
+const MK3_SLUGS = {
+  "Renault":"renault","Peugeot":"peugeot","Citroën":"citroen",
+  "Volkswagen":"volkswagen","Audi":"audi","Seat":"seat","Skoda":"skoda",
+  "BMW":"bmw","MINI":"mini","Mercedes":"mercedes-benz",
+  "Opel":"opel","Ford":"ford","Fiat":"fiat","Alfa Romeo":"alfa-romeo",
+  "Lancia":"lancia","Nissan":"nissan","Toyota":"toyota","Honda":"honda",
+  "Hyundai":"hyundai","Kia":"kia","Dacia":"dacia","Suzuki":"suzuki",
+  "Mazda":"mazda","Volvo":"volvo","Land Rover":"land-rover",
+  "Mitsubishi":"mitsubishi","Subaru":"subaru",
+};
+
+// Construit l'URL MK3 la plus précise possible :
+// marque + modèle + année + transpondeur chip → recherche directe produit
+function mk3SearchUrl(v){
+  const year  = document.getElementById('sel-year')?.value || '';
+  const slug  = MK3_SLUGS[v.brand];
+
+  // Extraire juste le chip du transpondeur (ex: "PCF7936" ou "PCF7947" ou "ID46")
+  const chipMatch = v.transponder.match(/PCF\d+|4D\d+|ID\d+|Hitag\s*\w+|Megamos\s*\d+|Temic\s*\d+/i);
+  const chip = chipMatch ? chipMatch[0].replace(/\s+/g,'') : '';
+
+  // Query : "Peugeot 307 2006 PCF7936 433MHz"
+  const q = [v.brand, v.model, year, chip, '433MHz'].filter(Boolean).join(' ');
+
+  if(slug){
+    return `https://www.mk3.com/fr/${slug}?q=${encodeURIComponent(q)}`;
+  }
+  return `https://www.mk3.com/fr/search?q=${encodeURIComponent(q)}`;
+}
+
+function openMK3(){
+  if(!currentResult) return;
+  const url = mk3SearchUrl(currentResult);
+  window.open(url, '_blank');
+  showToast('🔍 Recherche MK3 — ' + currentResult.brand + ' ' + currentResult.model);
+}
+
+// ════
+document.getElementById('c-mo').addEventListener('input',()=>{ document.getElementById('c-mo').dataset.touched='1'; calcPrice(); });
+init();
+</script>
+</body>
+</html>
