@@ -3455,10 +3455,10 @@ const XHORSE_NAMES = {
 
 function xhorseRemoteStyle(code){
   const key=code.split(' ')[0].replace(/[()]/g,'').trim();
-  if(/^XK/i.test(key)) return {series:'XK',label:'FIL',     color:'#3b82f6',bg:'rgba(59,130,246,.13)', border:'rgba(59,130,246,.4)'};
-  if(/^XN/i.test(key)) return {series:'XN',label:'SANS-FIL',color:'#f97316',bg:'rgba(249,115,22,.13)',  border:'rgba(249,115,22,.4)'};
-  if(/^XS/i.test(key)) return {series:'XS',label:'SMART',   color:'#a855f7',bg:'rgba(168,85,247,.13)',  border:'rgba(168,85,247,.4)'};
-  if(/^XE/i.test(key)) return {series:'XE',label:'SUPER',   color:'#ef4444',bg:'rgba(239,68,68,.13)',   border:'rgba(239,68,68,.4)'};
+  if(/^XK/i.test(key)) return {series:'XK',label:'WIRE KEY',    color:'#ef4444',bg:'rgba(239,68,68,.13)',   border:'rgba(239,68,68,.4)'};
+  if(/^XN/i.test(key)) return {series:'XN',label:'WIRELESS KEY',color:'#3b82f6',bg:'rgba(59,130,246,.13)',  border:'rgba(59,130,246,.4)'};
+  if(/^XS/i.test(key)) return {series:'XS',label:'SMART KEY',   color:'#f97316',bg:'rgba(249,115,22,.13)',  border:'rgba(249,115,22,.4)'};
+  if(/^XE/i.test(key)) return {series:'XE',label:'SUPER KEY',   color:'#a855f7',bg:'rgba(168,85,247,.13)',  border:'rgba(168,85,247,.4)'};
   return {series:'',label:'',color:'#6b7280',bg:'rgba(107,114,128,.13)',border:'rgba(107,114,128,.3)'};
 }
 
