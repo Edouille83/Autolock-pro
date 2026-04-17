@@ -3006,15 +3006,15 @@ function showResult(v, year){
     </div>
     <div class="ig-block" style="border-right:none">
       <div class="ig-label"><span class="dot" style="background:var(--purple)"></span>TÉLÉCOMMANDE XHORSE</div>
-      <div style="margin-top:6px;display:flex;flex-direction:column;gap:6px">
-        ${(v.remotes||[]).map(r=>`
-          <div style="display:flex;align-items:center;gap:6px">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;background:var(--purple-d);border:1px solid rgba(168,85,247,.35);color:#c084fc;border-radius:6px;padding:4px 10px;letter-spacing:.5px;flex:1">${r}</span>
-            <button onclick="navigator.clipboard.writeText('${r.replace(/'/g,"\\'")}').then(()=>showToast('📋 ${r.replace(/'/g,"\\'")} copié !'))" style="background:var(--s3);border:1px solid var(--b2);color:var(--txt2);border-radius:5px;padding:4px 8px;cursor:pointer;font-size:11px;flex-shrink:0;transition:all .2s" title="Copier la référence">📋</button>
-          </div>`).join('')}
-        <a href="${xhorseSearchUrl(v)}" target="_blank" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(168,85,247,.3);color:#c084fc;border-radius:6px;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;margin-top:2px;transition:all .2s">
-          🛒 COMMANDER SUR XHORSETOOL.COM
-        </a>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:7px">
+        ${(v.remotes||[]).map(r=>{
+          const st=xhorseRemoteStyle(r);
+          const nm=xhorseRemoteName(r);
+          return `<div style="background:${st.bg};border:1px solid ${st.border};border-radius:10px;padding:11px 14px">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:8px;font-weight:700;letter-spacing:2px;color:${st.color};margin-bottom:4px">${st.series}${st.label?' · '+st.label:''}</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:${st.color};line-height:1.1">${nm}</div>
+          </div>`;
+        }).join('')}
       </div>
     </div>
     ${v.obdPos?`
@@ -3411,6 +3411,63 @@ function cloneStatus(transponder){
   if(/pcf7936|id46 crypto2|crypto2/.test(t))
     return {label:'CLONE VVDI ①',color:'#60a5fa',bg:'rgba(96,165,250,.12)',title:'Clonable avec VVDI Key Tool Max — 1 crédit VVDI requis'};
   return {label:'NON CLONABLE',color:'#ef4444',bg:'rgba(239,68,68,.12)',title:'Nécessite accès OBD / EEPROM / BENCH — pas de clone direct'};
+}
+
+const XHORSE_NAMES = {
+  'XKRN00EN':'Universel fil Renault',
+  'XKRN04EN':'Universel fil Renault clé',
+  'XKPU01EN':'Universel fil Peugeot / Citroën',
+  'XKBM00EN':'Universel fil BMW Standard',
+  'XKBM01EN':'Universel fil BMW Luxury',
+  'XKBM02EN':'Universel fil BMW Smart Key',
+  'XKVW00EN':'Universel fil VW Flip',
+  'XKVW01EN':'Universel fil VW 3 boutons',
+  'XKFO01EN':'Universel fil Ford Flip',
+  'XKOP00EN':'Universel fil Opel / Vauxhall',
+  'XKFI00EN':'Universel fil Fiat / Alfa / Lancia',
+  'XKME00EN':'Universel fil Mercedes',
+  'XKTO00EN':'Universel fil Toyota / Lexus',
+  'XKHO01EN':'Universel fil Honda',
+  'XKNI00EN':'Universel fil Nissan',
+  'XKHY01EN':'Universel fil Hyundai / Kia A',
+  'XKHY02EN':'Universel fil Hyundai / Kia B',
+  'XKMA00EN':'Universel fil Mazda',
+  'XKSE00EN':'Universel fil Seat',
+  'XKSK00EN':'Universel fil Skoda',
+  'XKAU01EN':'Universel fil Audi A',
+  'XKAU02EN':'Universel fil Audi B',
+  'XKCU00EN':'Universel fil Chrysler / Dodge',
+  'XKVO00EN':'Universel fil Volvo',
+  'XKLR00EN':'Universel fil Land Rover / Jaguar',
+  'XKMI00EN':'Universel fil Mitsubishi',
+  'XKSU00EN':'Universel fil Suzuki',
+  'XKSU01EN':'Universel fil Suzuki / Subaru',
+  'XKB501EN':'Universel fil Mercedes (Type A)',
+  'XKB502EN':'Universel fil Mercedes (Type B)',
+  'XKT002'  :'Universel fil Toyota lame',
+  'XKF001'  :'Universel fil Ford / Mazda',
+  'XKE001'  :'Universel fil Ford / Mazda lame',
+  'XN001'   :'Sans-fil Peugeot / Citroën',
+  'XN002'   :'Sans-fil Opel / Vauxhall',
+  'XN004'   :'Sans-fil Renault',
+  'XN005'   :'Sans-fil Fiat / Lancia',
+};
+
+function xhorseRemoteStyle(code){
+  const key=code.split(' ')[0].replace(/[()]/g,'').trim();
+  if(/^XK/i.test(key)) return {series:'XK',label:'FIL',     color:'#3b82f6',bg:'rgba(59,130,246,.13)', border:'rgba(59,130,246,.4)'};
+  if(/^XN/i.test(key)) return {series:'XN',label:'SANS-FIL',color:'#f97316',bg:'rgba(249,115,22,.13)',  border:'rgba(249,115,22,.4)'};
+  if(/^XS/i.test(key)) return {series:'XS',label:'SMART',   color:'#a855f7',bg:'rgba(168,85,247,.13)',  border:'rgba(168,85,247,.4)'};
+  if(/^XE/i.test(key)) return {series:'XE',label:'SUPER',   color:'#ef4444',bg:'rgba(239,68,68,.13)',   border:'rgba(239,68,68,.4)'};
+  return {series:'',label:'',color:'#6b7280',bg:'rgba(107,114,128,.13)',border:'rgba(107,114,128,.3)'};
+}
+
+function xhorseRemoteName(code){
+  const key=code.split(' ')[0].replace(/[()]/g,'').trim();
+  if(XHORSE_NAMES[key]) return XHORSE_NAMES[key];
+  // Fallback : description dans la chaîne (ex: "XN001 coque Peugeot")
+  const desc=code.replace(key,'').replace(/[()]/g,'').trim();
+  return desc || key;
 }
 
 function xhorseSearchUrl(v){
