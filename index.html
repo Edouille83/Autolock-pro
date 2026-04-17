@@ -373,14 +373,55 @@ main{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:20px 16p
 footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:1px;border-top:1px solid var(--b1);margin-top:32px;}
 
 @media(max-width:640px){
+  /* ── Header ── */
+  .hdr{gap:6px;padding:7px 0;}
+  .logo-tx h1{font-size:16px;letter-spacing:2px;}
+  .logo-tx p{display:none;}
+  .hdr-stats{display:none;}
+  .hdr-actions{gap:4px;}
+  .hist-txt{display:none;}
+  .hist-btn{padding:5px 7px;font-size:13px;}
+  .hdr-tool-btn{padding:5px 7px;font-size:14px;}
+  .theme-btn{width:30px;height:30px;font-size:14px;}
+
+  /* ── Tab nav ── */
+  .tab-nav{padding:3px;gap:1px;}
+  .tab-nav-btn{font-size:7.5px;padding:6px 3px;min-width:0;letter-spacing:0;}
+
+  /* ── Cascade / search ── */
+  .cascade{padding:14px 12px;}
   .cascade-steps{flex-direction:column;}
   .step-arrow{display:none;}
+  .step{min-width:0;}
+
+  /* ── Result hero ── */
+  .hero-head{padding:11px 13px;gap:7px;}
+  .hero-model{font-size:17px;}
+  .hero-sub{font-size:8px;letter-spacing:.5px;}
+  .hero-year-badge{font-size:19px;padding:3px 9px;}
+  .diff-badge{font-size:8px;padding:2px 6px;}
+
+  /* ── Info grids ── */
   .info-grid{grid-template-columns:1fr!important;}
   .ig-block{border-right:none!important;border-bottom:1px solid var(--b1);}
+  .ig-top-col{flex:1 1 100%!important;min-width:0!important;}
+
+  /* ── Action bar ── */
+  .action-bar{gap:5px;padding:9px 12px;}
+  .btn-action{font-size:8px;padding:7px 9px;gap:3px;}
+
+  /* ── Cards & grids ── */
   .cards-grid{grid-template-columns:1fr;}
   .calc-grid{grid-template-columns:1fr;}
-  .hdr-stats{display:none;}
-  .tab-nav-btn{font-size:9px;padding:7px 8px;}
+  .stat-grid{grid-template-columns:1fr;}
+
+  /* ── Last used bar ── */
+  .last-used-bar .lu-hint{display:none;}
+  .last-used-bar{padding:8px 12px;gap:8px;}
+
+  /* ── Modals → bottom sheet ── */
+  .modal-overlay{padding:0;align-items:flex-end;}
+  .modal-box{border-radius:14px 14px 0 0;max-height:92vh;max-width:100%;}
 }
 /* ── PIN LOCK ── */
 #pin-lock{
@@ -497,6 +538,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 @media(max-width:640px){
   .client-form{grid-template-columns:1fr;}
   .fournisseur-grid{grid-template-columns:1fr;}
+  .client-form .full{grid-column:1;}
 }
 </style>
 </head>
@@ -552,7 +594,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <div class="hs"><div class="hs-v" id="s-total">0</div><div class="hs-l">Véhicules</div></div>
         <div class="hs"><div class="hs-v" id="s-hist">0</div><div class="hs-l">Interventions</div></div>
       </div>
-      <button class="hist-btn" onclick="showTab('tab-history')" aria-label="Ouvrir l'historique des interventions">📅 Historique</button>
+      <button class="hist-btn" onclick="showTab('tab-history')" aria-label="Ouvrir l'historique des interventions">📅 <span class="hist-txt">Historique</span></button>
       <button class="hdr-tool-btn" id="wake-btn" onclick="toggleWakeLock()" title="Verrouillage écran actif pendant intervention" aria-label="Verrouiller l'écran allumé">🔒</button>
       <button class="hdr-tool-btn" onclick="toggleTorch()" title="Lampe de poche — écran blanc plein" aria-label="Activer la lampe de poche">🔦</button>
       <button class="theme-btn" id="theme-btn" onclick="toggleTheme()" title="Mode jour/nuit" aria-label="Basculer mode jour/nuit">🌙</button>
@@ -2946,7 +2988,7 @@ function showResult(v, year){
   // Top grid
   document.getElementById('info-grid-top').innerHTML = `
     <div class="ig-block" style="grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;border-right:none">
-      <div style="flex:2;min-width:200px">
+      <div class="ig-top-col" style="flex:2;min-width:200px">
         <div class="ig-label"><span class="dot" style="background:var(--amber)"></span>TRANSPONDEUR</div>
         <div class="ig-val" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <span class="tag ${v.tColor}" style="font-size:13px;padding:4px 12px">${v.transponder}</span>
@@ -2966,15 +3008,15 @@ function showResult(v, year){
           }).join('')}
         </div>` : ''}
       </div>
-      <div style="flex:2;min-width:160px">
+      <div class="ig-top-col" style="flex:2;min-width:160px">
         <div class="ig-label"><span class="dot" style="background:var(--cyan)"></span>PROTOCOLE IMMO</div>
         <div class="ig-val" style="font-size:14px">${v.protocol}</div>
       </div>
-      <div style="flex:1;min-width:120px">
+      <div class="ig-top-col" style="flex:1;min-width:120px">
         <div class="ig-label"><span class="dot" style="background:var(--cyan)"></span>MÉTHODE</div>
         <div class="tags" style="margin-top:4px">${v.method.map(m=>`<span class="mbadge ${MTH_CLR[m]||'m-obd'}">${m}</span>`).join('')}</div>
       </div>
-      <div style="flex-shrink:0">
+      <div class="ig-top-col" style="flex-shrink:0">
         <div class="ig-label"><span class="dot" style="background:${freqClr}"></span>FRÉQUENCE</div>
         <div style="background:${freqBg};border:1px solid ${freqBord};border-radius:8px;padding:7px 12px;margin-top:4px;display:inline-flex;flex-direction:column;gap:2px">
           <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:${freqClr};line-height:1">${freqNum||'433.92'} <span style="font-size:14px">MHz</span></div>
