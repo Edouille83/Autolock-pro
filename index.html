@@ -916,6 +916,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
 <footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
+<script src="remotes-data.js"></script>
 <script>
 // ════════════════════════════════════════════════════
 //  PIN PROTECTION
@@ -2826,6 +2827,39 @@ function showToast(msg, duration=2500){
 }
 
 // ════════════════════════════════════════════════════
+//  XHORSE REMOTES DB — enrichissement depuis remotes-data.js
+// ════════════════════════════════════════════════════
+function _norm(s){ return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim(); }
+
+function lookupRemotes(brand, model, yearStart, yearEnd){
+  if(typeof REMOTES_DB === 'undefined' || !REMOTES_DB.length) return null;
+  const bNorm = _norm(brand);
+  const mNorm = _norm(model);
+  const matches = REMOTES_DB.filter(r=>{
+    if(_norm(r.brand) !== bNorm) return false;
+    const rMod = _norm(r.model);
+    if(!rMod.includes(mNorm) && !mNorm.includes(rMod)) return false;
+    if(yearStart && r.yearEnd   && r.yearEnd   < yearStart) return false;
+    if(yearEnd   && r.yearStart && r.yearStart > yearEnd)   return false;
+    return true;
+  });
+  if(!matches.length) return null;
+  const remotes = [...new Set(matches.flatMap(m=>m.remotes))].filter(Boolean);
+  const freq = matches.find(m=>m.freq)?.freq || null;
+  const chips = [...new Set(matches.map(m=>m.transponder).filter(Boolean))];
+  return { remotes, freq, xhorse_transponder: chips.join(' / ') || null };
+}
+
+function enrichWithXhorse(v){
+  const data = lookupRemotes(v.brand, v.model, v.yearStart, v.yearEnd);
+  if(!data) return v;
+  const enriched = { ...v };
+  if(data.remotes.length) enriched.remotes = data.remotes;
+  if(data.freq && !v.freq)  enriched.freq = data.freq;
+  return enriched;
+}
+
+// ════════════════════════════════════════════════════
 //  LOCALSTORAGE HELPERS
 // ════════════════════════════════════════════════════
 function editKey(v){ return `alp4_${v.brand}|${v.model}|${v.yearStart}`; }
@@ -2920,7 +2954,7 @@ function onYearChange(){
   if(!candidates.length){ alert('Aucune donnée trouvée.'); return; }
   candidates.sort((a,b)=>(a.yearEnd-a.yearStart)-(b.yearEnd-b.yearStart));
   const v = candidates[0];
-  currentResult = applyOverride(v);
+  currentResult = enrichWithXhorse(applyOverride(v));
   setStep(4,'active');
   saveLastUsed(v, year);
   showResult(currentResult, year);
@@ -3296,7 +3330,7 @@ function saveEdit(){
   catch(e){ alert('Erreur localStorage'); return; }
   closeEdit();
   const year = document.getElementById('sel-year').value;
-  currentResult = applyOverride(v);
+  currentResult = enrichWithXhorse(applyOverride(v));
   showResult(currentResult, year);
   showToast('✅ Fiche sauvegardée !');
 }
@@ -3307,7 +3341,7 @@ function resetEdit(){
   closeEdit();
   const year = document.getElementById('sel-year').value;
   const orig = DB.find(x=>x.brand===currentResult.brand&&x.model===currentResult.model&&parseInt(year)>=x.yearStart&&parseInt(year)<=x.yearEnd);
-  if(orig){ currentResult=orig; showResult(orig, year); }
+  if(orig){ currentResult=enrichWithXhorse(orig); showResult(currentResult, year); }
   showToast('🗑 Modifications effacées');
 }
 
