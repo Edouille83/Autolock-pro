@@ -58,12 +58,12 @@ const MAKE_MAP = {
 // ─── Mapping : (make_id, série_xhorse) → codes produits Xhorse ───────────────
 // Série : 'XK' | 'XN' | 'XE' | 'XS'
 const REMOTE_CODES = {
-  108: { XK: ['XKRN00EN'],          XN: ['XN004'],         XE: ['XEN001']                    }, // Renault
-   16: { XK: ['XKPU01EN'],          XN: ['XN001'],         XE: ['XE0B0EN','XE0B1EN']         }, // Peugeot
-   91: { XK: ['XKPU01EN'],          XN: ['XN001'],         XE: ['XE0B0EN','XE0B1EN']         }, // Citroën
-   21: { XK: ['XKVW00EN','XKVW01EN'], XN: [],              XE: []                            }, // VW
-   10: { XK: ['XKME00EN'],          XN: [],                XE: []                            }, // Mercedes
-    6: { XK: ['XKBM00EN','XKBM01EN'], XN: [],              XE: []                            }, // BMW
+  108: { XK: ['XKRN00EN'],  XN: ['XN004'],  XE: ['XEN001']   }, // Renault
+   16: { XK: ['XKPU01EN'],  XN: ['XN001'],  XE: ['XE0B0EN']  }, // Peugeot
+   91: { XK: ['XKPU01EN'],  XN: ['XN001'],  XE: ['XE0B0EN']  }, // Citroën
+   21: { XK: ['XKVW00EN'],  XN: [],         XE: []           }, // VW
+   10: { XK: ['XKME00EN'],  XN: [],         XE: []           }, // Mercedes
+    6: { XK: ['XKBM00EN'],  XN: [],         XE: []           }, // BMW
     4: { XK: ['XKAU01EN'],          XN: [],                XE: []                            }, // Audi
    27: { XK: ['XKFO01EN'],          XN: [],                XE: []                            }, // Ford
    65: { XK: ['XKOP00EN'],          XN: ['XN002'],         XE: []                            }, // Opel

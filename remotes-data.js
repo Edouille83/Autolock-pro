@@ -2557,8 +2557,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 -06 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2577,8 +2576,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "MINI with PINCODE 433",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2597,8 +2595,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 315 -06 V2",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2617,8 +2614,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2637,8 +2633,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2657,8 +2652,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 00 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2677,8 +2671,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 00 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2697,8 +2690,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-00 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2717,8 +2709,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-00 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2737,8 +2728,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2757,8 +2747,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2777,8 +2766,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2797,8 +2785,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2817,8 +2804,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-04 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2837,8 +2823,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-04 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2857,8 +2842,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-04 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2877,8 +2861,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-04 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2897,8 +2880,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 00 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2917,8 +2899,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 00 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2937,8 +2918,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-00 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2957,8 +2937,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-00 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -2977,8 +2956,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -2997,8 +2975,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3017,8 +2994,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3037,8 +3013,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3057,8 +3032,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-03 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3077,8 +3051,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-03 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3097,8 +3070,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3117,8 +3089,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3137,8 +3108,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV E39 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3157,8 +3127,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3177,8 +3146,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-04 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3197,8 +3165,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-04 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3217,8 +3184,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-00 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3237,8 +3203,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-00 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3257,8 +3222,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3277,8 +3241,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3297,8 +3260,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-03 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3317,8 +3279,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-03 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3337,8 +3298,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 04 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3357,8 +3317,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 04 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3377,8 +3336,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 04-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3397,8 +3355,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 04-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3417,8 +3374,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV E38 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3437,8 +3393,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-01 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3457,8 +3412,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-01 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3477,8 +3431,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-01 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3497,8 +3450,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-01 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3517,8 +3469,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 02-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3537,8 +3488,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 02-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3557,8 +3507,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 02-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3577,8 +3526,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 02-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3597,8 +3545,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-01 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3617,8 +3564,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-01 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3637,8 +3583,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 04-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3657,8 +3602,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 04-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3677,8 +3621,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 03-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3697,8 +3640,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 03-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3717,8 +3659,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-03 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3737,8 +3678,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-03 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3757,8 +3697,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 00-03 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3777,8 +3716,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 00-03 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3797,8 +3735,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 04-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3817,8 +3754,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 04-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3837,8 +3773,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 99-02 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3857,8 +3792,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 01-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3877,8 +3811,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 01-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3897,8 +3830,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 96-02 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3917,8 +3849,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 99-02 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3937,8 +3868,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 99-02 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3957,8 +3887,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 03-05 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -3977,8 +3906,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 03-05 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -3997,8 +3925,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV 00-03 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -4017,8 +3944,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 00-03 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4037,8 +3963,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4057,8 +3982,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "MINI(Pincode) 315",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -4077,8 +4001,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "MINI(Old) Landrover(Pincode) 433",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4097,8 +4020,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 315 V2",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -4117,8 +4039,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "LX8FZV EWS 1461",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -4137,8 +4058,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS 433 EWS 1462",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4361,8 +4281,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "(Pincode) 315",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -4381,8 +4300,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 97-02 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4401,8 +4319,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 95-02 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -4421,8 +4338,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "EWS433 97-02 212",
     "remotes": [
-      "XKBM00EN",
-      "XKBM01EN"
+      "XKBM00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13082,8 +12998,7 @@ const REMOTES_DB = [
     "version": "with frog light",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13103,8 +13018,7 @@ const REMOTES_DB = [
     "version": "_C2 04-08 273",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13143,8 +13057,7 @@ const REMOTES_DB = [
     "version": "with frog light",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13164,8 +13077,7 @@ const REMOTES_DB = [
     "version": "Peugeot 206",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13185,8 +13097,7 @@ const REMOTES_DB = [
     "version": "without frog light",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13206,8 +13117,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13227,8 +13137,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13248,8 +13157,7 @@ const REMOTES_DB = [
     "version": "0536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13269,8 +13177,7 @@ const REMOTES_DB = [
     "version": "206_C2 09-13 273",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13290,8 +13197,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13311,8 +13217,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13332,8 +13237,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13370,8 +13274,7 @@ const REMOTES_DB = [
     "version": "Remote B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -13408,8 +13311,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13429,8 +13331,7 @@ const REMOTES_DB = [
     "version": "2070523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13450,8 +13351,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13471,8 +13371,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13492,8 +13391,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13513,8 +13411,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13534,8 +13431,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13555,8 +13451,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13-16 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13610,8 +13505,7 @@ const REMOTES_DB = [
     "version": "Remote B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -13648,8 +13542,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 14-16 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13686,8 +13579,7 @@ const REMOTES_DB = [
     "version": "0536_ASK 270",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13707,8 +13599,7 @@ const REMOTES_DB = [
     "version": "0536_FSK 271",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13728,8 +13619,7 @@ const REMOTES_DB = [
     "version": "/508/301 Wireless Remote FSK 14- 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13749,8 +13639,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13804,8 +13693,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13-15 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13825,8 +13713,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13846,8 +13733,7 @@ const REMOTES_DB = [
     "version": "2070523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13867,8 +13753,7 @@ const REMOTES_DB = [
     "version": "0536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13888,8 +13773,7 @@ const REMOTES_DB = [
     "version": "0536_FSK 271",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -13909,8 +13793,7 @@ const REMOTES_DB = [
     "version": "(Old Version 1) Flat 01-13 479",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13930,8 +13813,7 @@ const REMOTES_DB = [
     "version": "04-13 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13951,8 +13833,7 @@ const REMOTES_DB = [
     "version": "04-13 433 fine adj",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13972,8 +13853,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -13993,8 +13873,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14014,8 +13893,7 @@ const REMOTES_DB = [
     "version": null,
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14036,8 +13914,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14057,8 +13934,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14078,8 +13954,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14099,8 +13974,7 @@ const REMOTES_DB = [
     "version": "0536_ASK 270",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14139,8 +14013,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14160,8 +14033,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14182,8 +14054,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14203,8 +14074,7 @@ const REMOTES_DB = [
     "version": "12-17 FSK 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14241,8 +14111,7 @@ const REMOTES_DB = [
     "version": null,
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": "PCF7936",
@@ -14263,8 +14132,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14284,8 +14152,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14305,8 +14172,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14326,8 +14192,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14399,8 +14264,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14420,8 +14284,7 @@ const REMOTES_DB = [
     "version": "2013 LATER ALL FSK 433 38",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14441,8 +14304,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14462,8 +14324,7 @@ const REMOTES_DB = [
     "version": "Partner 14-17 FSK 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14483,8 +14344,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14504,8 +14364,7 @@ const REMOTES_DB = [
     "version": "3070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14525,8 +14384,7 @@ const REMOTES_DB = [
     "version": "0536_FSK 271",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14546,8 +14404,7 @@ const REMOTES_DB = [
     "version": "3080536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14567,8 +14424,7 @@ const REMOTES_DB = [
     "version": "308 Wireless Remote FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14588,8 +14444,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 14- 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14628,8 +14483,7 @@ const REMOTES_DB = [
     "version": "206CC",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": "ID46",
@@ -14649,8 +14503,7 @@ const REMOTES_DB = [
     "version": "308(New) FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -14761,8 +14614,7 @@ const REMOTES_DB = [
     "version": "PSA Remote FSK B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -14799,8 +14651,7 @@ const REMOTES_DB = [
     "version": "Bipper 12-20(Delphi BSI)EU",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14820,8 +14671,7 @@ const REMOTES_DB = [
     "version": "(Marelli BSI)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "PCF7946",
@@ -14842,8 +14692,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14863,8 +14712,7 @@ const REMOTES_DB = [
     "version": "307 04-13 433 fine adj",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14884,8 +14732,7 @@ const REMOTES_DB = [
     "version": "Boxer 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "ID46",
@@ -14925,8 +14772,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -14963,8 +14809,7 @@ const REMOTES_DB = [
     "version": "0536 ASK 314.85",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "314.80 MHz ASK",
     "transponder": null,
@@ -14984,8 +14829,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15005,8 +14849,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15026,8 +14869,7 @@ const REMOTES_DB = [
     "version": "PSA FSK B5 Super Remote(swap lock and unlock)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -15047,8 +14889,7 @@ const REMOTES_DB = [
     "version": "308(New) FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15068,8 +14909,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15089,8 +14929,7 @@ const REMOTES_DB = [
     "version": "2070523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15110,8 +14949,7 @@ const REMOTES_DB = [
     "version": "0536_ASK 270",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15131,8 +14969,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15152,8 +14989,7 @@ const REMOTES_DB = [
     "version": "Wireless Remote FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15173,8 +15009,7 @@ const REMOTES_DB = [
     "version": "(New) FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15228,8 +15063,7 @@ const REMOTES_DB = [
     "version": "Remote B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -15266,8 +15100,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15287,8 +15120,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15308,8 +15140,7 @@ const REMOTES_DB = [
     "version": "(New) FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15330,8 +15161,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15351,8 +15181,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15407,8 +15236,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15483,8 +15311,7 @@ const REMOTES_DB = [
     "version": "Exper0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15504,8 +15331,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15578,8 +15404,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15599,8 +15424,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15620,8 +15444,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15641,8 +15464,7 @@ const REMOTES_DB = [
     "version": "2070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15662,8 +15484,7 @@ const REMOTES_DB = [
     "version": "(-06/2008)0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15683,8 +15504,7 @@ const REMOTES_DB = [
     "version": "2070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15704,8 +15524,7 @@ const REMOTES_DB = [
     "version": "Berlingo0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15725,8 +15544,7 @@ const REMOTES_DB = [
     "version": "C4 Picasso0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15746,8 +15564,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15767,8 +15584,7 @@ const REMOTES_DB = [
     "version": "0536 ASK 314.85",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "314.80 MHz ASK",
     "transponder": null,
@@ -15788,8 +15604,7 @@ const REMOTES_DB = [
     "version": "12-20(Delphi BSI)EU",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15828,8 +15643,7 @@ const REMOTES_DB = [
     "version": "(Marelli)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": null,
@@ -15849,8 +15663,7 @@ const REMOTES_DB = [
     "version": "433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "ID46",
@@ -15889,8 +15702,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -15910,8 +15722,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -15998,8 +15809,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16018,8 +15828,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -16038,8 +15847,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16058,8 +15866,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(5K0-837-202E) 5K0-837-202E70",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -16078,8 +15885,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16098,8 +15904,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -13",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -16118,8 +15923,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16138,8 +15942,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16158,8 +15961,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -16178,8 +15980,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0 959 753 DA 02-07 1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16198,8 +15999,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16218,8 +16018,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO1J0-959-753DC 02-06 4btn 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16289,8 +16088,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -16377,8 +16175,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16397,8 +16194,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-13 Gol Sedan 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16417,8 +16213,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 12-13 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16437,8 +16232,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "G5 6QE959753 433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -16457,8 +16251,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16477,8 +16270,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 11-13 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16497,8 +16289,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16517,8 +16308,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(5K0-837-202E) 5K0-837-202E70",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -16537,8 +16327,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -16574,8 +16363,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N09-11 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16594,8 +16382,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0 959 753 DA 02-05 1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16614,8 +16401,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16634,8 +16420,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 04-09 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16654,8 +16439,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO1J0-959-753DC 02-06 4btn 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16674,8 +16458,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 4btn 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16694,8 +16477,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16714,8 +16496,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16819,8 +16600,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -16890,8 +16670,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DJ 02-10 1515",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16910,8 +16689,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0 959 753 DA 02-10 1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16930,8 +16708,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -16950,8 +16727,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AM 02-09 1538",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16970,8 +16746,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO1J0-959-753DC 02-09 4btn 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -16990,8 +16765,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 4btn 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17010,8 +16784,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17030,8 +16803,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2000 ASK 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17050,8 +16822,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 12-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17070,8 +16841,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 12-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17124,8 +16894,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17144,8 +16913,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17164,8 +16932,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2012 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17184,8 +16951,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 04-11 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17204,8 +16970,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 14-15 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17224,8 +16989,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17244,8 +17008,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17264,8 +17027,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17284,8 +17046,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(5K0-837-202E) 12- 5K0-837-202E 170",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -17304,8 +17065,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -17324,8 +17084,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DJ 03-05 1515",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17344,8 +17103,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AG 1526",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17364,8 +17122,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0 959 753 DA 01-05 1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17384,8 +17141,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17404,8 +17160,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AM 02-09 1538",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17424,8 +17179,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO1J0-959-753DC 02-05 4btn 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17444,8 +17198,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17464,8 +17217,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 4btn 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17484,8 +17236,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17589,8 +17340,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -17643,8 +17393,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "7M3959753 -2003",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -17663,8 +17412,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "09-12 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17683,8 +17431,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17703,8 +17450,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17723,8 +17469,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2006",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -17743,8 +17488,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 10-11 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17763,8 +17507,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2010",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17783,8 +17526,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-N 10-11 1516",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17803,8 +17545,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD Polo India 1518",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17823,8 +17564,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0 959 753 DA 02-10 1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17843,8 +17583,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17914,8 +17653,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q 10-12",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -17934,8 +17672,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q 10-12",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -17954,8 +17691,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 11- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17974,8 +17710,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -17994,8 +17729,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "(753L) old style 753L 179",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18065,8 +17799,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 11- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18085,8 +17818,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2008",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18105,8 +17837,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N11- 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18125,8 +17856,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-N 11- 1516",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18145,8 +17875,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 03-11 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18165,8 +17894,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 11-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18236,8 +17964,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -13",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -18256,8 +17983,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 13- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18276,8 +18002,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 13- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18364,8 +18089,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -09",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -18384,8 +18108,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -13",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -18404,8 +18127,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 09- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18424,8 +18146,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N09- 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18444,8 +18165,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 09- 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18464,8 +18184,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2009 1J0-959-753AH",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18484,8 +18203,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 09-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18504,8 +18222,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -13",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -18524,8 +18241,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q -11",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -18544,8 +18260,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18564,8 +18279,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18584,8 +18298,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 08- 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18604,8 +18317,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-N 08- 1516",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18624,8 +18336,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 08-11 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18644,8 +18355,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18664,8 +18374,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 12-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18820,8 +18529,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 13- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18840,8 +18548,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "old style 617",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18860,8 +18567,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 06-11 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18880,8 +18586,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "315 1524",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18900,8 +18605,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 06-11 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -18920,8 +18624,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AM 02-09 1538",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18940,8 +18643,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753DC 02-05 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18960,8 +18662,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -18980,8 +18681,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 4btn 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19000,8 +18700,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19054,8 +18753,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 12-15 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19074,8 +18772,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 13- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19094,8 +18791,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19114,8 +18810,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(202AD) 11- 202AD 202L 202H 169",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19134,8 +18829,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Multivan 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19154,8 +18848,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19174,8 +18867,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0 837 202 E 10-16 1514",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19194,8 +18886,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 11-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19265,8 +18956,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Multivan 434 trunk btn is right door",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19285,8 +18975,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "7M3959753 -2003",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -19322,8 +19011,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "7N0-837-202-AF ASK 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19410,8 +19098,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19634,8 +19321,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -19654,8 +19340,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -19674,8 +19359,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 09-11 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19694,8 +19378,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19714,8 +19397,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 06-11 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19734,8 +19416,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19771,8 +19452,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD Vento India 1518",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19791,8 +19471,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "09-12 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19811,8 +19490,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19831,8 +19509,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DJ 02-10 1515",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -19851,8 +19528,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0 837 202 E 08-13 1514",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19871,8 +19547,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 09-11 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19891,8 +19566,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19911,8 +19585,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 05-09 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19931,8 +19604,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19951,8 +19623,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19971,8 +19642,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -19991,8 +19661,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20011,8 +19680,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20031,8 +19699,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20051,8 +19718,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DJ 1515",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20071,8 +19737,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753DJ 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20091,8 +19756,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1514",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20111,8 +19775,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20131,8 +19794,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 1513",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20151,8 +19813,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -20171,8 +19832,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20191,8 +19851,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1534",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20211,8 +19870,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "DA8000M 1536",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20231,8 +19889,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753G 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20251,8 +19908,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AM 02-09 1538",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20271,8 +19927,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20308,8 +19963,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20345,8 +19999,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 10-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20365,8 +20018,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 98-01 4btn 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20385,8 +20037,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753T 01-02 1688",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20405,8 +20056,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 15-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20425,8 +20075,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO 1J0-959-753DC 02-06 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20445,8 +20094,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "NBG010180T 11-16 1700",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20482,8 +20130,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2E0-959-753-A 06-16",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20502,8 +20149,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2E0-959-753-A 06-16 SR Remote",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20522,8 +20168,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S 10-14 1701",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20576,8 +20221,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753N 202Q",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -20596,8 +20240,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "202AD 202L 202H",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20616,8 +20259,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda(5K0-837-202E) 5K0-837-202E70",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -20704,8 +20346,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753A/B 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -20724,8 +20365,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -20744,8 +20384,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Jetta old style 617",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20764,8 +20403,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Voyage Sharan Multivan Carlavelle 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20801,8 +20439,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753DJ 1509",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20821,8 +20458,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20841,8 +20477,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-N",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20861,8 +20496,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0 837 202 E 1514",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20881,8 +20515,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DJ",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20901,8 +20534,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-N 1516",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20938,8 +20570,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20958,8 +20589,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-E 1519",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -20978,8 +20608,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Jetta 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -20998,8 +20627,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AG",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21035,8 +20663,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753 DA",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21055,8 +20682,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21075,8 +20701,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753G 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21095,8 +20720,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-AM 1538",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21115,8 +20739,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-DA",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21135,8 +20758,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "HLO1J0-959-753DC 02-06 4btn 1687",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21155,8 +20777,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753T",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21175,8 +20796,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753F",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21195,8 +20815,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753AH 1693",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21215,8 +20834,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT 1J0-959-753-CT 1694",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21235,8 +20853,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753-G 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21255,8 +20872,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-P",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -21275,8 +20891,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-B",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21295,8 +20910,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AE",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21315,8 +20929,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-S",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21335,8 +20948,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2E0-959-753-A 06-16",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21355,8 +20967,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Sagitar(753L) old style 753L V2",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21375,8 +20986,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "6QE959753 433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -21582,8 +21192,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Sharan Multivan Carlavelle 434 trunk btn is right door",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21636,8 +21245,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753P/N 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -21656,8 +21264,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0959753A/B 433.9 adj",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -21744,8 +21351,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "VW Fox Brasil",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -21832,8 +21438,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "VW 7M3959753 -2003",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -21869,8 +21474,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2E0-959-753-A 06-16 SR Remote",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -21906,8 +21510,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1K0-959-753G 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21960,8 +21563,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Sharan 7N0-837-202-AF ASK 315",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -21997,8 +21599,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "VW NEW TYPE ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.00 MHz ASK",
     "transponder": null,
@@ -22068,8 +21669,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Amarok/Vento/Passat 09-12 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22088,8 +21688,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "VW Russia ASK 432(Rustem)",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.00 MHz ASK",
     "transponder": null,
@@ -22210,8 +21809,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "MQB49/5C XT57 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22247,8 +21845,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -22641,8 +22238,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Sharan Multivan 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22661,8 +22257,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "1J0-959-753-CT",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22715,8 +22310,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Sharan Multivan 434 trunk btn is right door",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22769,8 +22363,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "09-12 ASK 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22789,8 +22382,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -22809,8 +22401,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "6QE959753 433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -22829,8 +22420,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "VW Fox Brasil",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -22849,8 +22439,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": null,
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -23039,8 +22628,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -23059,8 +22647,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "6QE959753 433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -23079,8 +22666,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Skoda 1J0-959-753DJ 167",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -23099,8 +22685,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "5K0-837-202-AD",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -23119,8 +22704,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "Carlavelle 434",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -23139,8 +22723,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "T5 Carlavelle 434 trunk btn is right door",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "434.42 MHz ASK",
     "transponder": null,
@@ -23244,8 +22827,7 @@ const REMOTES_DB = [
     "yearEnd": null,
     "version": "2012 Argentina 433",
     "remotes": [
-      "XKVW00EN",
-      "XKVW01EN"
+      "XKVW00EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107564,8 +107146,7 @@ const REMOTES_DB = [
     "version": "3070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107585,8 +107166,7 @@ const REMOTES_DB = [
     "version": "C5_14- 272",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107606,8 +107186,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107627,8 +107206,7 @@ const REMOTES_DB = [
     "version": "3070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107648,8 +107226,7 @@ const REMOTES_DB = [
     "version": "HELLA ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107703,8 +107280,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107724,8 +107300,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -107745,8 +107320,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107766,8 +107340,7 @@ const REMOTES_DB = [
     "version": "2070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107787,8 +107360,7 @@ const REMOTES_DB = [
     "version": "206_C2 06-13 273",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107808,8 +107380,7 @@ const REMOTES_DB = [
     "version": null,
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": "PCF7936",
@@ -107829,8 +107400,7 @@ const REMOTES_DB = [
     "version": "(-2003) Pluriel 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107850,8 +107420,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107871,8 +107440,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -107893,8 +107461,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -107915,8 +107482,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -107936,8 +107502,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13- 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -107958,8 +107523,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "430.00 MHz ASK",
     "transponder": null,
@@ -107979,8 +107543,7 @@ const REMOTES_DB = [
     "version": "C3XR C4L Elysee 13- FSK 13- 1472",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108017,8 +107580,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 14- 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108038,8 +107600,7 @@ const REMOTES_DB = [
     "version": "C4L Elysee 13- FSK 13- 1472",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108076,8 +107637,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13-16 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108097,8 +107657,7 @@ const REMOTES_DB = [
     "version": "C3XR C4L Elysee 13- FSK 13- 1472",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108153,8 +107712,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -108174,8 +107732,7 @@ const REMOTES_DB = [
     "version": "13-18 FSK 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108195,8 +107752,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108216,8 +107772,7 @@ const REMOTES_DB = [
     "version": "Remote B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -108237,8 +107792,7 @@ const REMOTES_DB = [
     "version": null,
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108258,8 +107812,7 @@ const REMOTES_DB = [
     "version": "Citroen FSK B5 Super Remote(swap lock and unlock)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -108279,8 +107832,7 @@ const REMOTES_DB = [
     "version": "2070523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108300,8 +107852,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108321,8 +107872,7 @@ const REMOTES_DB = [
     "version": "2070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108342,8 +107892,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108380,8 +107929,7 @@ const REMOTES_DB = [
     "version": "(Thailand) Pluriel 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108402,8 +107950,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108423,8 +107970,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108444,8 +107990,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108465,8 +108010,7 @@ const REMOTES_DB = [
     "version": "Citroen FSK B5 Super Remote(swap lock and unlock)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -108487,8 +108031,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108508,8 +108051,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108529,8 +108071,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108550,8 +108091,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108571,8 +108111,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108677,8 +108216,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108698,8 +108236,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108719,8 +108256,7 @@ const REMOTES_DB = [
     "version": "C40523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108740,8 +108276,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108761,8 +108296,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108782,8 +108316,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108803,8 +108336,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108824,8 +108356,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108845,8 +108376,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108866,8 +108396,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -108887,8 +108416,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -108908,8 +108436,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109002,8 +108529,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109024,8 +108550,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109045,8 +108570,7 @@ const REMOTES_DB = [
     "version": "2013 LATER ALL FSK 433 38",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109066,8 +108590,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109087,8 +108610,7 @@ const REMOTES_DB = [
     "version": "Berlingo 13-17 FSK 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109108,8 +108630,7 @@ const REMOTES_DB = [
     "version": "PSA0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109129,8 +108650,7 @@ const REMOTES_DB = [
     "version": "3070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109150,8 +108670,7 @@ const REMOTES_DB = [
     "version": "Berlingo0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109172,8 +108691,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -109193,8 +108711,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13-16 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109214,8 +108731,7 @@ const REMOTES_DB = [
     "version": "C3XR/C4L/Elysee FSK 2013+",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109305,8 +108821,7 @@ const REMOTES_DB = [
     "version": "Citroen Remote B5 Super Remote",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -109343,8 +108858,7 @@ const REMOTES_DB = [
     "version": "Nemo 11-20(Delphi BSI)EU",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109364,8 +108878,7 @@ const REMOTES_DB = [
     "version": "(Marelli BSI)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "PCF7946",
@@ -109386,8 +108899,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109426,8 +108938,7 @@ const REMOTES_DB = [
     "version": "Yumper 433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "ID46",
@@ -109448,8 +108959,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "434.00 MHz FSK",
     "transponder": null,
@@ -109506,8 +109016,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109528,8 +109037,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109566,8 +109074,7 @@ const REMOTES_DB = [
     "version": "PSA0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109587,8 +109094,7 @@ const REMOTES_DB = [
     "version": "Citroen FSK B5 Super Remote(swap lock and unlock)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": "ID4A (Hitag AES)",
@@ -109608,8 +109114,7 @@ const REMOTES_DB = [
     "version": "C3XR/C4L/Elysee FSK 2013+(lock swap unlock)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109629,8 +109134,7 @@ const REMOTES_DB = [
     "version": "2007",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109650,8 +109154,7 @@ const REMOTES_DB = [
     "version": null,
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109671,8 +109174,7 @@ const REMOTES_DB = [
     "version": "3070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109731,8 +109233,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109753,8 +109254,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109791,8 +109291,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109812,8 +109311,7 @@ const REMOTES_DB = [
     "version": "0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109833,8 +109331,7 @@ const REMOTES_DB = [
     "version": "2070536 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109854,8 +109351,7 @@ const REMOTES_DB = [
     "version": "0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109875,8 +109371,7 @@ const REMOTES_DB = [
     "version": "Berlingo0536 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109896,8 +109391,7 @@ const REMOTES_DB = [
     "version": "408/508/301 Wireless Remote FSK 13 478",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109917,8 +109411,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109955,8 +109448,7 @@ const REMOTES_DB = [
     "version": "FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -109976,8 +109468,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -109997,8 +109488,7 @@ const REMOTES_DB = [
     "version": "C4 Picasso0523 FSK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz FSK",
     "transponder": null,
@@ -110019,8 +109509,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "434.00 MHz FSK",
     "transponder": null,
@@ -110040,8 +109529,7 @@ const REMOTES_DB = [
     "version": "(Marelli)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": null,
@@ -110080,8 +109568,7 @@ const REMOTES_DB = [
     "version": "11-20(Delphi BSI)EU",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -110101,8 +109588,7 @@ const REMOTES_DB = [
     "version": "(Marelli)",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": null,
@@ -110123,8 +109609,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "315.00 MHz ASK",
     "transponder": null,
@@ -110163,8 +109648,7 @@ const REMOTES_DB = [
     "version": "0523 ASK",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
@@ -110218,8 +109702,7 @@ const REMOTES_DB = [
     "version": "433",
     "remotes": [
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.96 MHz ASK",
     "transponder": "ID46",
@@ -110240,8 +109723,7 @@ const REMOTES_DB = [
     "remotes": [
       "XKPU01EN",
       "XN001",
-      "XE0B0EN",
-      "XE0B1EN"
+      "XE0B0EN"
     ],
     "freq": "433.92 MHz ASK",
     "transponder": null,
