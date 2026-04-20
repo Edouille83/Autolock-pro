@@ -918,6 +918,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 <footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
 <script src="remotes-data.js"></script>
 <script src="prog-methods.js"></script>
+<script src="obd-locations.js"></script>
 <script>
 // ════════════════════════════════════════════════════
 //  PIN PROTECTION
@@ -8042,6 +8043,52 @@ function lookupRemotes(brand, model, yearStart, yearEnd){
   return { remotes, freq, transponder, blade, clonable };
 }
 
+function _normModel(s) {
+  return s.toLowerCase()
+    .replace(/\b[efg]\d{2,3}\b/g, '')   // strip BMW gen codes: E46, F30, G20
+    .replace(/\bph\d\b/g, '')           // strip phase codes: ph1, ph2
+    .replace(/[-_]/g,' ')
+    .replace(/\s+/g,' ')
+    .trim();
+}
+function getObdLocation(brand, model, yearStart, yearEnd) {
+  if(typeof OBD_LOCATIONS === 'undefined') return null;
+  const brandData = OBD_LOCATIONS[brand];
+  if(!brandData) return null;
+  const ys = yearStart || 0;
+  const ye = yearEnd   || 9999;
+
+  // 1. Exact match
+  let entries = brandData[model];
+  // 2. Normalized match
+  if(!entries) {
+    const normQ = _normModel(model);
+    const key = Object.keys(brandData).find(k => _normModel(k) === normQ);
+    if(key) entries = brandData[key];
+  }
+  // 3. Prefix match (e.g. "SERIE 3" matches "Serie 3 E46")
+  if(!entries) {
+    const normQ = _normModel(model);
+    const key = Object.keys(brandData).find(k => _normModel(k).startsWith(normQ) || normQ.startsWith(_normModel(k).split(' ').slice(0,2).join(' ')));
+    if(key) entries = brandData[key];
+  }
+  if(!entries || !entries.length) return null;
+
+  const overlapping = entries.filter(e => {
+    if(e.yearEnd   && e.yearEnd   < ys) return false;
+    if(e.yearStart && e.yearStart > ye) return false;
+    return true;
+  });
+  const pool = overlapping.length ? overlapping : entries;
+  // Pick entry with greatest overlap with [ys, ye]
+  const best = pool.sort((a, b) => {
+    const overlapA = Math.min(a.yearEnd||ye, ye) - Math.max(a.yearStart||ys, ys);
+    const overlapB = Math.min(b.yearEnd||ye, ye) - Math.max(b.yearStart||ys, ys);
+    return overlapB - overlapA;
+  })[0];
+  return best.location || null;
+}
+
 function enrichWithXhorse(v){
   const data = lookupRemotes(v.brand, v.model, v.yearStart, v.yearEnd);
   if(!data) return v;
@@ -8051,6 +8098,10 @@ function enrichWithXhorse(v){
   if(data.transponder && !v.transponder) enriched.transponder = data.transponder;
   if(data.blade       && !v.blade)       enriched.blade       = data.blade;
   if(data.clonable    && !v.clonable)    enriched.clonable    = true;
+  if(!v.obdPos) {
+    const loc = getObdLocation(v.brand, v.model, v.yearStart, v.yearEnd);
+    if(loc) enriched.obdPos = loc;
+  }
   return enriched;
 }
 
