@@ -258,7 +258,6 @@ function fetchPage(slug) {
 // Extrait la description OBD depuis le HTML
 function extractLocation(html) {
   if (!html || html.length < 500) return null;
-  // Extraire les figcaptions
   const captions = [];
   const re = /<figcaption>(.*?)<\/figcaption>/gi;
   let m;
@@ -268,13 +267,22 @@ function extractLocation(html) {
       captions.push(txt);
     }
   }
-  // Prendre la 2e légende si dispo (plus précise), sinon la 1ère
   if (captions.length >= 2) return captions[1];
   if (captions.length === 1) return captions[0];
-
-  // Fallback: chercher dans le texte autour de "prise"
   const fallback = html.match(/prise[^.]*se\s+(?:situe|trouve|est)[^.]{5,100}\./i);
   return fallback ? fallback[0].replace(/<[^>]+>/g,'').trim() : null;
+}
+
+// Extrait les URLs des images OBD depuis le HTML
+function extractImages(html) {
+  if (!html || html.length < 500) return [];
+  const images = [];
+  const re = /<img[^>]+src='(\/base_connecteur\/[^']+)'[^>]*>/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    images.push('https://www.outilsobdfacile.fr' + m[1]);
+  }
+  return images;
 }
 
 // Extrait marque + modèle + années depuis le titre
@@ -330,6 +338,7 @@ for (let i = 0; i < URLS.length; i++) {
   const location = extractLocation(html);
   if (!location) continue;
 
+  const images = extractImages(html);
   const { brand, yearStart, yearEnd } = extractMeta(html, slug);
   const brandNorm = normalizeBrand(slug.split('-')[0]);
 
@@ -346,7 +355,7 @@ for (let i = 0; i < URLS.length; i++) {
     .split('-').map(w=>w.charAt(0).toUpperCase()+w.slice(1)).join(' ').trim();
 
   if (!results[brandNorm][modelNorm]) results[brandNorm][modelNorm] = [];
-  results[brandNorm][modelNorm].push({ slug, location, yearStart, yearEnd });
+  results[brandNorm][modelNorm].push({ slug, location, images, yearStart, yearEnd });
 }
 
 console.log('\n\n✅ Scraping terminé.\n');

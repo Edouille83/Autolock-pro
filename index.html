@@ -8086,7 +8086,7 @@ function getObdLocation(brand, model, yearStart, yearEnd) {
     const overlapB = Math.min(b.yearEnd||ye, ye) - Math.max(b.yearStart||ys, ys);
     return overlapB - overlapA;
   })[0];
-  return best.location || null;
+  return { location: best.location || null, images: best.images || [] };
 }
 
 function enrichWithXhorse(v){
@@ -8099,8 +8099,9 @@ function enrichWithXhorse(v){
   if(data.blade       && !v.blade)       enriched.blade       = data.blade;
   if(data.clonable    && !v.clonable)    enriched.clonable    = true;
   if(!v.obdPos) {
-    const loc = getObdLocation(v.brand, v.model, v.yearStart, v.yearEnd);
-    if(loc) enriched.obdPos = loc;
+    const obd = getObdLocation(v.brand, v.model, v.yearStart, v.yearEnd);
+    if(obd && obd.location) enriched.obdPos = obd.location;
+    if(obd && obd.images && obd.images.length) enriched.obdImages = obd.images;
   }
   return enriched;
 }
@@ -8352,6 +8353,15 @@ function showResult(v, year){
           : `<span style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);border-radius:4px;font-size:8px;padding:1px 6px;margin-left:4px;letter-spacing:1px">⚠ À VÉRIFIER</span>`}
       </div>
       <div class="ig-val" style="font-size:14px">📍 ${v.obdPos}</div>
+      ${(v.obdImages||[]).length ? `
+      <div style="display:flex;gap:8px;margin-top:10px;overflow-x:auto;padding-bottom:4px">
+        ${(v.obdImages||[]).map((img,i)=>`
+        <img src="${img}" alt="OBD photo ${i+1}"
+          loading="lazy"
+          style="height:110px;width:auto;border-radius:8px;cursor:pointer;flex-shrink:0;border:1px solid var(--b1);object-fit:cover"
+          onclick="openObdPhoto('${img}')"
+        />`).join('')}
+      </div>` : ''}
     </div>`:''}
     ${v.notes?`
     <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
@@ -8654,6 +8664,25 @@ function printFiche(){
 function closePrint(){
   document.getElementById('print-overlay').style.display='none';
   document.body.style.overflow='';
+}
+
+// ════════════════════════════════════════════════════
+//  OBD PHOTO LIGHTBOX
+// ════════════════════════════════════════════════════
+function openObdPhoto(url) {
+  let lb = document.getElementById('obd-lightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'obd-lightbox';
+    lb.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out';
+    lb.innerHTML = '<img id="obd-lb-img" style="max-width:95vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px #000"/>';
+    lb.addEventListener('click', () => { lb.style.display='none'; document.body.style.overflow=''; });
+    document.body.appendChild(lb);
+    document.addEventListener('keydown', e => { if(e.key==='Escape' && lb.style.display!=='none'){ lb.style.display='none'; document.body.style.overflow=''; } });
+  }
+  document.getElementById('obd-lb-img').src = url;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
 }
 
 // ════════════════════════════════════════════════════
