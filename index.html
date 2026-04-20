@@ -8768,69 +8768,60 @@ function renderProgMethod(brand, model) {
   const best  = m.model_meilleur || m.meilleur;
   const note  = m.obd_note || m.notes || '';
 
-  // Couleurs
   const obdColor  = obd==='oui'?'#10b981':obd==='partiel'?'#f59e0b':'#ef4444';
   const obdBg     = obd==='oui'?'rgba(16,185,129,.12)':obd==='partiel'?'rgba(245,158,11,.12)':'rgba(239,68,68,.08)';
   const benchColor= bench==='oui'?'#a855f7':bench==='partiel'?'#f59e0b':'#64748b';
   const benchBg   = bench==='oui'?'rgba(168,85,247,.12)':bench==='partiel'?'rgba(245,158,11,.08)':'rgba(100,116,139,.08)';
+  const obdLabel  = obd==='oui'?'OBD DIRECT ✓':obd==='partiel'?'OBD PARTIEL ⚠':'OBD ✗';
+  const benchLabel= bench==='oui'?'BENCH REQUIS':bench==='partiel'?'BENCH POSSIBLE':'BENCH NON REQUIS';
 
-  const obdLabel   = obd==='oui'?'OBD DIRECT ✓':obd==='partiel'?'OBD PARTIEL ⚠':'OBD ✗';
-  const benchLabel = bench==='oui'?'BENCH REQUIS':bench==='partiel'?'BENCH POSSIBLE':'BENCH NON REQUIS';
+  const bestColor = best==='obdstar'?'#06b6d4':best==='autel'?'#3b82f6':best==='ktmp'?'#f59e0b':'#10b981';
+  const bestBg    = best==='obdstar'?'rgba(6,182,212,.12)':best==='autel'?'rgba(59,130,246,.12)':best==='ktmp'?'rgba(245,158,11,.12)':'rgba(16,185,129,.08)';
+  const bestLabel = best==='obdstar'?'OBDSTAR G3 ★':best==='autel'?'AUTEL IM608 ★':best==='ktmp'?'KEY TOOL MAX PRO ★':'LES TROIS ✓';
 
-  // Meilleur outil
-  const bestColor = best==='obdstar'?'#06b6d4':best==='autel'?'#3b82f6':'#10b981';
-  const bestBg    = best==='obdstar'?'rgba(6,182,212,.12)':best==='autel'?'rgba(59,130,246,.12)':'rgba(16,185,129,.08)';
-  const bestLabel = best==='obdstar'?'OBDSTAR ★':best==='autel'?'AUTEL IM608 ★':'LES DEUX ✓';
+  function toolRow(ok, bench_ok) {
+    const c1 = ok!=='non'?'#10b981':'#ef4444';
+    const c2 = bench_ok!=='non'?'#a855f7':'#64748b';
+    return `
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+        <span style="color:${c1};font-weight:700">${ok!=='non'?'✓':'✗'}</span>
+        <span style="color:var(--txt2)">OBD : ${ok==='oui'?'Facile':ok==='partiel'?'Partiel':'Non supporté'}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+        <span style="color:${c2};font-weight:700">${bench_ok!=='non'?'◆':'—'}</span>
+        <span style="color:var(--txt2)">Bench : ${bench_ok==='oui'?'Oui':bench_ok==='partiel'?'Partiel':'Non requis'}</span>
+      </div>`;
+  }
 
-  // Compatibilité détaillée par outil
-  const obsOk = m.obdstar !== 'non';
-  const autOk = m.autel !== 'non';
-  const obsBench = m.bench_obdstar !== 'non';
-  const autBench = m.bench_autel !== 'non';
+  const ktmpOk    = m.ktmp    || 'non';
+  const ktmpBench = m.bench_ktmp || 'non';
 
   return `
   <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
     <div class="ig-label"><span class="dot" style="background:#6366f1"></span>MÉTHODE DE PROGRAMMATION</div>
     <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
 
-      <!-- Badges méthode + meilleur outil -->
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
         <span style="background:${obdBg};border:1px solid ${obdColor}44;color:${obdColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${obdLabel}</span>
         <span style="background:${benchBg};border:1px solid ${benchColor}44;color:${benchColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${benchLabel}</span>
         <span style="background:${bestBg};border:1px solid ${bestColor}44;color:${bestColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${bestLabel}</span>
       </div>
 
-      <!-- Tableau OBDSTAR / Autel -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:2px">
         <div style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.2);border-radius:8px;padding:10px 12px">
-          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:#06b6d4;font-weight:700;margin-bottom:6px">OBDSTAR</div>
-          <div style="display:flex;flex-direction:column;gap:4px">
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
-              <span style="color:${obsOk?'#10b981':'#ef4444'};font-weight:700">${obsOk?'✓':'✗'}</span>
-              <span style="color:var(--txt2)">OBD : ${m.obdstar==='oui'?'Facile':m.obdstar==='partiel'?'Partiel':'Non supporté'}</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
-              <span style="color:${obsBench?'#a855f7':'#64748b'};font-weight:700">${obsBench?'◆':'—'}</span>
-              <span style="color:var(--txt2)">Bench : ${m.bench_obdstar==='oui'?'Oui':m.bench_obdstar==='partiel'?'Partiel':'Non requis'}</span>
-            </div>
-          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:#06b6d4;font-weight:700;margin-bottom:6px">OBDSTAR G3</div>
+          <div style="display:flex;flex-direction:column;gap:4px">${toolRow(m.obdstar, m.bench_obdstar)}</div>
         </div>
         <div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:10px 12px">
           <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:#3b82f6;font-weight:700;margin-bottom:6px">AUTEL IM608</div>
-          <div style="display:flex;flex-direction:column;gap:4px">
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
-              <span style="color:${autOk?'#10b981':'#ef4444'};font-weight:700">${autOk?'✓':'✗'}</span>
-              <span style="color:var(--txt2)">OBD : ${m.autel==='oui'?'Facile':m.autel==='partiel'?'Partiel':'Non supporté'}</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
-              <span style="color:${autBench?'#a855f7':'#64748b'};font-weight:700">${autBench?'◆':'—'}</span>
-              <span style="color:var(--txt2)">Bench : ${m.bench_autel==='oui'?'Oui':m.bench_autel==='partiel'?'Partiel':'Non requis'}</span>
-            </div>
-          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">${toolRow(m.autel, m.bench_autel)}</div>
+        </div>
+        <div style="background:rgba(245,158,11,.06);border:1px solid ${ktmpOk!=='non'?'rgba(245,158,11,.3)':'rgba(100,116,139,.2)'};border-radius:8px;padding:10px 12px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:${ktmpOk!=='non'?'#f59e0b':'#64748b'};font-weight:700;margin-bottom:6px">KEY TOOL MAX PRO</div>
+          <div style="display:flex;flex-direction:column;gap:4px">${toolRow(ktmpOk, ktmpBench)}</div>
         </div>
       </div>
 
-      <!-- Note détaillée -->
       ${note ? `<div style="background:rgba(99,102,241,.06);border-left:3px solid #6366f1;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;color:var(--txt2);line-height:1.6;margin-top:2px">${note}</div>` : ''}
     </div>
   </div>`;
