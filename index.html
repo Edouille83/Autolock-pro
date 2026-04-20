@@ -917,6 +917,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 
 <footer>AUTOLOCK PRO v4 — REPARETONPHONE83 — TOULON (83) — <span id="f-count">0</span> VÉHICULES</footer>
 <script src="remotes-data.js"></script>
+<script src="prog-methods.js"></script>
 <script>
 // ════════════════════════════════════════════════════
 //  PIN PROTECTION
@@ -8315,7 +8316,8 @@ function showResult(v, year){
     <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1;background:rgba(16,185,129,.04)">
       <div class="ig-label"><span class="dot" style="background:var(--green)"></span>MES NOTES PERSO <span class="edited-badge">✏️ PERSO</span></div>
       <div style="font-size:13px;color:#34d399;line-height:1.6;margin-top:5px;font-style:italic">${v.userNotes}</div>
-    </div>`:''}`;
+    </div>`:''}
+    ${renderProgMethod(v.brand, v.model)}`;
 
   document.getElementById('result-panel').style.display='block';
   document.getElementById('result-panel').scrollIntoView({behavior:'smooth',block:'start'});
@@ -8741,6 +8743,97 @@ function xhorseRemoteStyle(code){
   if(/^XS/i.test(key))   return {series:'XS',  label:'SMART KEY',   color:'#f97316',bg:'rgba(249,115,22,.13)', border:'rgba(249,115,22,.4)'};
   if(/^XE/i.test(key))   return {series:'XE',  label:'SUPER KEY',   color:'#a855f7',bg:'rgba(168,85,247,.13)', border:'rgba(168,85,247,.4)'};
   return {series:'',label:'',color:'#6b7280',bg:'rgba(107,114,128,.13)',border:'rgba(107,114,128,.3)'};
+}
+
+// ─── MÉTHODE DE PROGRAMMATION ────────────────────────────────────────────────
+function getProgMethod(brand, model) {
+  if (typeof PROG_METHODS === 'undefined') return null;
+  const entry = PROG_METHODS[brand];
+  if (!entry) return null;
+  const modelEntry = model && entry.models && entry.models[model];
+  return { ...entry.default, ...(modelEntry ? {
+    obd_note: modelEntry.note,
+    model_obd: modelEntry.obd,
+    model_bench: modelEntry.bench,
+    model_meilleur: modelEntry.meilleur,
+  } : {}) };
+}
+
+function renderProgMethod(brand, model) {
+  const m = getProgMethod(brand, model);
+  if (!m) return '';
+
+  const obd   = m.model_obd   || (m.obdstar === 'oui' && m.autel === 'oui' ? 'oui' : m.obdstar !== 'non' || m.autel !== 'non' ? 'partiel' : 'non');
+  const bench = m.model_bench || (m.bench_obdstar !== 'non' || m.bench_autel !== 'non' ? 'partiel' : 'non');
+  const best  = m.model_meilleur || m.meilleur;
+  const note  = m.obd_note || m.notes || '';
+
+  // Couleurs
+  const obdColor  = obd==='oui'?'#10b981':obd==='partiel'?'#f59e0b':'#ef4444';
+  const obdBg     = obd==='oui'?'rgba(16,185,129,.12)':obd==='partiel'?'rgba(245,158,11,.12)':'rgba(239,68,68,.08)';
+  const benchColor= bench==='oui'?'#a855f7':bench==='partiel'?'#f59e0b':'#64748b';
+  const benchBg   = bench==='oui'?'rgba(168,85,247,.12)':bench==='partiel'?'rgba(245,158,11,.08)':'rgba(100,116,139,.08)';
+
+  const obdLabel   = obd==='oui'?'OBD DIRECT ✓':obd==='partiel'?'OBD PARTIEL ⚠':'OBD ✗';
+  const benchLabel = bench==='oui'?'BENCH REQUIS':bench==='partiel'?'BENCH POSSIBLE':'BENCH NON REQUIS';
+
+  // Meilleur outil
+  const bestColor = best==='obdstar'?'#06b6d4':best==='autel'?'#3b82f6':'#10b981';
+  const bestBg    = best==='obdstar'?'rgba(6,182,212,.12)':best==='autel'?'rgba(59,130,246,.12)':'rgba(16,185,129,.08)';
+  const bestLabel = best==='obdstar'?'OBDSTAR ★':best==='autel'?'AUTEL IM608 ★':'LES DEUX ✓';
+
+  // Compatibilité détaillée par outil
+  const obsOk = m.obdstar !== 'non';
+  const autOk = m.autel !== 'non';
+  const obsBench = m.bench_obdstar !== 'non';
+  const autBench = m.bench_autel !== 'non';
+
+  return `
+  <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
+    <div class="ig-label"><span class="dot" style="background:#6366f1"></span>MÉTHODE DE PROGRAMMATION</div>
+    <div style="margin-top:10px;display:flex;flex-direction:column;gap:8px">
+
+      <!-- Badges méthode + meilleur outil -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+        <span style="background:${obdBg};border:1px solid ${obdColor}44;color:${obdColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${obdLabel}</span>
+        <span style="background:${benchBg};border:1px solid ${benchColor}44;color:${benchColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${benchLabel}</span>
+        <span style="background:${bestBg};border:1px solid ${bestColor}44;color:${bestColor};border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:4px 10px;letter-spacing:1px">${bestLabel}</span>
+      </div>
+
+      <!-- Tableau OBDSTAR / Autel -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:2px">
+        <div style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.2);border-radius:8px;padding:10px 12px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:#06b6d4;font-weight:700;margin-bottom:6px">OBDSTAR</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+              <span style="color:${obsOk?'#10b981':'#ef4444'};font-weight:700">${obsOk?'✓':'✗'}</span>
+              <span style="color:var(--txt2)">OBD : ${m.obdstar==='oui'?'Facile':m.obdstar==='partiel'?'Partiel':'Non supporté'}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+              <span style="color:${obsBench?'#a855f7':'#64748b'};font-weight:700">${obsBench?'◆':'—'}</span>
+              <span style="color:var(--txt2)">Bench : ${m.bench_obdstar==='oui'?'Oui':m.bench_obdstar==='partiel'?'Partiel':'Non requis'}</span>
+            </div>
+          </div>
+        </div>
+        <div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:10px 12px">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:2px;color:#3b82f6;font-weight:700;margin-bottom:6px">AUTEL IM608</div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+              <span style="color:${autOk?'#10b981':'#ef4444'};font-weight:700">${autOk?'✓':'✗'}</span>
+              <span style="color:var(--txt2)">OBD : ${m.autel==='oui'?'Facile':m.autel==='partiel'?'Partiel':'Non supporté'}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:12px">
+              <span style="color:${autBench?'#a855f7':'#64748b'};font-weight:700">${autBench?'◆':'—'}</span>
+              <span style="color:var(--txt2)">Bench : ${m.bench_autel==='oui'?'Oui':m.bench_autel==='partiel'?'Partiel':'Non requis'}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note détaillée -->
+      ${note ? `<div style="background:rgba(99,102,241,.06);border-left:3px solid #6366f1;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;color:var(--txt2);line-height:1.6;margin-top:2px">${note}</div>` : ''}
+    </div>
+  </div>`;
 }
 
 function xhorseRemoteName(code){
