@@ -194,6 +194,20 @@ main{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:20px 16p
 .dot{width:5px;height:5px;border-radius:50%;display:inline-block;flex-shrink:0;}
 .ig-val{font-size:15px;font-weight:700;line-height:1.3;}
 
+/* OBD Slider */
+.obd-slider{position:relative;border-radius:12px;overflow:hidden;background:var(--b0);border:1px solid var(--b1);touch-action:pan-y;}
+.obd-slider-track{display:flex;transition:transform .3s cubic-bezier(.4,0,.2,1);will-change:transform;}
+.obd-slide{flex:0 0 100%;position:relative;cursor:pointer;}
+.obd-slide img{width:100%;height:210px;object-fit:cover;display:block;}
+.obd-slide-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.65));padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:#fff;text-transform:uppercase;}
+.obd-sl-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);border:none;color:#fff;font-size:24px;cursor:pointer;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:2;transition:background .15s;}
+.obd-sl-btn:active{background:rgba(0,0,0,.7);}
+.obd-sl-prev{left:8px;}
+.obd-sl-next{right:8px;}
+.obd-sl-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2;}
+.obd-sl-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s,transform .2s;}
+.obd-sl-dot.active{background:#fff;transform:scale(1.25);}
+
 /* Tags */
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px;}
 .tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;}
@@ -8357,14 +8371,24 @@ function showResult(v, year){
       </div>
       <div class="ig-val" style="font-size:14px;margin-bottom:${(v.obdImages||[]).length?'12px':'0'}">📍 ${v.obdPos}</div>
       ${(v.obdImages||[]).length ? `
-      <div style="display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch">
-        ${(v.obdImages||[]).map((img,i)=>`
-        <div onclick="openObdGallery(${JSON.stringify(v.obdImages)},${i})" style="flex-shrink:0;cursor:pointer;position:relative;border-radius:10px;overflow:hidden;border:2px solid var(--b1);transition:border-color .2s" onmouseover="this.style.borderColor='var(--cyan)'" onmouseout="this.style.borderColor='var(--b1)'">
-          <img src="${img}" alt="OBD ${i+1}" loading="lazy" style="height:130px;width:auto;display:block;object-fit:cover"/>
-          <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.6));padding:4px 6px;font-size:9px;color:#fff;font-family:'JetBrains Mono',monospace;letter-spacing:1px">${i===0?'TABLEAU DE BORD':i===1?'LOCALISATION':i===2?'CONNECTEUR':'PHOTO '+(i+1)}</div>
-        </div>`).join('')}
+      <div class="obd-slider" id="obdslider-${v.brand}-${v.model}-${v.yearStart||0}" data-imgs='${JSON.stringify(v.obdImages).replace(/'/g,"&#39;")}' data-idx="0">
+        <div class="obd-slider-track">
+          ${(v.obdImages||[]).map((img,i)=>{
+            const caps=['TABLEAU DE BORD','LOCALISATION','CONNECTEUR OBD'];
+            return `<div class="obd-slide">
+              <img src="${img}" alt="OBD ${i+1}" loading="${i===0?'eager':'lazy'}" onclick="openObdGallery(${JSON.stringify(v.obdImages)},${i})"/>
+              <div class="obd-slide-cap">${caps[i]||'PHOTO '+(i+1)}</div>
+            </div>`;
+          }).join('')}
+        </div>
+        ${(v.obdImages||[]).length>1?`
+        <button class="obd-sl-btn obd-sl-prev" onclick="moveObdSlider(this.closest('.obd-slider'),-1)">‹</button>
+        <button class="obd-sl-btn obd-sl-next" onclick="moveObdSlider(this.closest('.obd-slider'),1)">›</button>
+        <div class="obd-sl-dots">
+          ${(v.obdImages||[]).map((_,i)=>`<span class="obd-sl-dot${i===0?' active':''}" onclick="goObdSlider(this.closest('.obd-slider'),${i})"></span>`).join('')}
+        </div>`:''}
       </div>
-      <div style="font-size:9px;color:var(--txt2);margin-top:4px;text-align:right">Source : outilsobdfacile.fr</div>` : ''}
+      <div style="font-size:9px;color:var(--txt2);margin-top:6px;text-align:right">Source : outilsobdfacile.fr</div>` : ''}
     </div>`:''}
     ${v.notes?`
     <div class="ig-block full" style="border-top:1px solid var(--b1);grid-column:1/-1">
@@ -8386,6 +8410,7 @@ function showResult(v, year){
   document.getElementById('result-panel').style.display='block';
   document.getElementById('result-panel').scrollIntoView({behavior:'smooth',block:'start'});
   renderChecklist(v);
+  requestAnimationFrame(initObdSliders);
 }
 
 // ════════════════════════════════════════════════════
@@ -8667,6 +8692,44 @@ function printFiche(){
 function closePrint(){
   document.getElementById('print-overlay').style.display='none';
   document.body.style.overflow='';
+}
+
+// ════════════════════════════════════════════════════
+//  OBD SLIDER
+// ════════════════════════════════════════════════════
+function _obdSliderUpdate(sl, idx) {
+  const track = sl.querySelector('.obd-slider-track');
+  const dots  = sl.querySelectorAll('.obd-sl-dot');
+  const imgs  = JSON.parse(sl.dataset.imgs.replace(/&#39;/g,"'"));
+  idx = Math.max(0, Math.min(imgs.length - 1, idx));
+  sl.dataset.idx = idx;
+  track.style.transform = `translateX(-${idx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  const prev = sl.querySelector('.obd-sl-prev');
+  const next = sl.querySelector('.obd-sl-next');
+  if(prev) prev.style.opacity = idx > 0 ? '1' : '0.25';
+  if(next) next.style.opacity = idx < imgs.length - 1 ? '1' : '0.25';
+}
+function moveObdSlider(sl, dir) {
+  _obdSliderUpdate(sl, +sl.dataset.idx + dir);
+}
+function goObdSlider(sl, idx) {
+  _obdSliderUpdate(sl, idx);
+}
+// Initialise le swipe tactile sur tous les sliders OBD du DOM
+function initObdSliders() {
+  document.querySelectorAll('.obd-slider').forEach(sl => {
+    if(sl._swipeInit) return;
+    sl._swipeInit = true;
+    let x0 = null;
+    sl.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+    sl.addEventListener('touchend', e => {
+      if(x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      if(Math.abs(dx) > 40) moveObdSlider(sl, dx < 0 ? 1 : -1);
+      x0 = null;
+    }, { passive: true });
+  });
 }
 
 // ════════════════════════════════════════════════════
