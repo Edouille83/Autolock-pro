@@ -8059,33 +8059,78 @@ function lookupRemotes(brand, model, yearStart, yearEnd){
 
 function _normModel(s) {
   return s.toLowerCase()
-    .replace(/\b[efg]\d{2,3}\b/g, '')   // strip BMW gen codes: E46, F30, G20
-    .replace(/\bph\d\b/g, '')           // strip phase codes: ph1, ph2
-    .replace(/[-_]/g,' ')
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')  // accents: é→e, à→a, ç→c…
+    .replace(/\b[a-z]\d{2,4}(?:\/[a-z]\d{2,4})*\b/g, '')  // gen codes: E46, F30, X83, D40, R55/R56
+    .replace(/\bph\d\b/g, '')
+    .replace(/\b(ii|iii|iv|vi|vii|viii|ix|xi|xii)\b/g, '')  // chiffres romains
+    .replace(/\b1p\b/g, '')  // Seat León 1P
+    .replace(/[-_\/]/g,' ')
     .replace(/\s+/g,' ')
     .trim();
 }
+
+// Alias explicites pour les nommages trop différents
+const _OBD_ALIASES = {
+  'Mercedes': {
+    'Classe A': 'A Class -', 'Classe B': 'B Class -', 'Classe C': 'C Class -',
+    'Classe E': 'E Class -', 'Classe G': 'G Class -', 'Classe S': 'S Class -',
+    'Classe CL': 'CL Class -', 'Classe CLK': 'CLK Class -', 'Classe SL': 'SL Class -',
+    'Classe SLK': 'SLK Class -', 'Classe GLA': 'GLA Class -', 'Classe GLC': 'GLC Class -',
+    'Classe GLE': 'GLE Class -', 'Classe ML': 'M/ML Class -', 'Classe M': 'M/ML Class -',
+  },
+  'MINI': { 'Cooper R55': 'Cooper R56/R57' },
+  'Suzuki': { 'S-Cross': 'SX4' },
+};
+
 function getObdLocation(brand, model, yearStart, yearEnd) {
   if(typeof OBD_LOCATIONS === 'undefined') return null;
-  const brandData = OBD_LOCATIONS[brand];
+  // Correction casse MINI
+  const b = brand === 'MINI' ? 'Mini' : brand;
+  const brandData = OBD_LOCATIONS[b];
   if(!brandData) return null;
   const ys = yearStart || 0;
   const ye = yearEnd   || 9999;
 
   // 1. Exact match
   let entries = brandData[model];
-  // 2. Normalized match
+
+  // 2. Alias explicite (Mercedes, MINI, Suzuki…)
+  if(!entries) {
+    const aliases = _OBD_ALIASES[brand] || {};
+    // cherche l'alias dont le modèle commence par la clé
+    const aliasKey = Object.keys(aliases).find(k => model.startsWith(k));
+    if(aliasKey) entries = brandData[aliases[aliasKey]];
+  }
+
+  // 3. Normalized match (accents, codes gen, chiffres romains)
   if(!entries) {
     const normQ = _normModel(model);
     const key = Object.keys(brandData).find(k => _normModel(k) === normQ);
     if(key) entries = brandData[key];
   }
-  // 3. Prefix match (e.g. "SERIE 3" matches "Serie 3 E46")
+
+  // 4. Prefix match
   if(!entries) {
     const normQ = _normModel(model);
-    const key = Object.keys(brandData).find(k => _normModel(k).startsWith(normQ) || normQ.startsWith(_normModel(k).split(' ').slice(0,2).join(' ')));
+    const key = Object.keys(brandData).find(k => {
+      const normK = _normModel(k);
+      return normK.startsWith(normQ) || normQ.startsWith(normK.split(' ').slice(0,2).join(' '));
+    });
     if(key) entries = brandData[key];
   }
+
+  // 5. Mots en commun (ex: "C4 Grand Picasso" ↔ "Grand C4 Picasso")
+  if(!entries) {
+    const normQ = _normModel(model);
+    const wordsQ = new Set(normQ.split(' ').filter(w => w.length > 2));
+    const key = Object.keys(brandData).find(k => {
+      const wordsK = _normModel(k).split(' ').filter(w => w.length > 2);
+      const common = wordsK.filter(w => wordsQ.has(w));
+      return common.length >= 2 && common.length >= Math.min(wordsQ.size, wordsK.length) - 1;
+    });
+    if(key) entries = brandData[key];
+  }
+
   if(!entries || !entries.length) return null;
 
   const overlapping = entries.filter(e => {
@@ -8094,7 +8139,6 @@ function getObdLocation(brand, model, yearStart, yearEnd) {
     return true;
   });
   const pool = overlapping.length ? overlapping : entries;
-  // Pick entry with greatest overlap with [ys, ye]
   const best = pool.sort((a, b) => {
     const overlapA = Math.min(a.yearEnd||ye, ye) - Math.max(a.yearStart||ys, ys);
     const overlapB = Math.min(b.yearEnd||ye, ye) - Math.max(b.yearStart||ys, ys);
