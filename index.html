@@ -527,6 +527,57 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
   height:16px;
 }
 .pin-error.show{opacity:1;}
+/* ── Backup banner ── */
+.backup-banner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:10px 14px;border-radius:10px;
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  margin-bottom:12px;flex-wrap:wrap;
+}
+.backup-banner.warn{
+  background:rgba(239,68,68,.08);
+  border:1px solid rgba(239,68,68,.25);
+  color:var(--red);
+}
+.backup-banner.ok{
+  background:rgba(16,185,129,.06);
+  border:1px solid rgba(16,185,129,.2);
+  color:var(--green);
+}
+.backup-banner button{
+  background:transparent;
+  border:1px solid currentColor;
+  border-radius:7px;
+  color:inherit;
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  padding:5px 12px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:opacity .15s;
+  flex-shrink:0;
+}
+.backup-banner button:active{opacity:.7;}
+.pin-bio-sep{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;color:var(--muted);
+  letter-spacing:2px;text-transform:uppercase;
+}
+.pin-bio-btn{
+  background:transparent;
+  border:1px solid var(--amber);
+  border-radius:12px;
+  color:var(--amber);
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+  padding:12px 28px;
+  cursor:pointer;
+  transition:all .15s;
+  -webkit-tap-highlight-color:transparent;
+  letter-spacing:1px;
+}
+.pin-bio-btn:active{background:var(--amber-d);transform:scale(.97);}
+.pin-bio-btn.muted{border-color:var(--muted);color:var(--muted);}
 
 /* ── Clients tab ── */
 .client-form{background:var(--s1);border:1px solid var(--b1);border-radius:12px;padding:16px;margin-bottom:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
@@ -617,6 +668,9 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
     <button class="pin-btn zero" onclick="pinPress('0')">0</button>
     <button class="pin-btn del" onclick="pinDel()">⌫</button>
   </div>
+  <div id="bio-sep" class="pin-bio-sep" style="display:none">— ou —</div>
+  <button id="bio-btn" class="pin-bio-btn" style="display:none" onclick="tryBiometric()">🔐 Face ID / Touch ID</button>
+  <button id="bio-reg-btn" class="pin-bio-btn muted" style="display:none" onclick="registerBiometric()">Activer Face ID / Touch ID</button>
 </div>
 
 <header>
@@ -848,6 +902,7 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         <button class="btn-cancel" onclick="clearHistory()" style="font-size:11px;padding:6px 12px;" aria-label="Effacer tout l'historique">🗑 Effacer tout</button>
       </div>
     </div>
+    <div id="backup-banner" style="display:none"></div>
     <div id="stock-alerts"></div>
     <div class="hist-list" id="hist-list" role="list" aria-label="Liste des interventions">
       <div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>
@@ -964,24 +1019,31 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 (function(){
   const PIN = '253115';
   const SESSION_KEY = 'alp_unlocked';
+  const CRED_KEY = 'alp_cred_id';
   let entered = '';
 
-  // Si déjà déverrouillé dans cette session → passer directement
   if(sessionStorage.getItem(SESSION_KEY) === '1'){
     document.getElementById('pin-lock').style.display = 'none';
     return;
   }
 
-  // Empêcher le scroll sur le body pendant le PIN
   document.body.style.overflow = 'hidden';
 
+  // ── Déverrouillage commun (PIN et biométrie) ──
+  function unlock(){
+    sessionStorage.setItem(SESSION_KEY, '1');
+    const lock = document.getElementById('pin-lock');
+    lock.style.transition = 'opacity .35s ease';
+    lock.style.opacity = '0';
+    setTimeout(()=>{ lock.style.display = 'none'; document.body.style.overflow = ''; }, 350);
+  }
+
+  // ── PIN ──
   window.pinPress = function(digit){
     if(entered.length >= PIN.length) return;
     entered += digit;
     updateDots();
-    if(entered.length === PIN.length){
-      setTimeout(checkPin, 150);
-    }
+    if(entered.length === PIN.length) setTimeout(checkPin, 150);
   };
 
   window.pinDel = function(){
@@ -998,19 +1060,9 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
 
   function checkPin(){
     if(entered === PIN){
-      // ✅ Correct — animer et ouvrir
-      sessionStorage.setItem(SESSION_KEY, '1');
-      const lock = document.getElementById('pin-lock');
-      lock.style.transition = 'opacity .35s ease';
-      lock.style.opacity = '0';
-      setTimeout(()=>{
-        lock.style.display = 'none';
-        document.body.style.overflow = '';
-      }, 350);
+      unlock();
     } else {
-      // ❌ Mauvais code — secouer et reset
       showError();
-      // Animation shake sur les dots
       const dots = document.getElementById('pin-dots');
       dots.style.transition = 'transform .05s';
       let count = 0;
@@ -1019,26 +1071,79 @@ footer{position:relative;z-index:1;text-align:center;padding:16px;font-family:'J
         count++;
         if(count > 6){ clearInterval(shake); dots.style.transform = ''; }
       }, 50);
-      setTimeout(()=>{
-        entered = '';
-        updateDots();
-      }, 600);
+      setTimeout(()=>{ entered = ''; updateDots(); }, 600);
     }
   }
 
-  function showError(){
-    document.getElementById('pin-error').classList.add('show');
-  }
-  function hideError(){
-    document.getElementById('pin-error').classList.remove('show');
-  }
+  function showError(){ document.getElementById('pin-error').classList.add('show'); }
+  function hideError(){ document.getElementById('pin-error').classList.remove('show'); }
 
-  // Support clavier (sur iMac)
   document.addEventListener('keydown', function(e){
     if(document.getElementById('pin-lock').style.display === 'none') return;
     if(e.key >= '0' && e.key <= '9') pinPress(e.key);
     if(e.key === 'Backspace') pinDel();
   });
+
+  // ── WebAuthn (Face ID / Touch ID) ──
+  const supportsWebAuthn = () =>
+    !!window.PublicKeyCredential && location.protocol !== 'file:';
+
+  function b64ToUint8(b64){
+    return Uint8Array.from(atob(b64), c => c.charCodeAt(0));
+  }
+  function uint8ToB64(buf){
+    return btoa(String.fromCharCode(...new Uint8Array(buf)));
+  }
+
+  window.registerBiometric = async function(){
+    try {
+      const cred = await navigator.credentials.create({ publicKey: {
+        challenge: crypto.getRandomValues(new Uint8Array(32)),
+        rp: { name: 'AutoLock Pro', id: location.hostname },
+        user: { id: new Uint8Array([1,0,0,0]), name: 'serrurier', displayName: 'Reparetonphone83' },
+        pubKeyCredParams: [
+          { alg: -7, type: 'public-key' },
+          { alg: -257, type: 'public-key' }
+        ],
+        authenticatorSelection: { authenticatorAttachment: 'platform', userVerification: 'required' },
+        timeout: 60000
+      }});
+      localStorage.setItem(CRED_KEY, uint8ToB64(cred.rawId));
+      document.getElementById('bio-reg-btn').style.display = 'none';
+      document.getElementById('bio-btn').style.display = 'block';
+      unlock();
+    } catch(e){
+      if(e.name !== 'NotAllowedError') showError();
+    }
+  };
+
+  window.tryBiometric = async function(){
+    const credId = localStorage.getItem(CRED_KEY);
+    if(!credId) return;
+    try {
+      await navigator.credentials.get({ publicKey: {
+        challenge: crypto.getRandomValues(new Uint8Array(32)),
+        rpId: location.hostname,
+        allowCredentials: [{ id: b64ToUint8(credId), type: 'public-key' }],
+        userVerification: 'required',
+        timeout: 60000
+      }});
+      unlock();
+    } catch(e){
+      if(e.name !== 'NotAllowedError') showError();
+    }
+  };
+
+  if(supportsWebAuthn()){
+    const credId = localStorage.getItem(CRED_KEY);
+    document.getElementById('bio-sep').style.display = 'block';
+    if(credId){
+      document.getElementById('bio-btn').style.display = 'block';
+      setTimeout(tryBiometric, 400);
+    } else {
+      document.getElementById('bio-reg-btn').style.display = 'block';
+    }
+  }
 })();
 
 // ════════════════════════════════════════════════════
@@ -8574,12 +8679,17 @@ function addToHistory(){
   document.getElementById('s-hist').textContent = hist.length>30?30:hist.length;
   renderHistory();
   showToast('✅ Intervention enregistrée dans l\'historique !');
+  // Rappel backup si overdue
+  if(_backupAgeDays() > 14){
+    setTimeout(()=>showToast('⚠️ Pense à sauvegarder — onglet Historique', 5000), 2000);
+  }
 }
 
 function renderHistory(){
   const hist = getHistory();
   document.getElementById('hist-count').textContent = hist.length;
   document.getElementById('s-hist').textContent = hist.length;
+  renderBackupBanner();
   const list = document.getElementById('hist-list');
   if(!hist.length){
     list.innerHTML='<div class="hist-empty">Aucune intervention enregistrée.<br>Utilise le bouton ✅ après chaque intervention.</div>';
@@ -9198,21 +9308,78 @@ function clearFilters(){
 }
 
 // ════════════════════════════════════════════════════
-//  EXPORT / IMPORT JSON
+//  EXPORT / IMPORT JSON + BACKUP REMINDER
 // ════════════════════════════════════════════════════
-function exportData(){
+const BACKUP_TS_KEY = 'alp4_last_backup';
+const BACKUP_WARN_DAYS = 7;
+
+function _backupAgeDays(){
+  const ts = localStorage.getItem(BACKUP_TS_KEY);
+  if(!ts) return Infinity;
+  return (Date.now() - parseInt(ts)) / 86400000;
+}
+
+function renderBackupBanner(){
+  const banner = document.getElementById('backup-banner');
+  if(!banner) return;
+  const age = _backupAgeDays();
+  const ts  = localStorage.getItem(BACKUP_TS_KEY);
+  if(age === Infinity){
+    banner.innerHTML = `<div class="backup-banner warn">
+      <span>⚠️ Aucune sauvegarde — tes données ne sont pas protégées</span>
+      <button onclick="exportData()">💾 Sauvegarder maintenant</button>
+    </div>`;
+  } else if(age > BACKUP_WARN_DAYS){
+    banner.innerHTML = `<div class="backup-banner warn">
+      <span>⚠️ Sauvegarde ancienne (${Math.floor(age)} jours) — pense à exporter</span>
+      <button onclick="exportData()">💾 Sauvegarder</button>
+    </div>`;
+  } else {
+    const date = new Date(parseInt(ts)).toLocaleDateString('fr-FR',{day:'numeric',month:'long'});
+    banner.innerHTML = `<div class="backup-banner ok">
+      <span>✓ Dernière sauvegarde : ${date}</span>
+      <button onclick="exportData()" style="opacity:.6">💾 Re-sauvegarder</button>
+    </div>`;
+  }
+  banner.style.display = 'block';
+}
+
+async function exportData(){
   const data = {};
   for(let i=0;i<localStorage.length;i++){
     const key=localStorage.key(i);
     if(key&&key.startsWith('alp4_')) data[key]=localStorage.getItem(key);
   }
   if(!Object.keys(data).length){ showToast('⚠️ Aucune donnée à exporter'); return; }
-  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=`autolock-pro-backup-${new Date().toISOString().slice(0,10)}.json`;
+  const json = JSON.stringify(data, null, 2);
+  const filename = `autolock-pro-backup-${new Date().toISOString().slice(0,10)}.json`;
+
+  // File System Access API (Chrome desktop/Android) — sauvegarde dans un vrai fichier
+  if('showSaveFilePicker' in window){
+    try{
+      const handle = await window.showSaveFilePicker({
+        suggestedName: filename,
+        types: [{ description: 'Sauvegarde AutoLock Pro', accept: {'application/json': ['.json']} }]
+      });
+      const writable = await handle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      localStorage.setItem(BACKUP_TS_KEY, Date.now());
+      showToast('✓ Sauvegarde enregistrée !');
+      renderBackupBanner();
+      return;
+    } catch(e){ if(e.name === 'AbortError') return; }
+  }
+
+  // Fallback mobile (Safari iPhone) — téléchargement classique
+  const blob = new Blob([json], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
   a.click();
-  showToast('⬇️ Sauvegarde exportée !');
+  localStorage.setItem(BACKUP_TS_KEY, Date.now());
+  showToast('⬇️ Sauvegarde téléchargée !');
+  renderBackupBanner();
 }
 
 function importData(input){
@@ -9523,6 +9690,26 @@ function renderClients(){
 // ════
 document.getElementById('c-mo').addEventListener('input',()=>{ document.getElementById('c-mo').dataset.touched='1'; calcPrice(); });
 init();
+
+// ═══ SERVICE WORKER ═══
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/Autolock-pro/sw.js', { scope: '/Autolock-pro/' })
+      .then(reg => {
+        reg.addEventListener('updatefound', () => {
+          const nw = reg.installing;
+          nw.addEventListener('statechange', () => {
+            if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+              showToast('Mise à jour disponible — relancez l\'app', 4000);
+            } else if (nw.state === 'installed') {
+              showToast('✓ App disponible hors-ligne', 3000);
+            }
+          });
+        });
+      })
+      .catch(() => {});
+  });
+}
 </script>
 </body>
 </html>
