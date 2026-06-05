@@ -8534,9 +8534,7 @@ function showResult(v, year){
         <div class="ig-val" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
           <span class="tag ${v.tColor}" style="font-size:13px;padding:4px 12px">${v.transponder}</span>
           ${(()=>{
-            const cs = v.clonable
-              ? {label:'CLONABLE',color:'#10b981',bg:'rgba(16,185,129,.12)',title:'Clonable selon base Xhorse'}
-              : cloneStatus(v.transponder);
+            const cs = cloneStatus(v.transponder);
             return cs?`<span title="${cs.title}" style="background:${cs.bg};border:1px solid ${cs.color}44;color:${cs.color};border-radius:4px;font-size:9px;font-weight:700;padding:2px 8px;letter-spacing:1px;white-space:nowrap;cursor:help">${cs.label}</span>`:'';
           })()}
         </div>
@@ -9170,11 +9168,17 @@ function quickSelect(brand,model,year){
 function cloneStatus(transponder){
   if(!transponder) return null;
   const t = transponder.toLowerCase();
+  // Clone direct — pince magnétique ou duplicateur simple
   if(/temic 11|id11|verre|id33|crypto1|pcf7930|pcf7931|id40|4d6[012]\b|4c /.test(t))
     return {label:'CLONABLE',color:'#10b981',bg:'rgba(16,185,129,.12)',title:'Clone direct — aucun accès voiture requis'};
+  // Clone VVDI — 1 crédit
   if(/pcf7936|id46 crypto2|crypto2/.test(t))
     return {label:'CLONE VVDI ①',color:'#60a5fa',bg:'rgba(96,165,250,.12)',title:'Clonable avec VVDI Key Tool Max — 1 crédit VVDI requis'};
-  return {label:'NON CLONABLE',color:'#ef4444',bg:'rgba(239,68,68,.12)',title:'Nécessite accès OBD / EEPROM / BENCH — pas de clone direct'};
+  // Clone VVDI — Hitag3 AES (ID4A / PCF7953) — crédits VVDI
+  if(/pcf7953|id4a|hitag3|hitag 3/.test(t))
+    return {label:'CLONE VVDI',color:'#a78bfa',bg:'rgba(167,139,250,.12)',title:'Clonable avec VVDI Key Tool Max Pro — crédits VVDI requis'};
+  // Pas de clone possible → rien à afficher
+  return null;
 }
 
 const XHORSE_NAMES = {
